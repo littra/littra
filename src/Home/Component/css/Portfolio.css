@@ -34,10 +34,11 @@
   padding-bottom: 60px;
   padding-top: 40px;
   background-color: var(--background-color-normal);
+  transition: all 200ms;
 }
 .infoCard {
   position: absolute;
-  bottom: -79px;
+  top: 210px;
   transition: 0.4s;
   background: #f9f9f9;
   padding: 20px;
@@ -45,11 +46,12 @@
   left: 0;
   background-color: var(--background-color-midDark);
 }
-.header {
-  composes: dark;
+.header a {
+  color: var(--text-color-dark);
   margin-bottom: 20px;
 }
 .box:hover .infoCard {
+  top: auto;
   bottom: 0;
 }
 .desc {

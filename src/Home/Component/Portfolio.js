@@ -12,7 +12,11 @@ class Portfolio extends React.Component {
           <Icon image={`${PUBLIC_ASSETS_PATH}/${item.icon}`} size={200} />
         </div>
         <div className={styles.infoCard}>
-          <h1 className={styles.header}>{item.header} </h1>
+          <h1 className={styles.header}>
+            <a href={item.link} target="blank">
+              {item.header}
+            </a>
+          </h1>
           <p className={styles.desc}>{item.desc}</p>
         </div>
       </div>
@@ -20,14 +24,16 @@ class Portfolio extends React.Component {
   };
   render() {
     const littraChatBot = {
-      icon: "littraChatBot.svg",
+      icon: "disherve.png",
       header: <FormattedMessage {...HomeMessages.littraChatBot} />,
-      desc: <FormattedMessage {...HomeMessages.littraChatBotDesc} />
+      desc: <FormattedMessage {...HomeMessages.littraChatBotDesc} />,
+      link: "https://apps.apple.com/us/app/disherve/id1496988145"
     };
     const littraPersonalization = {
-      icon: "littraPersonalization.svg",
+      icon: "video-conference.svg",
       header: <FormattedMessage {...HomeMessages.littraPersonalization} />,
-      desc: <FormattedMessage {...HomeMessages.littraPersonalizationDesc} />
+      desc: <FormattedMessage {...HomeMessages.littraPersonalizationDesc} />,
+      link: "https://app.littra.in"
     };
     return (
       <div className={styles.base} id="portfolio">
@@ -38,12 +44,11 @@ class Portfolio extends React.Component {
         </div>
         <hr className={styles.divider} />
         <div className={styles.portfolioWrapper}>
+          <div className={styles.portfolioTwo}>
+            {this.renderPortfolioCard(littraPersonalization)}
+          </div>
           <div className={styles.portfolioOne}>
             {this.renderPortfolioCard(littraChatBot)}
-          </div>
-          <div className={styles.portfolioTwo}>
-            {" "}
-            {this.renderPortfolioCard(littraPersonalization)}
           </div>
         </div>
       </div>

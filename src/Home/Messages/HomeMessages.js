@@ -244,21 +244,21 @@ export default defineMessages({
   },
   littraChatBot: {
     id: "home.topComponent.littraChatBot",
-    defaultMessage: "Littra Chat Bot"
+    defaultMessage: "Disherve"
   },
   littraChatBotDesc: {
     id: "home.topComponent.littraChatBotDesc",
     defaultMessage:
-      "Our Latest Works Our Latest WorksOur Latest WorksOur Latest WorksOur Latest WorksOur Latest WorksOur Latest WorksOur Latest Works"
+      "DishErve is an innovative platform, where user can login, click a picture of the particular dish that being consumed to review it and upon a successful review the dish can be recommended to others using other Social Media Networks."
   },
   littraPersonalization: {
     id: "home.topComponent.littraPersonalization",
-    defaultMessage: "Littra Personalization"
+    defaultMessage: "Littra Meetings"
   },
   littraPersonalizationDesc: {
     id: "home.topComponent.littraPersonalizationDesc",
     defaultMessage:
-      "Our Latest Works Our Latest WorksOur Latest WorksOur Latest WorksOur Latest WorksOur Latest WorksOur Latest WorksOur Latest Works"
+      "Littra Meetings software for video conferencing. Littra meetings can hold upto 500 users in a session. Littra meetings mainly for school, tuition, Official meetings."
   },
   blogHeading: {
     id: "home.topComponent.blogHeading",
