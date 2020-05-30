@@ -1,0 +1,60 @@
+import React from "react";
+import styles from "./css/SecondTopBanner.css";
+import Image from "../../general/Image";
+import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
+import { FormattedMessage } from "react-intl";
+import HomeMessages from "../Messages/HomeMessages";
+
+export default class About extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showMore: false
+    };
+  }
+
+  toggleShowMore = () => {
+    this.setState({ showMore: !this.state.showMore });
+  };
+
+  render() {
+    return (
+      <div className={styles.base} id="aboutus">
+        <div className={styles.left}>
+          <div className={styles.featureWrapper}>
+            <h1 className={styles.darkColor}>
+              <FormattedMessage {...HomeMessages.aboutHeading} />
+            </h1>
+            <hr className={styles.border} />
+            <ul>
+              <p className={styles.aboutText}>
+                <FormattedMessage {...HomeMessages.aboutTextOne} />
+              </p>
+              <button className={styles.showMore} onClick={this.toggleShowMore}>
+                {this.state.showMore ? "Show less..." : "Show more..."}
+              </button>
+              {this.state.showMore && (
+                <div className={styles.moreContent}>
+                  <p className={styles.aboutText}>
+                    <FormattedMessage {...HomeMessages.aboutTextTwo} />
+                  </p>
+                  <p className={styles.aboutText}>
+                    <FormattedMessage {...HomeMessages.aboutTextThree} />
+                  </p>
+                </div>
+              )}
+            </ul>
+          </div>
+        </div>
+        <div className={styles.right}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src={`${PUBLIC_ASSETS_PATH}/image1.png`}
+              paddingBottom="370px"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}

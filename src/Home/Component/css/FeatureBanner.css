@@ -1,0 +1,33 @@
+.base {
+  padding: 60px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Hind SANS-SERIF;
+}
+.card {
+  width: 33.33%;
+  padding: 10px;
+}
+.dark {
+  color: var(--text-color-dark);
+  margin: 15px 0px;
+}
+.featureWrapper {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.featureDes {
+  composes: dark;
+  line-height: 25px;
+  padding-right: 20px;
+}
+
+.featureRow {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
