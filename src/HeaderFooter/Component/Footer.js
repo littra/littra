@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
         <div className={styles.footerWrapper}>
           <div className={styles.left}>
             <p className={styles.copyRight}>
-              Copyrights © 2019 All Rights Reserved by LITTRA Inc.
+              Copyrights © 2021 All Rights Reserved by LITTRA Inc.
             </p>
           </div>
           <div className={styles.right}>
