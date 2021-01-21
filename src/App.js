@@ -20,7 +20,7 @@ export default class App extends React.Component {
     }
   }
   render() {
-    if (isMobile()) {
+    /*if (isMobile()) {
       return (
         <div className={styles.mobileBase}>
           <Icon image="./assets/images/icon_512.png" size={150} />
@@ -28,10 +28,10 @@ export default class App extends React.Component {
           <h3 className={styles.text}>Please visit site from desktop</h3>
         </div>
       );
-    }
+    }*/
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <Switch>
           <Route path="*" component={Home} />
         </Switch>
