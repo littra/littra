@@ -9,7 +9,7 @@ export default class About extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMore: false
+      showMore: false,
     };
   }
 
@@ -26,6 +26,12 @@ export default class About extends React.Component {
               <FormattedMessage {...HomeMessages.aboutHeading} />
             </h1>
             <hr className={styles.border} />
+            <div className={styles.imageWrapperMobile}>
+              <Image
+                src={`${PUBLIC_ASSETS_PATH}/image1.png`}
+                paddingBottom="80%"
+              />
+            </div>
             <ul>
               <p className={styles.aboutText}>
                 <FormattedMessage {...HomeMessages.aboutTextOne} />

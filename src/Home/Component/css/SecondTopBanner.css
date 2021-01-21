@@ -50,6 +50,9 @@
   animation-duration: 2.5s;
   animation-name: fadeIn;
 }
+.imageWrapperMobile {
+  display: none;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -102,19 +105,35 @@
     opacity: 1;
   }
 }
-@media only screen and (min-width: 400px) and (max-width: 600px) {
-  .left {
-    float: none;
+
+@media only screen and (max-width: 1024px) {
+  .base {
+    height: 100%;
+    flex-direction: column;
+  }
+  .border {
     display: none;
   }
-}
-@media only screen and (max-width: 600px) {
-  .right {
-    float: none;
+  .left {
+    width: 100%;
   }
-}
-@media only screen and (max-width: 600px) {
+  .featureWrapper {
+    padding: 0;
+  }
+  .darkColor {
+    font-size: 24px;
+    text-align: center;
+  }
+  .right {
+    display: none;
+  }
+  .imageWrapperMobile {
+    width: 300px;
+    margin: auto;
+    display: block;
+  }
   .aboutText {
-    color: black;
+    font-size: 14px;
+    margin-top: 0px;
   }
 }
