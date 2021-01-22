@@ -32,6 +32,9 @@ html {
 .tittleWrapper {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
+.hamburger {
+  display: none;
+}
 
 .rightSection {
   display: flex;
@@ -87,9 +90,15 @@ html {
     display: none;
   }
   .title {
+    margin: 0 0 11px;
+    padding: 16px 21px 11px;
     color: #000000;
   }
   .searchBox {
     display: none;
+  }
+  .hamburger {
+    height: 24px;
+    width: 24px;
   }
 }

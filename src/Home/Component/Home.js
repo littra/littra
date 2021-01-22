@@ -45,7 +45,7 @@ class Home extends React.Component {
         </div> */}
         <div className={styles.second}>
           {/* <VisibilityChild> */}
-          <About />
+          {/* <About /> */}
           {/* </VisibilityChild> */}
         </div>
         <div className={styles.third}>

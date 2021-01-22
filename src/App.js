@@ -31,7 +31,7 @@ export default class App extends React.Component {
     }*/
     return (
       <div>
-        {/* <Header /> */}
+        <Header />
         <Switch>
           <Route path="*" component={Home} />
         </Switch>
