@@ -10,15 +10,11 @@ export default class About extends React.Component {
     super(props);
     this.state = {
       showMore: false,
-      showLess: false,
     };
   }
 
   toggleShowMore = () => {
     this.setState({ showMore: !this.state.showMore });
-  };
-  toggleShowLess = () => {
-    this.setState({ showLess: !this.state.showLess });
   };
 
   render() {
@@ -52,7 +48,7 @@ export default class About extends React.Component {
                     <FormattedMessage {...HomeMessages.aboutTextThree} />
                   </p>
                   <button
-                    className={styles.showLess}
+                    className={styles.showMore}
                     onClick={this.toggleShowMore}
                   >
                     {!this.state.showMore ? "" : "Show Less..."}

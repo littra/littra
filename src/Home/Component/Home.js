@@ -11,17 +11,18 @@ import About from "./About";
 import WhyUs from "./WhyUs";
 import isMobile from "../../Utils/UserAgent";
 import Image from "../../general/Image";
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      translateY: 0
+      translateY: 0,
     };
   }
   handleScroll = () => {
     if (document.documentElement.scrollTop < window.innerHeight) {
       this.setState({
-        translateY: document.documentElement.scrollTop / 1.5
+        translateY: document.documentElement.scrollTop / 1.5,
       });
     }
   };
@@ -37,7 +38,7 @@ class Home extends React.Component {
         {/* <div
           className={styles.front}
           style={{
-            transform: `translateY(${this.state.translateY}px)`
+            transform: `translateY(${this.state.translateY}px)`,
           }}
         >
           <TopBanner />

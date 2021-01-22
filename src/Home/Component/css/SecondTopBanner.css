@@ -89,13 +89,6 @@
   color: var(--text-color-dark);
   cursor: pointer;
 }
-.showLess {
-  outline: none;
-  border: none;
-  background: var(--background-color-midDark);
-  color: var(--text-color-dark);
-  cursor: pointer;
-}
 
 .moreContent {
   animation-duration: 1s;
@@ -148,8 +141,6 @@
   }
   .showMore {
     padding: 0;
-  }
-  .showLess {
-    padding: 0;
+    font-family: "ProximaNova-Bold";
   }
 }
