@@ -89,6 +89,13 @@
   color: var(--text-color-dark);
   cursor: pointer;
 }
+.showLess {
+  outline: none;
+  border: none;
+  background: var(--background-color-midDark);
+  color: var(--text-color-dark);
+  cursor: pointer;
+}
 
 .moreContent {
   animation-duration: 1s;
@@ -135,5 +142,14 @@
   .aboutText {
     font-size: 14px;
     margin-top: 0px;
+  }
+  .pad {
+    padding: 0px 10px;
+  }
+  .showMore {
+    padding: 0;
+  }
+  .showLess {
+    padding: 0;
   }
 }

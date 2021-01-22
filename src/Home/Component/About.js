@@ -10,11 +10,15 @@ export default class About extends React.Component {
     super(props);
     this.state = {
       showMore: false,
+      showLess: false,
     };
   }
 
   toggleShowMore = () => {
     this.setState({ showMore: !this.state.showMore });
+  };
+  toggleShowLess = () => {
+    this.setState({ showLess: !this.state.showLess });
   };
 
   render() {
@@ -32,12 +36,12 @@ export default class About extends React.Component {
                 paddingBottom="80%"
               />
             </div>
-            <ul>
+            <ul className={styles.pad}>
               <p className={styles.aboutText}>
                 <FormattedMessage {...HomeMessages.aboutTextOne} />
               </p>
               <button className={styles.showMore} onClick={this.toggleShowMore}>
-                {this.state.showMore ? "Show less..." : "Show more..."}
+                {this.state.showMore ? "" : "Show more..."}
               </button>
               {this.state.showMore && (
                 <div className={styles.moreContent}>
@@ -47,6 +51,12 @@ export default class About extends React.Component {
                   <p className={styles.aboutText}>
                     <FormattedMessage {...HomeMessages.aboutTextThree} />
                   </p>
+                  <button
+                    className={styles.showLess}
+                    onClick={this.toggleShowMore}
+                  >
+                    {!this.state.showMore ? "" : "Show Less..."}
+                  </button>
                 </div>
               )}
             </ul>
