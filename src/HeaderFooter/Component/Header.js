@@ -63,13 +63,6 @@ class Header extends React.Component {
         </div>
 
         <div className={styles.rightSection}>
-          <div className="hamburger">
-            <img
-              src="C:/Users/Alankrit/Downloads/square.svg"
-              alt="image not found"
-            />
-          </div>
-
           <div
             className={`${styles.links} ${this.state.stickyHeader &&
               styles.linksSmall}`}
@@ -82,7 +75,9 @@ class Header extends React.Component {
             {this.renderLink("Why Us?", "#whyus")}
             {this.renderLink("Contact Us", "#contactus")}
           </div>
-
+          <div className={styles.settingIconMobile}>
+            <Icon image={`${PUBLIC_ASSETS_PATH}/square.svg`} size={50} />
+          </div>
           <div
             className={styles.searchBox}
             onClick={() => this.onClickSetting()}

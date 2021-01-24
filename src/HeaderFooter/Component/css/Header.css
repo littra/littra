@@ -32,10 +32,6 @@ html {
 .tittleWrapper {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
-.hamburger {
-  display: none;
-}
-
 .rightSection {
   display: flex;
   justify-content: flex-end;
@@ -73,6 +69,9 @@ html {
 .settingIcon {
   cursor: pointer;
 }
+.settingIconMobile {
+  display: none;
+}
 .settingIcon:hover {
   animation: rotateIcon 1s linear infinite;
 }
@@ -97,8 +96,9 @@ html {
   .searchBox {
     display: none;
   }
-  .hamburger {
-    height: 24px;
-    width: 24px;
+  .settingIconMobile {
+    display: flex;
+    margin: 3px 0 0 163px;
+    padding: 9.3px 10.2px 9.3px 10.2px;
   }
 }

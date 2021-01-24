@@ -35,14 +35,14 @@ class Home extends React.Component {
   render() {
     return (
       <div className={styles.base}>
-        {/* <div
-          className={styles.front}
-          style={{
-            transform: `translateY(${this.state.translateY}px)`,
-          }}
-        >
-          <TopBanner />
-        </div> */}
+        {/*   <div
+           className={styles.front}
+           style={{
+             transform: `translateY(${this.state.translateY}px)`,
+           }}
+         >
+           <TopBanner />
+          </div>*/}
         <div className={styles.second}>
           {/* <VisibilityChild> */}
           {/* <About /> */}
