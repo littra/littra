@@ -40,11 +40,11 @@ class Home extends React.Component {
             transform: `translateY(${this.state.translateY}px)`,
           }}
         >
-          <TopBanner />
+          {/* <TopBanner /> */}
         </div>
         <div className={styles.second}>
           {/* <VisibilityChild> */}
-          <About />
+          {/* <About /> */}
           {/* </VisibilityChild> */}
         </div>
         <div className={styles.third}>
@@ -59,18 +59,18 @@ class Home extends React.Component {
         </div>
 
         {/* <VisibilityChild> */}
-        <Portfolio />
+        {/* <Portfolio /> */}
         {/* </VisibilityChild> */}
 
         {/* <VisibilityChild> */}
-        <WhyUs />
+        {/* <WhyUs /> */}
         {/* </VisibilityChild> */}
         {/* 
         <VisibilityChild>
           <Team />
         </VisibilityChild> */}
-        <ContactUs />
-        <Footer />
+        {/* <ContactUs /> */}
+        {/* <Footer /> */}
       </div>
     );
   }

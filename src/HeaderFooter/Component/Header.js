@@ -4,6 +4,8 @@ import styles from "./css/Header.css";
 import Icon from "../../general/Icon";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import Setting from "./Setting";
+
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -70,13 +72,13 @@ class Header extends React.Component {
             className={`${styles.links} ${this.state.stickyHeader &&
               styles.linksSmall}`}
           >
-            {this.renderLink("Home", "#")}
+            {/* {this.renderLink("Home", "#")}
             {this.renderLink("About Us", "#aboutus")}
             {this.renderLink("Features", "#features")}
             {this.renderLink("Pages", "#pages")}
             {this.renderLink("Portfolio", "#portfolio")}
             {this.renderLink("Why Us?", "#whyus")}
-            {this.renderLink("Contact Us", "#contactus")}
+            {this.renderLink("Contact Us", "#contactus")} */}
           </div>
 
           <div
