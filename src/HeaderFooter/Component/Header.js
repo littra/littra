@@ -9,7 +9,7 @@ class Header extends React.Component {
     super(props);
     this.state = {
       stickyHeader: false,
-      showSetting: false
+      showSetting: false,
     };
   }
   handleScroll = () => {
@@ -43,14 +43,14 @@ class Header extends React.Component {
     );
   };
   onClickSetting = () => {
-    this.setState(prevState => ({ showSetting: !prevState.showSetting }));
+    this.setState((prevState) => ({ showSetting: !prevState.showSetting }));
   };
   render() {
     return (
       <div
         className={[
           styles.base,
-          this.state.stickyHeader && styles.fixedHeader
+          this.state.stickyHeader && styles.fixedHeader,
         ].join(" ")}
       >
         <div className={styles.tittleWrapper}>
@@ -63,6 +63,9 @@ class Header extends React.Component {
         </div>
 
         <div className={styles.rightSection}>
+          <div className={styles.settingIconMobile}>
+            <Icon image={`${PUBLIC_ASSETS_PATH}/square.svg`} size={50} />
+          </div>
           <div
             className={`${styles.links} ${this.state.stickyHeader &&
               styles.linksSmall}`}
