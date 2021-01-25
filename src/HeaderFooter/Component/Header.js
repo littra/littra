@@ -63,11 +63,8 @@ class Header extends React.Component {
         </div>
 
         <div className={styles.rightSection}>
-          <div className="hamburger">
-            <img
-              src="C:/Users/Alankrit/Downloads/square.svg"
-              alt="image not found"
-            />
+          <div className={styles.settingIconMobile}>
+            <Icon image={`${PUBLIC_ASSETS_PATH}/square.svg`} size={50} />
           </div>
 
           <div

@@ -90,15 +90,23 @@ html {
     display: none;
   }
   .title {
-    margin: 0 0 11px;
-    padding: 16px 21px 11px;
+    margin: 2px 12px 0 0;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
     color: #000000;
   }
   .searchBox {
     display: none;
   }
-  .hamburger {
-    height: 24px;
-    width: 24px;
+  .settingIconMobile {
+    display: flex;
+    margin: 3px 0 0 163px;
+    padding: 9.3px 10.2px 9.3px 10.2px;
   }
 }
