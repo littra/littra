@@ -34,43 +34,43 @@ class Home extends React.Component {
   render() {
     return (
       <div className={styles.base}>
-        {/* <div
+        <div
           className={styles.front}
           style={{
-            transform: `translateY(${this.state.translateY}px)`
+            transform: `translateY(${this.state.translateY}px)`,
           }}
         >
           <TopBanner />
-        </div> */}
+        </div>
         <div className={styles.second}>
           {/* <VisibilityChild> */}
-          {/* <About /> */}
+          <About />
           {/* </VisibilityChild> */}
         </div>
         <div className={styles.third}>
           {/* <VisibilityChild> */}
-          {/* <FeatureBanner /> */}
+          <FeatureBanner />
           {/* </VisibilityChild> */}
         </div>
         <div className={styles.second}>
           {/* <VisibilityChild> */}
-          {/* <FeatureTwoBanner /> */}
+          <FeatureTwoBanner />
           {/* </VisibilityChild> */}
         </div>
 
         {/* <VisibilityChild> */}
-        {/* <Portfolio /> */}
+        <Portfolio />
         {/* </VisibilityChild> */}
 
         {/* <VisibilityChild> */}
-        {/* <WhyUs /> */}
+        <WhyUs />
         {/* </VisibilityChild> */}
         {/* 
         <VisibilityChild>
           <Team />
         </VisibilityChild> */}
-        {/* <ContactUs /> */}
-        {/* <Footer /> */}
+        <ContactUs />
+        <Footer />
       </div>
     );
   }
