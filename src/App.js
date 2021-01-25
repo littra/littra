@@ -20,15 +20,15 @@ export default class App extends React.Component {
     }
   }
   render() {
-    /*if (isMobile()) {
-      return (
-        <div className={styles.mobileBase}>
-          <Icon image="./assets/images/icon_512.png" size={150} />
-          <h1 className={styles.text}>Sorry, We dont support mobile view.</h1>
-          <h3 className={styles.text}>Please visit site from desktop</h3>
-        </div>
-      );
-    }*/
+    // if (isMobile()) {
+    //   return (
+    //     <div className={styles.mobileBase}>
+    //       <Icon image="./assets/images/icon_512.png" size={150} />
+    //       <h1 className={styles.text}>Sorry, We dont support mobile view.</h1>
+    //       <h3 className={styles.text}>Please visit site from desktop</h3>
+    //     </div>
+    //   );
+    // }
     return (
       <div>
         <Header />
