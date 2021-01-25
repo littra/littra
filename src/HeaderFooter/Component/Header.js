@@ -78,6 +78,7 @@ class Header extends React.Component {
             {this.renderLink("Why Us?", "#whyus")}
             {this.renderLink("Contact Us", "#contactus")}
           </div>
+
           <div
             className={styles.searchBox}
             onClick={() => this.onClickSetting()}
