@@ -73,6 +73,9 @@ html {
 .settingIcon {
   cursor: pointer;
 }
+.settingIconMobile {
+  display: none;
+}
 .settingIcon:hover {
   animation: rotateIcon 1s linear infinite;
 }
@@ -89,6 +92,13 @@ html {
   .links {
     display: none;
   }
+
+  /* .base {
+    margin: 0 0 11px;
+    padding: 16px 21px 11px;
+    background-color: #ffffff;
+  } */
+
   .title {
     margin: 2px 12px 0 0;
     font-family: Roboto;
