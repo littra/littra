@@ -75,9 +75,6 @@ class Header extends React.Component {
             {this.renderLink("Why Us?", "#whyus")}
             {this.renderLink("Contact Us", "#contactus")}
           </div>
-          <div className={styles.settingIconMobile}>
-            <Icon image={`${PUBLIC_ASSETS_PATH}/square.svg`} size={50} />
-          </div>
           <div
             className={styles.searchBox}
             onClick={() => this.onClickSetting()}
