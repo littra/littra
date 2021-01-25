@@ -31,3 +31,47 @@
   display: flex;
   flex-direction: row;
 }
+
+@media (max-width: 980px) {
+  .base {
+    padding: 60px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: Hind SANS-SERIF;
+  }
+
+  .card {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    box-shadow: 2px 4px 3px rgba(39, 39, 39, 0.2);
+  }
+
+  .card h2 {
+    text-align: center;
+    text-shadow: 0.5px 0.5px;
+  }
+
+  .featureRow {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .iconWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .featureDes {
+    composes: dark;
+    line-height: 25px;
+    padding-right: 20px;
+    text-align: justify;
+    margin-left: 7%;
+  }
+}
