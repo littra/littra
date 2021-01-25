@@ -9,7 +9,7 @@ class Header extends React.Component {
     super(props);
     this.state = {
       stickyHeader: false,
-      showSetting: false,
+      showSetting: false
     };
   }
   handleScroll = () => {
@@ -43,14 +43,14 @@ class Header extends React.Component {
     );
   };
   onClickSetting = () => {
-    this.setState((prevState) => ({ showSetting: !prevState.showSetting }));
+    this.setState(prevState => ({ showSetting: !prevState.showSetting }));
   };
   render() {
     return (
       <div
         className={[
           styles.base,
-          this.state.stickyHeader && styles.fixedHeader,
+          this.state.stickyHeader && styles.fixedHeader
         ].join(" ")}
       >
         <div className={styles.tittleWrapper}>
@@ -63,13 +63,6 @@ class Header extends React.Component {
         </div>
 
         <div className={styles.rightSection}>
-          <div className="hamburger">
-            <img
-              src="C:/Users/Alankrit/Downloads/square.svg"
-              alt="image not found"
-            />
-          </div>
-
           <div
             className={`${styles.links} ${this.state.stickyHeader &&
               styles.linksSmall}`}
@@ -82,7 +75,6 @@ class Header extends React.Component {
             {this.renderLink("Why Us?", "#whyus")}
             {this.renderLink("Contact Us", "#contactus")}
           </div>
-
           <div
             className={styles.searchBox}
             onClick={() => this.onClickSetting()}

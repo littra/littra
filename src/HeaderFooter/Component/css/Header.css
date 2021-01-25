@@ -1,3 +1,4 @@
+
 html {
   scroll-behavior: smooth;
 }
@@ -21,7 +22,7 @@ html {
 .title {
   font-size: 40px;
   padding: 20px;
-  font-family: "ProximaNova-Bold";
+  font-family: ProximaNova-SemiBold;
   transition: all 0.4s;
 }
 .titleSmall {
@@ -31,9 +32,6 @@ html {
 }
 .tittleWrapper {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-.hamburger {
-  display: none;
 }
 
 .rightSection {
@@ -83,22 +81,5 @@ html {
 
   to {
     transform: rotate(360deg);
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .links {
-    display: none;
-  }
-  .title {
-    margin: 0 0 11px;
-    padding: 16px 21px 11px;
-    color: #000000;
-  }
-  .searchBox {
-    display: none;
-  }
-  .hamburger {
-    height: 24px;
-    width: 24px;
   }
 }
