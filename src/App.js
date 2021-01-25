@@ -8,6 +8,9 @@ import isMobile from "./Utils/UserAgent";
 import Image from "./general/Image";
 import * as styles from "./App.css";
 import Icon from "./general/Icon";
+import WhiteButton from "./general/WhiteButton";
+import Tag from "./general/Tag";
+import UserProfile from "./Home/Component/UserProfile";
 
 export default class App extends React.Component {
   componentDidMount() {
@@ -31,10 +34,12 @@ export default class App extends React.Component {
     }
     return (
       <div>
-        <Header />
-        <Switch>
-          <Route path="*" component={Home} />
-        </Switch>
+        {/* <Header /> */}
+        {/* <Switch></Switch> */}
+        <UserProfile name="aakarsh" />
+        <UserProfile name="aakash" />
+        <UserProfile name="John" />
+        <UserProfile name="Cool" />
       </div>
     );
   }
