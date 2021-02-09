@@ -5,7 +5,7 @@ import HomeMessages from "../Messages/HomeMessages";
 import Icon from "../../general/Icon";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 class Portfolio extends React.Component {
-  renderPortfolioCard = item => {
+  renderPortfolioCard = (item) => {
     return (
       <div className={styles.box}>
         <div className={styles.wallpaper}>
@@ -27,13 +27,13 @@ class Portfolio extends React.Component {
       icon: "disherve.png",
       header: <FormattedMessage {...HomeMessages.littraChatBot} />,
       desc: <FormattedMessage {...HomeMessages.littraChatBotDesc} />,
-      link: "https://apps.apple.com/us/app/disherve/id1496988145"
+      link: "https://apps.apple.com/us/app/disherve/id1496988145",
     };
     const littraPersonalization = {
       icon: "video-conference.svg",
       header: <FormattedMessage {...HomeMessages.littraPersonalization} />,
       desc: <FormattedMessage {...HomeMessages.littraPersonalizationDesc} />,
-      link: "https://app.littra.in"
+      link: "https://app.littra.in",
     };
     return (
       <div className={styles.base} id="portfolio">

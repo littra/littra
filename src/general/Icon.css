@@ -12,3 +12,13 @@
   background-size: 80%;
   background-repeat: no-repeat;
 }
+@media only screen and (max-width: 1024px) {
+  /* .image {
+    width: 67px;
+    margin: 0 50px;
+    height: 63px;
+    margin: 0 137 0 138;
+    padding: 7.9px 2.8px 7.9px 2.8px;
+  }
+} */
+}
