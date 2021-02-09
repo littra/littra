@@ -64,13 +64,7 @@ export default class FeatureBanner extends React.Component {
             size={60}
           />
         </div>
-        {/* <div className={styles.iconWrapperMobile}>
-          <Icon
-            className={styles.icons}
-            image={`${PUBLIC_ASSETS_PATH}/${item.icon}`}
-            size={60}
-          />
-        </div> */}
+
         <h2 className={styles.dark}>{item.title}</h2>
         <p className={styles.featureDes}>{item.description}</p>
       </div>

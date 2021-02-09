@@ -20,6 +20,17 @@ class Portfolio extends React.Component {
           <p className={styles.desc}>{item.desc}</p>
         </div>
       </div>
+      // <div className={styles.wallpaperMobile}>
+      //   <Icon image={`${PUBLIC_ASSETS_PATH}/${item.icon}`} size={200} />
+      // </div>
+      // <div className={styles.infoCard}>
+      //   <h1 className={styles.header}>
+      //     <a href={item.link} target="blank">
+      //       {item.header}
+      //     </a>
+      //   </h1>
+      //   <p className={styles.desc}>{item.desc}</p>
+      // </div>
     );
   };
   render() {
