@@ -9,41 +9,41 @@ const leftSection = [
   {
     icon: "f1.svg",
     title: <FormattedMessage {...HomeMessages.f1} />,
-    desc: <FormattedMessage {...HomeMessages.fd1} />
+    desc: <FormattedMessage {...HomeMessages.fd1} />,
   },
   {
     icon: "f2.svg",
     title: <FormattedMessage {...HomeMessages.f2} />,
-    desc: <FormattedMessage {...HomeMessages.fd2} />
+    desc: <FormattedMessage {...HomeMessages.fd2} />,
   },
   {
     icon: "f3.svg",
     title: <FormattedMessage {...HomeMessages.f3} />,
-    desc: <FormattedMessage {...HomeMessages.fd3} />
-  }
+    desc: <FormattedMessage {...HomeMessages.fd3} />,
+  },
 ];
 const rightSection = [
   {
     icon: "f4.svg",
     title: <FormattedMessage {...HomeMessages.f4} />,
-    desc: <FormattedMessage {...HomeMessages.fd4} />
+    desc: <FormattedMessage {...HomeMessages.fd4} />,
   },
   {
     icon: "f5.svg",
     title: <FormattedMessage {...HomeMessages.f5} />,
-    desc: <FormattedMessage {...HomeMessages.fd5} />
+    desc: <FormattedMessage {...HomeMessages.fd5} />,
   },
   {
     icon: "f6.svg",
     title: <FormattedMessage {...HomeMessages.f6} />,
-    desc: <FormattedMessage {...HomeMessages.fd6} />
-  }
+    desc: <FormattedMessage {...HomeMessages.fd6} />,
+  },
 ];
 export default class FeatureTwoBanner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      translateY: 0
+      translateY: 0,
     };
   }
   handleScroll = () => {
@@ -53,7 +53,7 @@ export default class FeatureTwoBanner extends React.Component {
     ) {
       this.setState({
         translateY:
-          (document.documentElement.scrollTop - window.innerHeight * 3) / 1.5
+          (document.documentElement.scrollTop - window.innerHeight * 3) / 1.5,
       });
     }
   };
@@ -114,7 +114,7 @@ export default class FeatureTwoBanner extends React.Component {
             <div
               className={styles.backgroundImage}
               style={{
-                transform: `translateY(${this.state.translateY}px)`
+                transform: `translateY(${this.state.translateY}px)`,
               }}
             >
               <Image
