@@ -87,7 +87,8 @@ html {
 }
 @media only screen and (max-width: 1024px) {
   .base {
-    display: none;
+    /* display: none; */
+    background-color: #fff;
   }
   .links {
     display: none;
@@ -102,7 +103,7 @@ html {
   .title {
     margin: 2px 12px 0 0;
     font-family: Roboto;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -116,7 +117,6 @@ html {
   }
   .settingIconMobile {
     display: flex;
-    margin: 3px 0 0 163px;
     padding: 9.3px 10.2px 9.3px 10.2px;
   }
 }

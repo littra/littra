@@ -64,7 +64,7 @@ class Header extends React.Component {
 
         <div className={styles.rightSection}>
           <div className={styles.settingIconMobile}>
-            <Icon image={`${PUBLIC_ASSETS_PATH}/square.svg`} size={50} />
+            <Icon image={`${PUBLIC_ASSETS_PATH}/square.svg`} size={30} />
           </div>
           <div
             className={`${styles.links} ${this.state.stickyHeader &&

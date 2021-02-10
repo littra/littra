@@ -36,12 +36,17 @@
   flex-direction: row;
 }
 @media only screen and (max-width: 1024px) {
+  .base {
+    padding: 60px 20px;
+  }
+  .featureWrapper {
+    width: 100%;
+  }
   .featureRow {
     flex-direction: column;
     display: contents;
   }
   .featureDes {
-    height: 119px;
     margin: 21px 0 0;
     font-family: Roboto;
     font-size: 16px;
@@ -54,7 +59,8 @@
     color: #000000;
   }
   .card {
-    width: 342px;
+    width: 100%;
+    box-sizing: border-box;
     /* height: 250px; */
     margin: 0 0 33px;
     padding: 26px 23px 26px 39px;
