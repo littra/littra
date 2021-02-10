@@ -9,7 +9,7 @@ export default class About extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMore: false
+      showMore: false,
     };
   }
 
@@ -26,12 +26,18 @@ export default class About extends React.Component {
               <FormattedMessage {...HomeMessages.aboutHeading} />
             </h1>
             <hr className={styles.border} />
-            <ul>
+            <div className={styles.imageWrapperMobile}>
+              <Image
+                src={`${PUBLIC_ASSETS_PATH}/image1.png`}
+                paddingBottom="80%"
+              />
+            </div>
+            <ul className={styles.pad}>
               <p className={styles.aboutText}>
                 <FormattedMessage {...HomeMessages.aboutTextOne} />
               </p>
               <button className={styles.showMore} onClick={this.toggleShowMore}>
-                {this.state.showMore ? "Show less..." : "Show more..."}
+                {this.state.showMore ? "" : "Show more..."}
               </button>
               {this.state.showMore && (
                 <div className={styles.moreContent}>
@@ -41,6 +47,12 @@ export default class About extends React.Component {
                   <p className={styles.aboutText}>
                     <FormattedMessage {...HomeMessages.aboutTextThree} />
                   </p>
+                  <button
+                    className={styles.showMore}
+                    onClick={this.toggleShowMore}
+                  >
+                    {!this.state.showMore ? "" : "Show Less..."}
+                  </button>
                 </div>
               )}
             </ul>

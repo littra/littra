@@ -20,7 +20,7 @@ export default class Icon extends React.Component {
             className={styles.image}
             style={{
               backgroundImage: `url(${this.props.image})`,
-              backgroundSize: `${this.props.backgroundSize}`
+              backgroundSize: `${this.props.backgroundSize}`,
             }}
           />
         </div>
@@ -32,10 +32,10 @@ export default class Icon extends React.Component {
 Icon.propTypes = {
   size: PropTypes.number.isRequired,
   backgroundSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  image: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired,
 };
 
 Icon.defaultProps = {
   size: 30,
-  backgroundSize: "contain"
+  backgroundSize: "contain",
 };

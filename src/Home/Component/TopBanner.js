@@ -18,7 +18,7 @@ class TopBanner extends React.Component {
     this.state = {
       juke: 0,
       position: 0,
-      setJuke: false
+      setJuke: false,
     };
   }
   changePosition(i, count) {
@@ -47,13 +47,13 @@ class TopBanner extends React.Component {
     window.scrollTo(0, window.innerHeight);
   };
 
-  goForward = count => {
+  goForward = (count) => {
     const componentData = images;
     const childCount = componentData.length;
     if ((Math.abs(this.state.position) + 1) % childCount === 0) {
       this.setState(
         {
-          juke: this.state.juke - childCount
+          juke: this.state.juke - childCount,
         },
         () => {
           this.setState({ position: this.state.position + 1 });
@@ -63,12 +63,12 @@ class TopBanner extends React.Component {
       this.setState({ position: this.state.position + 1 });
     }
   };
-  goBack = count => {
+  goBack = (count) => {
     const childCount = count;
     if (Math.abs(this.state.position) === Math.abs(this.state.juke)) {
       this.setState(
         {
-          juke: this.state.juke + childCount
+          juke: this.state.juke + childCount,
         },
         () => {
           this.setState({ position: this.state.position - 1 });
@@ -136,12 +136,12 @@ class TopBanner extends React.Component {
     const componentData = [
       this.renderFirstCard(),
       this.renderSecondCard(),
-      this.renderThirdCard()
+      this.renderThirdCard(),
     ];
     return (
       <div className={styles.base}>
         <CarouselBanner
-          changePosition={index =>
+          changePosition={(index) =>
             this.changePosition(index, componentData.length)
           }
           goForward={() => this.goForward(componentData.length)}

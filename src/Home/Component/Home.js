@@ -11,6 +11,7 @@ import About from "./About";
 import WhyUs from "./WhyUs";
 import isMobile from "../../Utils/UserAgent";
 import Image from "../../general/Image";
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -43,30 +44,29 @@ class Home extends React.Component {
           <TopBanner />
         </div>
         <div className={styles.second}>
-          {/* <VisibilityChild> */}
-          <About />
-          {/* </VisibilityChild> */}
+          <VisibilityChild>
+            <About />
+          </VisibilityChild>
         </div>
         <div className={styles.third}>
-          {/* <VisibilityChild> */}
-          <FeatureBanner />
-          {/* </VisibilityChild> */}
+          <VisibilityChild>
+            <FeatureBanner />
+          </VisibilityChild>
         </div>
         <div className={styles.second}>
-          {/* <VisibilityChild> */}
-          <FeatureTwoBanner />
-          {/* </VisibilityChild> */}
+          <VisibilityChild>
+            <FeatureTwoBanner />
+          </VisibilityChild>
         </div>
-
-        {/* <VisibilityChild> */}
-        <Portfolio />
-        {/* </VisibilityChild> */}
-
-        {/* <VisibilityChild> */}
-        <WhyUs />
-        {/* </VisibilityChild> */}
-        {/* 
         <VisibilityChild>
+          <Portfolio />
+        </VisibilityChild>
+
+        <VisibilityChild>
+          <WhyUs />
+        </VisibilityChild>
+
+        {/* <VisibilityChild>
           <Team />
         </VisibilityChild> */}
         <ContactUs />

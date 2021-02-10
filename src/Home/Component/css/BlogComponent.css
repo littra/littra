@@ -111,3 +111,70 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+.backgroundMobile {
+  display: none;
+}
+
+/* Mobile View  */
+@media (max-width: 1024px) {
+  .base {
+  }
+
+  .background {
+    display: none;
+  }
+  .background img {
+    height: 300px;
+  }
+
+  .carouselWrapper {
+    height: 60%;
+    width: 90%;
+  }
+
+  .information {
+    height: 300px;
+  }
+
+  .heading {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .navigationButton {
+    display: none;
+  }
+
+  .blogWrapper {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+  }
+  .blog {
+    position: relative;
+    font-size: 18px;
+    margin-top: 0px;
+    line-height: normal;
+    height: calc(100% - 24px);
+  }
+
+  .blog span {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .backgroundMobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+  .backgroundMobile img {
+    height: 300px;
+  }
+}

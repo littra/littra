@@ -5,7 +5,7 @@ import HomeMessages from "../Messages/HomeMessages";
 import Icon from "../../general/Icon";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 class Portfolio extends React.Component {
-  renderPortfolioCard = item => {
+  renderPortfolioCard = (item) => {
     return (
       <div className={styles.box}>
         <div className={styles.wallpaper}>
@@ -20,6 +20,17 @@ class Portfolio extends React.Component {
           <p className={styles.desc}>{item.desc}</p>
         </div>
       </div>
+      // <div className={styles.wallpaperMobile}>
+      //   <Icon image={`${PUBLIC_ASSETS_PATH}/${item.icon}`} size={200} />
+      // </div>
+      // <div className={styles.infoCard}>
+      //   <h1 className={styles.header}>
+      //     <a href={item.link} target="blank">
+      //       {item.header}
+      //     </a>
+      //   </h1>
+      //   <p className={styles.desc}>{item.desc}</p>
+      // </div>
     );
   };
   render() {
@@ -27,13 +38,13 @@ class Portfolio extends React.Component {
       icon: "disherve.png",
       header: <FormattedMessage {...HomeMessages.littraChatBot} />,
       desc: <FormattedMessage {...HomeMessages.littraChatBotDesc} />,
-      link: "https://apps.apple.com/us/app/disherve/id1496988145"
+      link: "https://apps.apple.com/us/app/disherve/id1496988145",
     };
     const littraPersonalization = {
       icon: "video-conference.svg",
       header: <FormattedMessage {...HomeMessages.littraPersonalization} />,
       desc: <FormattedMessage {...HomeMessages.littraPersonalizationDesc} />,
-      link: "https://app.littra.in"
+      link: "https://app.littra.in",
     };
     return (
       <div className={styles.base} id="portfolio">
