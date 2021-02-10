@@ -1,7 +1,7 @@
 .base {
   width: 100%;
-  height: 100vh;
-  min-height: 680px;
+  /* height: 100vh;
+  min-height: 680px; */
 }
 .topSection {
   width: 60%;
@@ -100,4 +100,86 @@
 }
 .leftCardWithRight {
   width: 70%;
+}
+
+/* Mobile View  */
+@media (max-width: 1024px) {
+  .base {
+    min-height: 100vh;
+  }
+  .topSection {
+    margin: 40px 20px 20px;
+    width: calc(100% - 40px);
+    padding: 0;
+    /* border: 1px solid black; */
+  }
+
+  .topSection h1 {
+    font-size: 24px;
+  }
+
+  .richFeature {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100% - 30px);
+    font-size: 14px;
+    /* width: 100% -; */
+    /* background-color: red; */
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .imageWrapper,
+  .imageFrame {
+    display: none;
+    height: 0;
+  }
+
+  .info {
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+    position: initial;
+    /* border: 1px solid black; */
+  }
+
+  .infoWrapper {
+    height: 100%;
+  }
+
+  .leftInfo,
+  .rightInfo {
+    width: 100%;
+  }
+
+  .imageFrame {
+  }
+  .iconWrapper {
+    order: 0;
+    width: 60px;
+    height: 60px;
+    margin: 0 25px 0 0;
+  }
+  .smallCard {
+    word-wrap: break-word;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .leftCard {
+    order: 1;
+    text-align: left;
+  }
+
+  .smallCard h2 {
+    font-size: 14px;
+  }
+
+  .desc {
+    font-size: 13px;
+    margin-top: 7px;
+    line-height: normal;
+  }
 }

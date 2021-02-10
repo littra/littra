@@ -60,10 +60,8 @@
 .portfolioTwo {
   width: 50%;
 }
-.wallpaperMobile {
-  display: none;
-}
-@media only screen and (max-width: 1024px) {
+
+@media (max-width: 1024px) {
   .base {
     background-color: #e4f2fb;
     padding: 40px 0;
@@ -88,7 +86,6 @@
 
   .portfolioTwo {
     margin-bottom: 25px;
-    margin-top: -40px;
   }
 
   .box {

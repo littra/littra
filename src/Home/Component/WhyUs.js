@@ -14,17 +14,17 @@ const data = [
   HomeMessages.whyUsTextFive,
   HomeMessages.whyUsTextSix,
   HomeMessages.whyUsTextSeven,
-  HomeMessages.whyUsTextEight
+  HomeMessages.whyUsTextEight,
 ];
 
 export default class WhyUs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: 0
+      current: 0,
     };
   }
-  renderSection = text => {
+  renderSection = (text) => {
     return (
       <div className={styles.blogWrapper}>
         <div className={styles.blog}>
@@ -68,6 +68,9 @@ export default class WhyUs extends React.Component {
       <div className={styles.base} id="whyus">
         <div className={styles.background}>
           <Image src={`${PUBLIC_ASSETS_PATH}/blog.jpg`} paddingBottom="100vh" />
+        </div>
+        <div className={styles.backgroundMobile}>
+          <Image src={`${PUBLIC_ASSETS_PATH}/blog.jpg`} paddingBottom="0vh" />
         </div>
         <div className={styles.information}>
           <div className={styles.blogHeading}>

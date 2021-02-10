@@ -54,24 +54,23 @@ class Home extends React.Component {
           </VisibilityChild>
         </div>
         <div className={styles.second}>
-          {/* <VisibilityChild> */}
-          {/* <FeatureTwoBanner /> */}
-          {/* </VisibilityChild> */}
+          <VisibilityChild>
+            <FeatureTwoBanner />
+          </VisibilityChild>
         </div>
-
         <VisibilityChild>
           <Portfolio />
         </VisibilityChild>
 
-        {/* <VisibilityChild> */}
-        {/* <WhyUs /> */}
-        {/* </VisibilityChild> */}
-        {/* 
         <VisibilityChild>
+          <WhyUs />
+        </VisibilityChild>
+
+        {/* <VisibilityChild>
           <Team />
         </VisibilityChild> */}
-        {/* <ContactUs /> */}
-        {/* <Footer /> */}
+        <ContactUs />
+        <Footer />
       </div>
     );
   }
