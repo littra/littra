@@ -1,0 +1,66 @@
+{
+  "entrypoints": [
+    "main"
+  ],
+  "origins": {
+    "3": [
+      2,
+      3
+    ],
+    "./Translations/ar.json": [
+      0
+    ],
+    "./Translations/en.json": [
+      1
+    ],
+    "main": [
+      3,
+      2
+    ]
+  },
+  "assets": {
+    "0": {
+      "js": [
+        {
+          "file": "i18n-ar.8ea19787c7c7e3841076.chunk.js",
+          "hash": "f9c32684393579ecf925",
+          "publicPath": "/dist/i18n-ar.8ea19787c7c7e3841076.chunk.js"
+        }
+      ]
+    },
+    "1": {
+      "js": [
+        {
+          "file": "i18n-en.8ea19787c7c7e3841076.chunk.js",
+          "hash": "bbaa3ee2239f5feb21b6",
+          "publicPath": "/dist/i18n-en.8ea19787c7c7e3841076.chunk.js"
+        }
+      ]
+    },
+    "2": {
+      "css": [
+        {
+          "file": "main.css",
+          "hash": "b7a5453d1005d9faca08",
+          "publicPath": "/dist/main.css"
+        }
+      ],
+      "js": [
+        {
+          "file": "main-bundle.js",
+          "hash": "b7a5453d1005d9faca08",
+          "publicPath": "/dist/main-bundle.js"
+        }
+      ]
+    },
+    "3": {
+      "js": [
+        {
+          "file": "3.8ea19787c7c7e3841076.chunk.js",
+          "hash": "d31394ca394def008f6d",
+          "publicPath": "/dist/3.8ea19787c7c7e3841076.chunk.js"
+        }
+      ]
+    }
+  }
+}
