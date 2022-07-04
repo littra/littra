@@ -5,6 +5,7 @@ import HomeMessages from "../Messages/HomeMessages";
 import Icon from "../../general/Icon";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import _ from "lodash";
+import { Card } from "../../WebSite Ui Components/Card/Card";
 
 const cards = [
   {
@@ -56,18 +57,11 @@ const cards = [
 export default class FeatureBanner extends React.Component {
   renderCard = (item, id) => {
     return (
-      <div className={styles.card} key={id}>
-        <div className={styles.iconWrapper}>
-          <Icon
-            className={styles.icons}
-            image={`${PUBLIC_ASSETS_PATH}/${item.icon}`}
-            size={60}
-          />
-        </div>
-
-        <h2 className={styles.dark}>{item.title}</h2>
-        <p className={styles.featureDes}>{item.description}</p>
-      </div>
+      <Card
+        icon={item.icon}
+        title={item.title}
+        description={item.description}
+      />
     );
   };
   render() {
