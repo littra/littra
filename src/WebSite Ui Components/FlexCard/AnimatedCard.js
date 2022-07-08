@@ -1,101 +1,96 @@
-import "./AnimatedCard.css";
-import $ from "jquery";
+import React from "react";
+import styles from "./AnimatedCard.css";
+import Icon from "../../general/Icon";
+import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
+import { FormattedMessage } from "react-intl";
+import HomeMessages from "../../Home/Messages/HomeMessages";
 
 function AnimatedCard() {
-  $(".option").click(function () {
-    $(".option").removeClass("active");
-    $(this).addClass("active");
-  });
-  return (
-    <div>
-      <div className="options">
-        <div
-          className="option"
-          style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=80")`,
-          }}
-        >
-          <div className="shadow"></div>
-          <div className="label">
-            <div className="icon">
-              <i className="fas fa-walking"></i>
-            </div>
-            <div className="info">
-              <div className="title"> dgdt </div>
-              <div className="sub">Omuke trughte a otufta</div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="option"
-          style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80")`,
-          }}
-        >
-          <div className="shadow"></div>
-          <div className="label">
-            <div className="icon">
-              <i className="fas fa-snowflake"></i>
-            </div>
-            <div className="info">
-              <div className="title">Oretemauw</div>
-              <div className="sub">Omuke trough a otufta</div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="option active"
-          style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1442850473887-0fb77cd0b337?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")`,
-          }}
-        >
-          <div className="shadow"></div>
-          <div className="label">
-            <div className="icon">
-              <i className="fas fa-tree"></i>
-            </div>
-            <div className="info">
-              <div className="title">Iteresusele</div>
-              <div className="sub">Omuke trughte a otufta</div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="option"
-          style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")`,
-          }}
-        >
-          <div className="shadow"></div>
-          <div className="label">
-            <div className="icon">
-              <i className="fas fa-tint"></i>
-            </div>
-            <div className="info">
-              <div className="title">Idiefe</div>
-              <div className="sub">Omuke trughte a otufta</div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="option"
-          style={{
-            backgroundImage: `url("https://images.unsplash.com/38/L2NfDz5SOm7Gbf755qpw_DSCF0490.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")`,
-          }}
-        >
-          <div className="shadow"></div>
-          <div className="label">
-            <div className="icon">
-              <i className="fas fa-sun"></i>
-            </div>
-            <div className="info">
-              <div className="title">Inatethi</div>
-              <div className="sub">Omuke trughte a tufta</div>
-            </div>
-          </div>
-        </div>
-      </div>
+  const AnimatedCardData = [
+    {
+      icon: "f1.svg",
+      title: <FormattedMessage {...HomeMessages.f1} />,
+      desc: <FormattedMessage {...HomeMessages.fd1} />,
+      image: "LayoutDesign.jpg",
+    },
+    {
+      icon: "f2.svg",
+      title: <FormattedMessage {...HomeMessages.f2} />,
+      desc: <FormattedMessage {...HomeMessages.fd2} />,
+      image: "documentation.jpg",
+    },
+    {
+      icon: "f3.svg",
+      title: <FormattedMessage {...HomeMessages.f3} />,
+      desc: <FormattedMessage {...HomeMessages.fd3} />,
+      image: "parallex.png",
+    },
 
+    {
+      icon: "f4.svg",
+      title: <FormattedMessage {...HomeMessages.f4} />,
+      desc: <FormattedMessage {...HomeMessages.fd4} />,
+      image: "html5.jpg",
+    },
+    {
+      icon: "f5.svg",
+      title: <FormattedMessage {...HomeMessages.f5} />,
+      desc: <FormattedMessage {...HomeMessages.fd5} />,
+      image: "support.jpg",
+    },
+    {
+      icon: "f6.svg",
+      title: <FormattedMessage {...HomeMessages.f6} />,
+      desc: <FormattedMessage {...HomeMessages.fd6} />,
+      image: "LightDark.jpg",
+    },
+  ];
+
+  function MouseEnter(event) {
+    event.target.classList.toggle(styles.active);
+  }
+
+  function MouseLeave(event) {
+    event.target.classList.remove(styles.active);
+  }
+
+  return (
+    <div className={styles.AnimatedCardMain}>
+      <div className={styles.AnimatedCardOptions}>
+        {AnimatedCardData?.map((item, index) => {
+          console.log("===", item.image);
+          return (
+            <div
+              className={styles.AnimatedCardOption}
+              onMouseEnter={MouseEnter}
+              onMouseLeave={MouseLeave}
+              style={{
+                backgroundImage: `url(${PUBLIC_ASSETS_PATH}/${item.image})`,
+                backgroundRepeat: "no-repeat",
+                marginRight: "10px",
+              }}
+            >
+              <div className={styles.shadow}></div>
+              <div className={styles.label}>
+                <div className={styles.icon}>
+                  <Icon
+                    image={`${PUBLIC_ASSETS_PATH}/${item.icon}`}
+                    size={20}
+                  />
+                </div>
+                <div className={styles.info}>
+                  <div className={styles.title}>
+                    <p> {item.title} </p>
+                  </div>
+                  <div className={styles.sub} style={{ padding: "5px" }}>
+                    <p> {item.desc} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
       <link
         rel="stylesheet"
         href="https://static.fontawesome.com/css/fontawesome-app.css"
