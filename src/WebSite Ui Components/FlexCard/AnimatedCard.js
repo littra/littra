@@ -55,41 +55,42 @@ function AnimatedCard() {
   }
 
   return (
-    <div className={styles.AnimatedCardMain}>
-      <div className={styles.AnimatedCardOptions}>
-        {AnimatedCardData?.map((item, index) => {
-          console.log("===", item.image);
-          return (
-            <div
-              className={styles.AnimatedCardOption}
-              onMouseEnter={MouseEnter}
-              onMouseLeave={MouseLeave}
-              style={{
-                backgroundImage: `url(${PUBLIC_ASSETS_PATH}/${item.image})`,
-                backgroundRepeat: "no-repeat",
-                marginRight: "10px",
-              }}
-            >
-              <div className={styles.shadow}></div>
-              <div className={styles.label}>
-                <div className={styles.icon}>
-                  <Icon
-                    image={`${PUBLIC_ASSETS_PATH}/${item.icon}`}
-                    size={20}
-                  />
-                </div>
-                <div className={styles.info}>
-                  <div className={styles.title}>
-                    <p> {item.title} </p>
+    <>
+      <div className={styles.AnimatedCardMain}>
+        <div className={styles.AnimatedCardOptions}>
+          {AnimatedCardData?.map((item, index) => {
+            return (
+              <div
+                className={styles.AnimatedCardOption}
+                onMouseEnter={MouseEnter}
+                onMouseLeave={MouseLeave}
+                style={{
+                  backgroundImage: `url(${PUBLIC_ASSETS_PATH}/${item.image})`,
+                  backgroundRepeat: "no-repeat",
+                  marginRight: "10px",
+                }}
+              >
+                <div className={styles.shadow}></div>
+                <div className={styles.label}>
+                  <div className={styles.icon}>
+                    <Icon
+                      image={`${PUBLIC_ASSETS_PATH}/${item.icon}`}
+                      size={20}
+                    />
                   </div>
-                  <div className={styles.sub} style={{ padding: "5px" }}>
-                    <p> {item.desc} </p>
+                  <div className={styles.info}>
+                    <div className={styles.title}>
+                      <p> {item.title} </p>
+                    </div>
+                    <div className={styles.sub} style={{ padding: "5px" }}>
+                      <p> {item.desc} </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
       <link
         rel="stylesheet"
@@ -99,7 +100,7 @@ function AnimatedCard() {
         rel="stylesheet"
         href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css"
       />
-    </div>
+    </>
   );
 }
 
