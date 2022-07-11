@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import NewHeader from "./HeaderFooter/NewHeader"
 
 import Home from "./Home/Component/Home";
 import Header from "./HeaderFooter/Component/Header";
@@ -30,8 +31,14 @@ export default class App extends React.Component {
     //   );
     // }
     return (
-      <div>
-        <Header />
+      <div style={{height:0,margin:0,padding: 0 }}>
+        {/* <Header />  */}
+        
+   
+        <NewHeader />
+     
+       
+       
         <Switch>
           <Route path="*" component={Home} />
         </Switch>
