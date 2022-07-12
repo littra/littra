@@ -1,15 +1,24 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
-import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  useSpring,
+  useMotionValue,
+  useTransform,
+} from "framer-motion/dist/framer-motion";
 import { interpolate } from "@popmotion/popcorn";
 import "./Card.css";
+import styles from "../../Home/Component/css/FeatureBanner.css";
+import Icon from "../../general/Icon";
+import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
+
 const Container = styled.div`
   border-radius: 8px;
   transform-style: preserve-3d;
   transform: perspective(921px);
   width: 300px;
   height: 400px;
-  margin: 2rem;
+  margin: 3rem;
 `;
 
 const Content = styled(motion.div)`
@@ -20,6 +29,7 @@ const Content = styled(motion.div)`
   transform-style: preserve-3d;
   perspective: 800px;
   backface-visibility: hidden;
+  padding: 40px;
 `;
 
 const Shadow = styled.div`
@@ -30,7 +40,7 @@ const Shadow = styled.div`
   border-radius: 1rem;
   height: 90%;
   transition: all 0.2s ease-out 0s;
-  box-shadow: rgba(0, 0, 0, 06) 0px 50px 100px -30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 `;
 
 const RelativeContainer = styled.div`
@@ -65,7 +75,7 @@ const Gradient = styled(motion.div)`
   transition: all 0.5s ease;
 `;
 
-export function Card({ height = 400, width = 300 }) {
+export function Card({ height = 350, width = 250, icon, title, description }) {
   const ref = useRef();
   const [hover, setHover] = useState(false);
   const [tapped, setTapped] = useState(false);
@@ -172,13 +182,24 @@ export function Card({ height = 400, width = 300 }) {
       >
         <Shadow hover={hover} />
         <RelativeContainer>
-          <Image />
+          <div className={styles.card}>
+            <div className={styles.iconWrapper}>
+              <Icon
+                className={styles.icons}
+                image={`${PUBLIC_ASSETS_PATH}/${icon}`}
+                size={60}
+              />
+            </div>
+
+            <h2 className={styles.dark}> {title}</h2>
+            <p className={styles.featureDes}> {description}</p>
+          </div>
         </RelativeContainer>
-        <Gradient
+        {/* <Gradient
           style={{
             background: gradient,
           }}
-        />
+        /> */}
       </Content>
     </Container>
   );
