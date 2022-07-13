@@ -1,5 +1,4 @@
 import React from "react";
-import TopBanner from "./TopBanner";
 import styles from "./css/Home.css";
 import VisibilityChild from "../../general/VisibilityChild";
 import FeatureBanner from "./FeatureBanner";
@@ -11,6 +10,7 @@ import About from "./About";
 import WhyUs from "./WhyUs";
 import isMobile from "../../Utils/UserAgent";
 import Image from "../../general/Image";
+import Banner from "../../WebSite Ui Components/Banner/Banner";
 
 class Home extends React.Component {
   constructor(props) {
@@ -35,13 +35,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className={styles.base}>
-        <div
-          className={styles.front}
-          style={{
-            transform: `translateY(${this.state.translateY}px)`,
-          }}
-        >
-          <TopBanner />
+        <div className={styles.front}>
+          <Banner />
         </div>
         <div className={styles.second}>
           <VisibilityChild>
