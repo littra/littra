@@ -58,7 +58,7 @@ function AnimatedCard() {
     <>
       <div className={styles.AnimatedCardMain}>
         <div className={styles.AnimatedCardOptions}>
-          {AnimatedCardData?.map((item, index) => {
+          {AnimatedCardData.map((item, index) => {
             return (
               <div
                 className={styles.AnimatedCardOption}
