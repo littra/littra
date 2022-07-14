@@ -6,7 +6,7 @@ html {
   transition: all 0.4s;
   background-color: rgba(0, 0, 0, 0.273);
   display: flex;
-  filter: blur(1px);
+  
  
   border-bottom: 1px solid rgba(170, 95, 95, 0.1);
   justify-content: space-between;
