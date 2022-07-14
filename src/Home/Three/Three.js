@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   PerspectiveCamera,
   Scene,
   Particle,
   ParticleCanvasMaterial,
-  CanvasRenderer,
+  CanvasRenderer
 } from "three";
-import "./three.css";
+import styles from "./three.css";
 
 const Three = () => {
   var SEPARATION = 100,
@@ -14,7 +14,7 @@ const Three = () => {
     AMOUNTY = 70;
 
   var container;
-  var outerContainer
+  var outerContainer;
   var camera, scene, renderer;
 
   var particles,
@@ -27,16 +27,24 @@ const Three = () => {
   var windowHalfX = window.innerWidth / 2;
   var windowHalfY = window.innerHeight / 2;
 
-  init();
-  animate();
+  useEffect(() => {
+    console.log("Typeof", typeof window);
+    if (typeof window == "undefined") return;
+    init();
+  }, [typeof window]);
 
   function init() {
+    if (typeof document == "undefined") return;
+    console.log("HEY");
+
+    const parentId = document.getElementById("particleThreeJsHoverBase");
+    console.log("ParentID", parentId);
     outerContainer = document.createElement("div");
-    document.body.appendChild(outerContainer);
+    parentId.appendChild(outerContainer);
     container = document.createElement("div");
     outerContainer.appendChild(container);
     outerContainer.classList.add("outerContainer");
-    const list = outerContainer.classList.contains("outerContainer")
+    const list = outerContainer.classList.contains("outerContainer");
     console.log(list);
 
     camera = new PerspectiveCamera(
@@ -58,7 +66,7 @@ const Three = () => {
         context.beginPath();
         context.arc(0, 0, 0.6, 0, PI2, true);
         context.fill();
-      },
+      }
     });
 
     var i = 0;
@@ -83,6 +91,7 @@ const Three = () => {
     //
 
     window.addEventListener("resize", onWindowResize, false);
+    animate();
   }
 
   function onWindowResize() {
@@ -152,9 +161,12 @@ const Three = () => {
   }
 
   return (
-  
-      <h1>WELCOME TO LITTRA</h1>
- 
+    <div
+      id="particleThreeJsHoverBase"
+      className={styles.particleThreeJsHoverBase}
+    >
+      <h1 className={styles.title}>WELCOME TO LITTRA</h1>
+    </div>
   );
 };
 
