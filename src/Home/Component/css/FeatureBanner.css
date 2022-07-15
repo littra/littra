@@ -6,11 +6,10 @@
   font-family: Hind SANS-SERIF;
 }
 .card {
-  width: 33.33%;
   padding: 10px;
 }
 .dark {
-  color: var(--text-color-dark);
+  color:#ffff;
   margin: 15px 0px;
 }
 .featureWrapper {
@@ -56,7 +55,8 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #000000;
+    color: #ffff;
+    
   }
   .card {
     width: 100%;
@@ -68,7 +68,7 @@
     text-align: center;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
     border: solid 1px #ececec;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
   }
   /* .featureWrapperMobile {
   } */
