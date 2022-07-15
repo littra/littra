@@ -18,12 +18,14 @@
   text-align: center;
   margin: 0px;
   overflow: hidden;
+  /* display: flex;
+  align-items: center; */
 }
 
 .title {
   position: absolute;
-  bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
+  top: 50%;
   font-size: 80px;
 }

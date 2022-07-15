@@ -165,7 +165,9 @@ const Three = () => {
       id="particleThreeJsHoverBase"
       className={styles.particleThreeJsHoverBase}
     >
-      <h1 className={styles.title}>WELCOME TO LITTRA</h1>
+    
+     <div><h1 className={styles.title}>WELCOME TO LITTRA</h1></div>
+    
     </div>
   );
 };
