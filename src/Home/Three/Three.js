@@ -28,24 +28,24 @@ const Three = () => {
   var windowHalfY = window.innerHeight / 2;
 
   useEffect(() => {
-    console.log("Typeof", typeof window);
+  
     if (typeof window == "undefined") return;
     init();
   }, [typeof window]);
 
   function init() {
     if (typeof document == "undefined") return;
-    console.log("HEY");
+ 
 
     const parentId = document.getElementById("particleThreeJsHoverBase");
-    console.log("ParentID", parentId);
+  
     outerContainer = document.createElement("div");
     parentId.appendChild(outerContainer);
     container = document.createElement("div");
     outerContainer.appendChild(container);
     outerContainer.classList.add("outerContainer");
     const list = outerContainer.classList.contains("outerContainer");
-    console.log(list);
+
 
     camera = new PerspectiveCamera(
       120,
