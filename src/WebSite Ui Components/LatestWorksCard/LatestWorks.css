@@ -1,0 +1,52 @@
+.base {
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #eee;
+}
+.dark {
+  color: var(--text-color-dark);
+}
+
+.divider {
+  width: 150px;
+  height: 3px;
+  border: none;
+  background: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 45%;
+
+}
+.topSection {
+  text-align: center;
+}
+
+/* card started here */
+.cardMain {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+
+.cardArea {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.cardSection {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  size: 500px;
+}
+
+

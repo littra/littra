@@ -1,0 +1,259 @@
+
+:root {
+    --black: black;
+  }
+  
+.cardFrontHeading {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.insidePageHeading {
+  width: 100%;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+}
+
+.cardFrontTextView {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-top: 0.2rem;
+}
+
+.insidePageHeadingCity,
+.cardFrontTextViewCity {
+  color: var(--black)
+}
+
+.cardFrontTp{
+  color: #fafbfa;
+
+}
+
+.cardFrontTextPrice {
+  font-size: 1.2rem;
+  margin-top: -0.2rem;
+}
+
+
+.insidePage__text {
+  color: #ffff;
+  font-size: 20px;
+  text-align: justify;
+  padding: 15px;
+}
+
+
+.cardFrontIcon {
+  fill: #fafbfa;
+  font-size: 3vw;
+  height: 3.25rem;
+  margin-top: -0.5rem;
+  width: 3.25rem;
+}
+
+.btnDiv{
+  margin-top: 20px;
+}
+
+.insidePageBtn {
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  overflow: hidden;
+  padding: 0.7rem 2rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: white;
+  width: 100%;
+  z-index: 10;
+}
+
+.insidePageBtn::before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scaleY(0);
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: -1;
+}
+
+.insidePageBtnCity {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.insidePageBtnCity::before {
+  background-color: var(--black);
+}
+
+.insidePageBtn:hover {
+  color: #fafbfa;
+}
+
+.insidePageBtn,.insidePageBtnCity:hover::before {
+  transform: scaleY(1);
+  border-radius: 0.5rem;
+
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
+  height: 20rem;
+  position: relative;
+  transition: all 1s ease;
+  width: 20rem;
+  margin: 20px;
+
+}
+
+.flipCard {
+  height: 20rem;
+  perspective: 100rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  visibility: hidden;
+  width: 20rem;
+  z-index: 100;
+}
+
+.flipCard > * {
+  visibility: visible;
+}
+
+.flipCardContainer {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  width: 100%;
+}
+
+.cardFront,
+.cardBack {
+  backface-visibility: hidden;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.cardFront {
+  background-color: #fafbfa;
+  height: 20rem;
+  width: 20rem;
+}
+
+.cardFrontTp {
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
+  display: flex;
+  flex-direction: column;
+  height: 16rem;
+  width: 20rem;
+  justify-content: center;
+  padding: 0.75rem;
+  background-color: #ffff;
+}
+
+.cardFrontTpCity {
+  background-image: linear-gradient(147deg, var(--black) 0%, #2c3e50 74%);
+
+}
+
+.cardFrontBt {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.cardBack {
+  background-color: #fafbfa;
+  transform: rotateY(180deg);
+  text-align: center;
+
+}
+
+.imgContainer {
+  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color:black;
+}
+
+.IconDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+
+.insidePage {
+  background-image: linear-gradient(125deg, #cdd5e0 0%, #5d7993 100%);
+  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.25);
+  height: 100%;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  width: 20rem;
+  z-index: 1;
+}
+
+.insidePage__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+
+.card:hover {
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
+  width: 40rem;
+}
+
+.card:hover .flipCardContainer {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .insidePage {
+  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
+}
+
+.divider {
+    width: 80px;
+    height: 3px;
+    border: none;
+    background: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35%;
+  
+  }
+
+
