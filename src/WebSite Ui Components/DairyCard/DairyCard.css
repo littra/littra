@@ -1,6 +1,7 @@
 
 :root {
     --black: black;
+    --font:ProximaNova-SemiBold;
   }
   
 .cardFrontHeading {
@@ -14,17 +15,20 @@
   font-size: 1.7rem;
   font-weight: 800;
   margin-top: 0.5rem;
+  font-family: var(--font);
 }
 
 .cardFrontTextView {
   font-size: 1.3rem;
   font-weight: 800;
   margin-top: 0.2rem;
+  font-family: var(--font);
 }
 
 .insidePageHeadingCity,
 .cardFrontTextViewCity {
-  color: var(--black)
+  color: var(--black);
+  font-family: var(--font);
 }
 
 .cardFrontTp{
@@ -40,9 +44,10 @@
 
 .insidePage__text {
   color: #ffff;
-  font-size: 20px;
+  font-size: 16px;
   text-align: justify;
   padding: 15px;
+  font-family: var(--font);
 }
 
 
@@ -73,6 +78,7 @@
   color: white;
   width: 100%;
   z-index: 10;
+  font-family: var(--font);
 }
 
 .insidePageBtn::before {
@@ -114,6 +120,7 @@
   transition: all 1s ease;
   width: 20rem;
   margin: 20px;
+ 
 
 }
 
@@ -126,6 +133,7 @@
   visibility: hidden;
   width: 20rem;
   z-index: 100;
+  transition: 0.3s;
 }
 
 .flipCard > * {
@@ -253,7 +261,32 @@
     align-items: center;
     justify-content: center;
     margin-left: 35%;
-  
   }
+
+@media screen and (max-width:1118px) and (min-width:790px){
+  
+  .card:hover .flipCardContainer {
+    opacity: 0;
+    transition: all 1s ease-out;
+  }
+  .card:hover {
+    box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width:650px) {
+  
+  .card:hover .flipCardContainer {
+    opacity: 0;
+    transition: all 1s ease-out;
+  }
+  .card:hover {
+    box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
+    width: 20rem;
+  }
+}
+
+
 
 
