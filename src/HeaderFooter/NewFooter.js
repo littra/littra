@@ -7,7 +7,7 @@ const NewFooter = () => {
   <div className="new_footer_top">
     <div className="container">
       <div className="row">
-        <div className="col-lg-3 col-md-6">
+        <div className="col-lg-3 col-md-6 visblerow">
           <div
             className="f_widget company_widget wow fadeInLeft"
             data-wow-delay="0.2s"
@@ -17,7 +17,7 @@ const NewFooter = () => {
               animationName: "fadeInLeft"
             }}
           >
-            <h3 className="f-title f_600 t_color f_size_18">Get in Touch</h3>
+            <h3 className=" f-title f_600 t_color f_size_18">Get in Touch</h3>
             <p>Don’t miss any updates of our new templates and extensions.!</p>
             <form
               action="#"
@@ -40,7 +40,7 @@ const NewFooter = () => {
             </form>
           </div>
         </div>
-        <div className="col-lg-3 col-md-6">
+        <div className="col-lg-3 col-md-6 rowdelete">
           <div
             className="f_widget about-widget pl_70 wow fadeInLeft"
             data-wow-delay="0.4s"
@@ -73,7 +73,7 @@ const NewFooter = () => {
             </ul>
           </div>
         </div>
-        <div className="col-lg-3 col-md-6">
+        <div className="col-lg-3 col-md-6 rowdelete">
           <div
             className="f_widget about-widget pl_70 wow fadeInLeft"
             data-wow-delay="0.6s"
@@ -106,7 +106,7 @@ const NewFooter = () => {
             </ul>
           </div>
         </div>
-        <div className="col-lg-3 col-md-6">
+        <div className="col-lg-3 col-md-6 visblerow">
           <div
             className="f_widget social-widget pl_70 wow fadeInLeft"
             data-wow-delay="0.8s"
