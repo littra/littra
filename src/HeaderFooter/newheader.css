@@ -1,17 +1,13 @@
 html {
-
-    box-sizing: border-box;
-    /* --bgColorMenu : #1d1d27;  */
-     --duration: .7s;    
-
+  box-sizing: border-box;
+  /* --bgColorMenu : #1d1d27;  */
+  --duration: 0.7s;
 }
 
 html *,
 html *::before,
 html *::after {
-
-    box-sizing: inherit;
-
+  box-sizing: inherit;
 }
 
 /* body{
@@ -28,132 +24,143 @@ html *::after {
 
 } */
 
-.menu{
-    display: flex;
-    width:30.05em;
-    height:100px;
-    align-items: center;
-    justify-content: center;
-    padding: 0 2.85em;
-    background-color: var(--bgColorMenu);
-    margin-bottom:10px;
-    font-size: 1.5em;
-    margin-left: auto;
+.menu {
+  display: flex;
+  width: 30.05em;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.85em;
+  background-color: var(--bgColorMenu);
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  margin-left: auto;
 }
 
-.menu__item{
-
-    all: unset;
-    flex-grow: 1;
-    z-index: 100;
-    display: flex;
-    cursor: pointer;
-    position: relative;
-    border-radius: 50%;
-    align-items: center;
-    will-change: transform;
-    justify-content: center;
-    padding: 0.35em 0 0.85em;
-    transition: transform var(--timeOut , var(--duration));
-
+.menu__item {
+  all: unset;
+  flex-grow: 1;
+  z-index: 100;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  align-items: center;
+  will-change: transform;
+  justify-content: center;
+  padding: 0.35em 0 0.85em;
+  transition: transform var(--timeOut, var(--duration));
 }
 
-.menu__item::before{
-
-    content: "";
-    z-index: -1;
-    width: 3.2em;
-    height: 3.2em;
-    border-radius: 50%;
-    position: absolute;
-    transform: scale(0);
-    transition: background-color var(--duration), transform var(--duration);
-
+.menu__item::before {
+  content: "";
+  z-index: -1;
+  width: 3.2em;
+  height: 3.2em;
+  border-radius: 50%;
+  position: absolute;
+  transform: scale(0);
+  transition: background-color var(--duration), transform var(--duration);
 }
-
 
 .menu__item.active {
-
-    transform: translate3d(0, -.8em , 0);
-
+  transform: translate3d(0, -0.8em, 0);
 }
 
-.menu__item.active::before{
-
-    transform: scale(1);
-    background-color: var(--bgColorItem);
-
+.menu__item.active::before {
+  transform: scale(1);
+  background-color: var(--bgColorItem);
 }
 
-.icon{
-
-    width: 2.2em;
-    height: 2.2em;
-    stroke: white;
-    fill: transparent;
-    stroke-width: 1pt;
-    stroke-miterlimit: 10;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-dasharray: 400;
-
+.icon {
+  width: 2.2em;
+  height: 2.2em;
+  stroke: white;
+  fill: transparent;
+  stroke-width: 1pt;
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 400;
 }
 
 .menu__item.active .icon {
-
-    animation: strok 1.5s reverse;
-
+  animation: strok 1.5s reverse;
 }
 
 @keyframes strok {
-
-    100% {
-
-        stroke-dashoffset: 400;
-
-    }
-
+  100% {
+    stroke-dashoffset: 400;
+  }
 }
 
-.menu__border{
+.menu__border {
+  left: 0;
+  bottom: 99%;
+  width: 8.9em;
+  height: 0;
+  position: absolute;
+  clip-path: url(#menu);
+  will-change: transform;
+  background-color: var(--bgColorMenu);
+  transition: transform var(--timeOut, var(--duration));
+}
 
-    left: 0;
-    bottom: 99%;
-    width: 8.9em;
+.svg-container {
+  width: 0;
+  height: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .menu {
+    display: none;
+    width: 100px;
     height: 0;
-    position: absolute;
-    clip-path: url(#menu);
-    will-change: transform;
-    background-color: var(--bgColorMenu);
-    transition: transform var(--timeOut , var(--duration));
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 
-} 
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-left: 0;
+  }
 
-     .svg-container {
+  .menuShow {
+    display: flex;
+    flex-direction: column;
+    margin-top: 180px;
+    justify-content: center;
+  }
 
-        width: 0;
-        height: 0;
-    }
+  .menu__item {
+    padding: 5px;
+  }
 
+  .icon {
+    width: 30px;
+    height: 3opx;
+  }
+  .menu__item::before {
+    width: 40px;
+    height: 40px;
+  }
+  .Header__combinerr {
+    /* margin-top: 50px; */
+    display: flex;
+    width: 50px;
+    height: 5px;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    align-items: center;
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .togglerr {
+    margin-bottom: 10px;
+  }
 
-    @media only screen and (max-width: 1024px) {
-
-        .menu {
-          display: none;
-    
-        }
-        .togglerr{
-            display:flex;
-            margin-left: auto;
-            margin-right: 20px;
-    
-    
-        }
-    
-        /* .base{
+  /* .base{
             background-color: white;
         } */
-    
-    
-    
-      }
+}
