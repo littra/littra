@@ -130,6 +130,7 @@ html *::after {
     flex-direction: column;
     margin-top: 180px;
     justify-content: center;
+    animation: slideDown 300ms;
   }
 
   .menu__item {
@@ -158,6 +159,28 @@ html *::after {
   }
   .togglerr {
     margin-bottom: 10px;
+  }
+
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-60px);
+    }
+
+    25% {
+      opacity: 0.45;
+      transform: translateY(10px);
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* .base{
