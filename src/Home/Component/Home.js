@@ -10,7 +10,7 @@ import About from "./About";
 import WhyUs from "./WhyUs";
 import isMobile from "../../Utils/UserAgent";
 import Image from "../../general/Image";
-import LatestWorks from "../../WebSite Ui Components/LatestWorksCard/LatestWorks";
+import LatestWorks from "./LatestWorks";
 
 class Home extends React.Component {
   constructor(props) {

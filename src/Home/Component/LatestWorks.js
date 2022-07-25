@@ -1,8 +1,8 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../../Home/Messages/HomeMessages";
-import DairyCard from "../DairyCard/DairyCard";
-import styles from "./LatestWorks.css";
+import DairyCard from "../../WebSite Ui Components/DairyCard/DairyCard";
+import styles from "./css/LatestWorks.css";
 function LatestWorks() {
   const LatestWorkData = [
     {
