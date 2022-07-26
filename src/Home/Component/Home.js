@@ -11,6 +11,7 @@ import About from "./About";
 import WhyUs from "./WhyUs";
 import isMobile from "../../Utils/UserAgent";
 import Image from "../../general/Image";
+import OurCreativity from "./OurCreativity";
 
 class Home extends React.Component {
   constructor(props) {
@@ -58,6 +59,10 @@ class Home extends React.Component {
             <FeatureTwoBanner />
           </VisibilityChild>
         </div>
+        <VisibilityChild>
+          <OurCreativity />
+        </VisibilityChild>
+
         <VisibilityChild>
           <Portfolio />
         </VisibilityChild>
