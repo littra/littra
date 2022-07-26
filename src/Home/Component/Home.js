@@ -11,6 +11,7 @@ import WhyUs from "./WhyUs";
 import isMobile from "../../Utils/UserAgent";
 import Image from "../../general/Image";
 import LatestWorks from "./LatestWorks";
+import OurCreativity from "./OurCreativity";
 
 class Home extends React.Component {
   constructor(props) {

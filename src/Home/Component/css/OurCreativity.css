@@ -1,0 +1,25 @@
+.base {
+    width: 100%;
+    margin-top: 80px;
+  }
+  .topSection {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+  }
+  .dark{
+  color: var(--text-color-dark);
+  }
+  .divider {
+    margin: auto;
+    width: 70px;
+    height: 3px;
+    background-color: var(--text-color-dark);
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 30px;
+  }
+  .infoWrapper {
+    height: 100vh;
+    width: 100%;
+  }

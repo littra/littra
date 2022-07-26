@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "!style-loader!css-loader!./newheader.css";
+import Icon from "./../general/Icon";
+import { PUBLIC_ASSETS_PATH } from "./../Utils/Constants";
 function AnimatedTabBar() {
   let menu;
   let menuItems;
@@ -52,6 +54,9 @@ function AnimatedTabBar() {
     <div className="Header__base___1a41w">
       <div className="Header__title___11Px4">
           LITTRA
+      </div>
+      <div className="togglerr">
+      <Icon image={`${PUBLIC_ASSETS_PATH}/square.svg`} size={30} />
       </div>
       <menu className="menu" >
      
