@@ -4,13 +4,13 @@ import styles from "./css/Home.css";
 import VisibilityChild from "../../general/VisibilityChild";
 import FeatureBanner from "./FeatureBanner";
 import FeatureTwoBanner from "./FeatureTwoBanner";
-import Portfolio from "./Portfolio";
 import Footer from "../../HeaderFooter/Component/Footer";
 import ContactUs from "./Contactus";
 import About from "./About";
 import WhyUs from "./WhyUs";
 import isMobile from "../../Utils/UserAgent";
 import Image from "../../general/Image";
+import LatestWorks from "./LatestWorks";
 import OurCreativity from "./OurCreativity";
 
 class Home extends React.Component {
@@ -60,11 +60,7 @@ class Home extends React.Component {
           </VisibilityChild>
         </div>
         <VisibilityChild>
-          <OurCreativity />
-        </VisibilityChild>
-
-        <VisibilityChild>
-          <Portfolio />
+          <LatestWorks />
         </VisibilityChild>
 
         <VisibilityChild>
