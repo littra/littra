@@ -12,6 +12,7 @@ import isMobile from "../../Utils/UserAgent";
 import Image from "../../general/Image";
 import LatestWorks from "./LatestWorks";
 import OurCreativity from "./OurCreativity";
+import NewFooter from "../../HeaderFooter/NewFooter";
 
 class Home extends React.Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class Home extends React.Component {
           <Team />
         </VisibilityChild> */}
         <ContactUs />
-        <Footer />
+        <NewFooter />
       </div>
     );
   }
