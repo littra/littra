@@ -103,6 +103,10 @@ button:focus {
 .ti-pinterest:before {
   content: "\e731";
 }
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .btn_get_two {
   -webkit-box-shadow: none;
