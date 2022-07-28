@@ -13,6 +13,7 @@ import Image from "../../general/Image";
 import LatestWorks from "./LatestWorks";
 import OurCreativity from "./OurCreativity";
 import NewFooter from "../../HeaderFooter/NewFooter";
+import Three from "../Three/Three";
 
 class Home extends React.Component {
   constructor(props) {
@@ -43,7 +44,8 @@ class Home extends React.Component {
             transform: `translateY(${this.state.translateY}px)`,
           }}
         >
-          <TopBanner />
+          {/* <TopBanner /> */}
+          <Three />
         </div>
         <div className={styles.second}>
           <VisibilityChild>
