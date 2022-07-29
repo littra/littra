@@ -13,7 +13,7 @@ import Image from "../../general/Image";
 import LatestWorks from "./LatestWorks";
 import OurCreativity from "./OurCreativity";
 import NewFooter from "../../HeaderFooter/NewFooter";
-import Three from "../Three/Three";
+import NewTopBanner from "../NewTopBanner/NewTopBanner";
 
 class Home extends React.Component {
   constructor(props) {
@@ -45,7 +45,7 @@ class Home extends React.Component {
           }}
         >
           {/* <TopBanner /> */}
-          <Three />
+          <NewTopBanner />
         </div>
         <div className={styles.second}>
           <VisibilityChild>
