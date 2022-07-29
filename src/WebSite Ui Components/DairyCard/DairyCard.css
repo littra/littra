@@ -1,7 +1,7 @@
 
 :root {
     --black: black;
-    --font:ProximaNova-SemiBold;
+    --font:'Raleway', sans-serif;;
   }
   
 .cardFrontHeading {
