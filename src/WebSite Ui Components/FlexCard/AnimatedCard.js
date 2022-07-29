@@ -118,7 +118,7 @@ function AnimatedCard() {
                     </div>
                     <div className={styles.info}>
                       <div className={styles.title}>
-                        <p> {item.title} </p>
+                        <h4> {item.title} </h4>
                       </div>
                       <div className={styles.sub} style={{ padding: "5px" }}>
                         <p> {item.desc} </p>
