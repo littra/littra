@@ -9,7 +9,6 @@ export default class FeatureTwoBanner extends React.Component {
     super(props);
     this.state = {
       translateY: 0,
-      isLoading: true,
     };
   }
 
@@ -26,7 +25,6 @@ export default class FeatureTwoBanner extends React.Component {
   };
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
-    setTimeout(() => this.setState({ isLoading: false }), 4000);
   }
   componentWillUnmount() {
     window.removeEventListener("scroll");
@@ -46,7 +44,7 @@ export default class FeatureTwoBanner extends React.Component {
           </div>
           <hr className={styles.divider} />
           <div className={styles.infoWrapper}>
-            {this.state.isLoading ? <SkeletonLoader /> : <AnimatedCard />}
+            <AnimatedCard />
           </div>
         </div>
       </>
