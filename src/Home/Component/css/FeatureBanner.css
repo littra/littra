@@ -22,7 +22,7 @@
 
 .featureDes {
   composes: dark;
-  line-height: 21px;
+  line-height: 20px;
   padding-right: 20px;
   text-align: justify;
 }
