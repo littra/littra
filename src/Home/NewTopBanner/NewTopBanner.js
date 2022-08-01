@@ -85,7 +85,7 @@ const Three = () => {
     document.addEventListener("touchstart", onDocumentTouchStart, false);
     document.addEventListener("touchmove", onDocumentTouchMove, false);
 
-    //
+  
 
     window.addEventListener("resize", onWindowResize, false);
     animate();
@@ -101,7 +101,7 @@ const Three = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  //
+  
 
   function onDocumentMouseMove(event) {
     mouseX = event.clientX - windowHalfX;
@@ -126,7 +126,7 @@ const Three = () => {
     }
   }
 
-  //
+
 
   function animate() {
     requestAnimationFrame(animate);
@@ -165,12 +165,12 @@ const Three = () => {
       <div className={styles.title}>
         <h1
           className={styles.threeTitleHead}
-          style={{ fontSize: "80px", color: "white" }}
+         
         >
           WELCOME TO LITTRA
         </h1>
 
-        <p className={styles.threeSubtitle} style={{ fontSize: "30px" }}>
+        <p className={styles.threeSubtitle} >
           {" "}
           Good business leaders create a vision, articulate the vision,
           passionately own the vision, and relentlessly drive it to completion.
