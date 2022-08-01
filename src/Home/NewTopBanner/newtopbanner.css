@@ -18,8 +18,7 @@
   text-align: center;
   margin: 0px;
   overflow: hidden;
-  /* display: flex;
-  align-items: center; */
+
 }
 
 .title {
@@ -28,7 +27,7 @@
   transform: translateX(-50%);
   top: 50%;
   color: white;
-  /* font-size: 80px; */
+ 
 }
 .threeSubtitle{
   font-size: 30px;
