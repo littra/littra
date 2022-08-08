@@ -6,62 +6,57 @@ import { FormattedMessage } from "react-intl";
 import HomeMessages from "../../Home/Messages/HomeMessages";
 import { forEach } from "lodash";
 
+const AnimatedCardData = [
+  {
+    id: "one",
+    icon: "f1.svg",
+    title: <FormattedMessage {...HomeMessages.f1} />,
+    desc: <FormattedMessage {...HomeMessages.fd1} />,
+    image: "LayoutDesign.jpg"
+  },
+  {
+    id: "two",
+    icon: "f2.svg",
+    title: <FormattedMessage {...HomeMessages.f2} />,
+    desc: <FormattedMessage {...HomeMessages.fd2} />,
+    image: "documentation.jpg"
+  },
+  {
+    id: "three",
+    icon: "f3.svg",
+    title: <FormattedMessage {...HomeMessages.f3} />,
+    desc: <FormattedMessage {...HomeMessages.fd3} />,
+    image: "parallex.png"
+  },
+
+  {
+    id: "four",
+    icon: "f4.svg",
+    title: <FormattedMessage {...HomeMessages.f4} />,
+    desc: <FormattedMessage {...HomeMessages.fd4} />,
+    image: "html5.jpg"
+  },
+  {
+    id: "five",
+    icon: "f5.svg",
+    title: <FormattedMessage {...HomeMessages.f5} />,
+    desc: <FormattedMessage {...HomeMessages.fd5} />,
+    image: "support.jpg"
+  },
+  {
+    id: "six",
+    icon: "f6.svg",
+    title: <FormattedMessage {...HomeMessages.f6} />,
+    desc: <FormattedMessage {...HomeMessages.fd6} />,
+    image: "LightDark.jpg"
+  }
+];
 function AnimatedCard() {
-  const AnimatedCardData = [
-    {
-      id: "one",
-      icon: "f1.svg",
-      title: <FormattedMessage {...HomeMessages.f1} />,
-      desc: <FormattedMessage {...HomeMessages.fd1} />,
-      image: "LayoutDesign.jpg",
-    },
-    {
-      id: "two",
-      icon: "f2.svg",
-      title: <FormattedMessage {...HomeMessages.f2} />,
-      desc: <FormattedMessage {...HomeMessages.fd2} />,
-      image: "documentation.jpg",
-    },
-    {
-      id: "three",
-      icon: "f3.svg",
-      title: <FormattedMessage {...HomeMessages.f3} />,
-      desc: <FormattedMessage {...HomeMessages.fd3} />,
-      image: "parallex.png",
-    },
+  const [activeCard, setActiveCard] = useState("");
 
-    {
-      id: "four",
-      icon: "f4.svg",
-      title: <FormattedMessage {...HomeMessages.f4} />,
-      desc: <FormattedMessage {...HomeMessages.fd4} />,
-      image: "html5.jpg",
-    },
-    {
-      id: "five",
-      icon: "f5.svg",
-      title: <FormattedMessage {...HomeMessages.f5} />,
-      desc: <FormattedMessage {...HomeMessages.fd5} />,
-      image: "support.jpg",
-    },
-    {
-      id: "six",
-      icon: "f6.svg",
-      title: <FormattedMessage {...HomeMessages.f6} />,
-      desc: <FormattedMessage {...HomeMessages.fd6} />,
-      image: "LightDark.jpg",
-    },
-  ];
-  const [data, setData] = useState(AnimatedCardData);
-  const [activeCard, setActiveCard] = useState(null);
-
-  function MouseEnter(event) {
-    event.target.classList.toggle(styles.active);
-  }
-
-  function MouseLeave(event) {
-    event.target.classList.remove(styles.active);
-  }
+  // function MouseLeave(event) {
+  //   event.target.classList.remove(styles.active);
+  // }
 
   // Scrolling function according to screen
 
@@ -166,7 +161,7 @@ function AnimatedCard() {
     <>
       <div className={styles.AnimatedCardMain}>
         <div className={styles.AnimatedCardOptions}>
-          {data.map((item, index) => {
+          {AnimatedCardData.map((item, index) => {
             return (
               <div
                 key={index}
@@ -175,20 +170,24 @@ function AnimatedCard() {
                   index === activeCard ? styles.active : ""
                 }`}
                 // className={styles.AnimatedCardOption}
-                onMouseEnter={MouseEnter}
-                onMouseLeave={MouseLeave}
+                onMouseEnter={() => setActiveCard(index)}
+                // onMouseLeave={MouseLeave}
                 style={{
                   backgroundImage: `url(${PUBLIC_ASSETS_PATH}/${item.image})`,
                   backgroundRepeat: "no-repeat",
                   marginRight: "10px",
                   backgroundSize: "cover",
+                  transition: "all 1s"
                 }}
-                onTransitionEnd={(event) => {
-                  const activeElement = activeCard === 5 ? 0 : activeCard + 1;
-                  setActiveCard(activeElement);
-                  // handleTransitionEnd(activeElement);
-                  // console.log({ event });
-                  console.log(activeElement, index + 1, "++++++++++");
+                onTransitionEnd={() => {
+                  if (index === activeCard) {
+                    const activeElement =
+                      activeCard + 1 === AnimatedCardData.length
+                        ? 0
+                        : activeCard + 1;
+
+                    setActiveCard(activeElement);
+                  }
                 }}
               >
                 <div style={{ margin: "30px" }}>
