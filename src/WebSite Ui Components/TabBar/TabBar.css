@@ -79,14 +79,15 @@ html *::after {
 
 .menu{
     display: flex;
-    width:30.05em;
+    width:50.05em;
     height:100px;
     align-items: center;
     justify-content: center;
     padding: 0 2.85em;
     background-color: var(--bgColorMenu);
     font-size: 1.5em;
-    margin-left: 20%;
+    margin-left: 14%;
+
 }
 
 .menu__item{
@@ -167,23 +168,111 @@ html *::after {
     height: 0;
 }
 
-
-    @media only screen and (max-width: 1024px) {
-        .menu {
-          display: none;
+@media only screen and (max-width: 1220px) {
+    .menu{
+        display: flex;
+        width:50.05em;
+        height:100px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2.85em;
+        background-color: var(--bgColorMenu);
+        font-size: 1.5em;
+        margin-left: 10%;
     
-        }
-        .togglerr{
-            display:flex;
-            margin-left: auto;
-            margin-right: 20px;
-        }    
-      }
-
-      .toggleBtn{
+    }
+  }
+@media only screen and (max-width: 1180px) {
+    .icon{
+        padding: 25px;
+        width: 1.5em;
+        height: 1.5em;
+        stroke: white;
+        fill: transparent;
+        stroke-width: 1pt;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 400;
+    }
+  }
+@media only screen and (max-width: 1090px) {
+    .icon{
+        padding: 20px;
+        width: 1.5em;
+        height: 1.5em;
+        stroke: white;
+        fill: transparent;
+        stroke-width: 1pt;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 400;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    .icon{
+        padding: 18px;
+        width: 1.3em;
+        height: 1.3em;
+        stroke: white;
+        fill: transparent;
+        stroke-width: 1pt;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 400;
+    }
+    .menu{
+        margin-left: 5%;
+    
+    }
+  }
+@media only screen and (max-width: 840px) {
+    .icon{
+        padding: 17px;
+        width: 1.3em;
+        height: 1.3em;
+        stroke: white;
+        fill: transparent;
+        stroke-width: 1pt;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 400;
+    }
+    .menu{
+        margin-left: 1%;
+    
+    }
+  }
+  @media only screen and (max-width: 810px) {
+    .icon{
+        padding: 15px;
+        width: 1.3em;
+        height: 1.3em;
+        stroke: white;
+        fill: transparent;
+        stroke-width: 1pt;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 400;
+    }
+    .menu{
+        margin-left: -1%;
+    }
+  }
+  @media only screen and (max-width: 760px) {
+    .menu{
         display: none;
-      }
-
+    }
+    .togglerr{
+        display:flex;
+        margin-left: auto;
+        margin-right: 20px;
+    } 
+  }
       .link {
         color: var(--text-color-dark);
         font-weight: 700;
@@ -191,4 +280,5 @@ html *::after {
         -o-transition: margin 0.4s ease, padding 0.4s ease;
         transition: margin 0.4s ease, padding 0.4s ease;
       }
+    
       
