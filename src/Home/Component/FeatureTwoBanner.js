@@ -7,27 +7,6 @@ import SkeletonLoader from "../../WebSite Ui Components/Loder/SkeletonLoader";
 export default class FeatureTwoBanner extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      translateY: 0,
-    };
-  }
-
-  handleScroll = () => {
-    if (
-      document.documentElement.scrollTop < window.innerHeight * 3 &&
-      document.documentElement.scrollTop > window.innerHeight * 2
-    ) {
-      this.setState({
-        translateY:
-          (document.documentElement.scrollTop - window.innerHeight * 3) / 1.5,
-      });
-    }
-  };
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
-  componentWillUnmount() {
-    window.removeEventListener("scroll");
   }
 
   render() {

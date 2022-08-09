@@ -1,60 +1,74 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./AnimatedCard.css";
 import Icon from "../../general/Icon";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../../Home/Messages/HomeMessages";
+import { forEach } from "lodash";
 
+const AnimatedCardData = [
+  {
+    id: "one",
+    icon: "f1.svg",
+    title: <FormattedMessage {...HomeMessages.f1} />,
+    desc: <FormattedMessage {...HomeMessages.fd1} />,
+    image: "LayoutDesign.jpg",
+  },
+  {
+    id: "two",
+    icon: "f2.svg",
+    title: <FormattedMessage {...HomeMessages.f2} />,
+    desc: <FormattedMessage {...HomeMessages.fd2} />,
+    image: "documentation.jpg",
+  },
+  {
+    id: "three",
+    icon: "f3.svg",
+    title: <FormattedMessage {...HomeMessages.f3} />,
+    desc: <FormattedMessage {...HomeMessages.fd3} />,
+    image: "parallex.png",
+  },
+
+  {
+    id: "four",
+    icon: "f4.svg",
+    title: <FormattedMessage {...HomeMessages.f4} />,
+    desc: <FormattedMessage {...HomeMessages.fd4} />,
+    image: "html5.jpg",
+  },
+  {
+    id: "five",
+    icon: "f5.svg",
+    title: <FormattedMessage {...HomeMessages.f5} />,
+    desc: <FormattedMessage {...HomeMessages.fd5} />,
+    image: "support.jpg",
+  },
+  {
+    id: "six",
+    icon: "f6.svg",
+    title: <FormattedMessage {...HomeMessages.f6} />,
+    desc: <FormattedMessage {...HomeMessages.fd6} />,
+    image: "LightDark.jpg",
+  },
+];
 function AnimatedCard() {
-  const AnimatedCardData = [
-    {
-      icon: "f1.svg",
-      title: <FormattedMessage {...HomeMessages.f1} />,
-      desc: <FormattedMessage {...HomeMessages.fd1} />,
-      image: "LayoutDesign.jpg",
-    },
-    {
-      icon: "f2.svg",
-      title: <FormattedMessage {...HomeMessages.f2} />,
-      desc: <FormattedMessage {...HomeMessages.fd2} />,
-      image: "documentation.jpg",
-    },
-    {
-      icon: "f3.svg",
-      title: <FormattedMessage {...HomeMessages.f3} />,
-      desc: <FormattedMessage {...HomeMessages.fd3} />,
-      image: "parallex.png",
-    },
+  const [activeCard, setActiveCard] = useState("");
 
-    {
-      icon: "f4.svg",
-      title: <FormattedMessage {...HomeMessages.f4} />,
-      desc: <FormattedMessage {...HomeMessages.fd4} />,
-      image: "html5.jpg",
-    },
-    {
-      icon: "f5.svg",
-      title: <FormattedMessage {...HomeMessages.f5} />,
-      desc: <FormattedMessage {...HomeMessages.fd5} />,
-      image: "support.jpg",
-    },
-    {
-      icon: "f6.svg",
-      title: <FormattedMessage {...HomeMessages.f6} />,
-      desc: <FormattedMessage {...HomeMessages.fd6} />,
-      image: "LightDark.jpg",
-    },
-  ];
+  useEffect(() => {
+    setActiveCard(0);
+    transitionFun(0);
+  }, []);
 
-  function MouseEnter(event) {
-    event.target.classList.toggle(styles.active);
+  function transitionFun(index) {
+    setTimeout(() => {
+      if (index === activeCard) {
+        const activeElement =
+          activeCard + 1 === AnimatedCardData.length ? 0 : activeCard + 1;
+
+        setActiveCard(activeElement);
+      }
+    }, 1300);
   }
-
-  function MouseLeave(event) {
-    event.target.classList.remove(styles.active);
-  }
-
-  // Scrolling function according to screen
 
   let screen = () => {
     window.addEventListener("scroll", function() {
@@ -97,15 +111,18 @@ function AnimatedCard() {
               <div
                 key={index}
                 id="optionId"
-                className={styles.AnimatedCardOption}
-                onMouseEnter={MouseEnter}
-                onMouseLeave={MouseLeave}
+                className={`${styles.AnimatedCardOption} ${
+                  index === activeCard ? styles.active : ""
+                }`}
+                // onMouseEnter={() => setActiveCard(index)}
                 style={{
                   backgroundImage: `url(${PUBLIC_ASSETS_PATH}/${item.image})`,
                   backgroundRepeat: "no-repeat",
                   marginRight: "10px",
                   backgroundSize: "cover",
+                  transition: "all 2s",
                 }}
+                onTransitionEnd={() => transitionFun(index)}
               >
                 <div style={{ margin: "30px" }}>
                   <div className={styles.shadow}></div>
