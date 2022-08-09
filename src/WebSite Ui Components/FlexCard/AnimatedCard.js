@@ -54,6 +54,11 @@ const AnimatedCardData = [
 function AnimatedCard() {
   const [activeCard, setActiveCard] = useState("");
 
+  useEffect(() => {
+    setActiveCard(0);
+    transitionFun(0);
+  }, []);
+
   function transitionFun(index) {
     setTimeout(() => {
       if (index === activeCard) {
@@ -65,10 +70,37 @@ function AnimatedCard() {
     }, 1300);
   }
 
-  useEffect(() => {
-    setActiveCard(0);
-    transitionFun(0);
-  }, []);
+  let screen = () => {
+    window.addEventListener("scroll", function() {
+      var scroll = document.querySelectorAll("#optionId");
+      for (var i = 0; i < scroll.length; i++) {
+        var windowHeight = window.innerHeight;
+        var scrollTop = scroll[i].getBoundingClientRect().top;
+        var scrollPoint = 150;
+
+        if (scrollTop < windowHeight - scrollPoint) {
+          scroll[i].classList.add(styles.active);
+        } else {
+          scroll[i].classList.remove(styles.active);
+        }
+      }
+    });
+  };
+
+  // Handling Function according to screen width
+  var widths = [0, 750, 1024];
+
+  function resizeFn() {
+    if (window.innerWidth >= widths[0] && window.innerWidth < widths[1]) {
+      screen();
+    } else if (
+      window.innerWidth >= widths[1] &&
+      window.innerWidth < widths[2]
+    ) {
+    }
+  }
+  window.onresize = resizeFn;
+  resizeFn();
 
   return (
     <>
