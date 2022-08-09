@@ -78,7 +78,7 @@ class Home extends React.Component {
         {/* <VisibilityChild>
           <Team />
         </VisibilityChild> */}
-        <ContactUs />
+        {/* <ContactUs /> */}
         <NewFooter />
       </div>
     );

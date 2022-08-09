@@ -213,6 +213,14 @@ h6 {
   }
 }
 
+.address-style-footer{
+ margin-bottom: 20px;
+  
+}
+.marginZero{
+  margin: 0 !important;
+}
+
 /*************footer End*****************/
 
 @media only screen and (max-width: 1024px) {
