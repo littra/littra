@@ -99,7 +99,6 @@
     "simple-card-validator": "^1.1.0",
     "styled-components": "^5.3.5",
     "sw-precache-webpack-plugin": "^0.11.5",
-    "three": "^0.55.0",
     "uuid": "^3.3.2",
     "webpack-bundle-analyzer": "^3.5.1",
     "webpack-cli": "^3.2.3",

@@ -1,183 +1,184 @@
-import React, { useEffect } from "react";
-import {
-  PerspectiveCamera,
-  Scene,
-  Particle,
-  ParticleCanvasMaterial,
-  CanvasRenderer,
-} from "three";
-import styles from "./newtopbanner.css";
+import React from 'react'
+import './newtopbanner.css'
+const NewTopBanner = () => {
+  
+React.useEffect(()=>{
+  
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/tsparticles@1.33.1/tsparticles.min.js";
+  script.async = true; 
+  script.onload = () => {
+    loadUiFrame()  
+  };
+  document.body.appendChild(script);
+},[])  
+  
 
-const Three = () => {
-  var SEPARATION = 100,
-    AMOUNTX = 100,
-    AMOUNTY = 70;
 
-  var container;
-  var outerContainer;
-  var camera, scene, renderer;
-
-  var particles,
-    particle,
-    count = 0;
-
-  var mouseX = 85,
-    mouseY = -842;
-
-  var windowHalfX = window.innerWidth / 2;
-  var windowHalfY = window.innerHeight / 2;
-
-  useEffect(() => {
-    if (typeof window == "undefined") return;
-    init();
-  }, [typeof window]);
-
-  function init() {
-    if (typeof document == "undefined") return;
-
-    const parentId = document.getElementById("particleThreeJsHoverBase");
-
-    outerContainer = document.createElement("div");
-    parentId.appendChild(outerContainer);
-    container = document.createElement("div");
-    outerContainer.appendChild(container);
-    outerContainer.classList.add("outerContainer");
-    const list = outerContainer.classList.contains("outerContainer");
-
-    camera = new PerspectiveCamera(
-      120,
-      window.innerWidth / window.innerHeight,
-      1,
-      10000
-    );
-    camera.position.z = 1000;
-
-    scene = new Scene();
-
-    particles = new Array();
-
-    var PI2 = Math.PI * 2;
-    var material = new ParticleCanvasMaterial({
-      color: 0xe1e1e1,
-      program: function(context) {
-        context.beginPath();
-        context.arc(0, 0, 0.6, 0, PI2, true);
-        context.fill();
+const loadUiFrame = () =>{
+  window.tsParticles.load("tsparticles", {
+    fullScreen: {
+      enable: true
+    },
+    detectRetina: true,
+    background: {
+      color: "#000"
+    },
+    fpsLimit: 60,
+    emitters: {
+      direction: "top",
+      life: {
+        count: 0,
+        duration: 0.1,
+        delay: 0.1
       },
-    });
-
-    var i = 0;
-
-    for (var ix = 0; ix < AMOUNTX; ix++) {
-      for (var iy = 0; iy < AMOUNTY; iy++) {
-        particle = particles[i++] = new Particle(material);
-        particle.position.x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
-        particle.position.z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
-        scene.add(particle);
+      rate: {
+        delay: 0.15,
+        quantity: 1
+      },
+      size: {
+        width: 100,
+        height: 0
+      },
+      position: {
+        y: 100,
+        x: 50
+      }
+    },
+    particles: {
+      number: {
+        value: 0
+      },
+      destroy: {
+        mode: "split",
+        split: {
+          count: 1,
+          factor: { value: 1 / 3 },
+          rate: {
+            value: 100
+          },
+          particles: {
+            stroke: {
+              color: {
+                value: [
+                  "#ffffff",
+                  "#b22234",
+                  "#b22234",
+                  "#3c3bfe",
+                  "#3c3bfe",
+                  "#3c3bfe"
+                ]
+              },
+              width: 1
+            },
+            number: {
+              value: 0
+            },
+            collisions: {
+              enable: false
+            },
+            opacity: {
+              value: 1,
+              animation: {
+                enable: true,
+                speed: 0.7,
+                minimumValue: 0.1,
+                sync: false,
+                startValue: "max",
+                destroy: "min"
+              }
+            },
+            shape: {
+              type: "circle"
+            },
+            size: {
+              value: 1,
+              animation: {
+                enable: false
+              }
+            },
+            life: {
+              count: 1,
+              duration: {
+                value: {
+                  min: 1,
+                  max: 2
+                }
+              }
+            },
+            move: {
+              enable: true,
+              gravity: {
+                enable: false
+              },
+              speed: 2,
+              direction: "none",
+              random: true,
+              straight: false,
+              outMode: "destroy"
+            }
+          }
+        }
+      },
+      life: {
+        count: 1
+      },
+      shape: {
+        type: "line"
+      },
+      size: {
+        value: 50,
+        animation: {
+          enable: true,
+          sync: true,
+          speed: 150,
+          startValue: "max",
+          destroy: "min"
+        }
+      },
+      stroke: {
+        color: {
+          value: "#ffffff"
+        },
+        width: 1
+      },
+      rotate: {
+        path: true
+      },
+      move: {
+        enable: true,
+        gravity: {
+          acceleration: 15,
+          enable: true,
+          inverse: true,
+          maxSpeed: 100
+        },
+        speed: { min: 10, max: 20 },
+        outModes: {
+          default: "destroy",
+          top: "none"
+        },
+        trail: {
+          fillColor: "#000",
+          enable: true,
+          length: 10
+        }
       }
     }
-
-    renderer = new CanvasRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    container.appendChild(renderer.domElement);
-
-    document.addEventListener("mousemove", onDocumentMouseMove, false);
-    document.addEventListener("touchstart", onDocumentTouchStart, false);
-    document.addEventListener("touchmove", onDocumentTouchMove, false);
-
+  });
   
-
-    window.addEventListener("resize", onWindowResize, false);
-    animate();
-  }
-
-  function onWindowResize() {
-    windowHalfX = window.innerWidth / 2;
-    windowHalfY = window.innerHeight / 2;
-
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  }
-
-  
-
-  function onDocumentMouseMove(event) {
-    mouseX = event.clientX - windowHalfX;
-    mouseY = event.clientY - windowHalfY;
-  }
-
-  function onDocumentTouchStart(event) {
-    if (event.touches.length === 1) {
-      event.preventDefault();
-
-      mouseX = event.touches[0].pageX - windowHalfX;
-      mouseY = event.touches[0].pageY - windowHalfY;
-    }
-  }
-
-  function onDocumentTouchMove(event) {
-    if (event.touches.length === 1) {
-      event.preventDefault();
-
-      mouseX = event.touches[0].pageX - windowHalfX;
-      mouseY = event.touches[0].pageY - windowHalfY;
-    }
-  }
-
-
-
-  function animate() {
-    requestAnimationFrame(animate);
-
-    render();
-  }
-
-  function render() {
-    camera.position.x += (mouseX - camera.position.x) * 0.05;
-    camera.position.y += (-mouseY - camera.position.y) * 0.05;
-    camera.lookAt(scene.position);
-
-    var i = 0;
-
-    for (var ix = 0; ix < AMOUNTX; ix++) {
-      for (var iy = 0; iy < AMOUNTY; iy++) {
-        particle = particles[i++];
-        particle.position.y =
-          Math.sin((ix + count) * 0.3) * 50 + Math.sin((iy + count) * 0.5) * 50;
-        particle.scale.x = particle.scale.y =
-          (Math.sin((ix + count) * 0.3) + 1) * 2 +
-          (Math.sin((iy + count) * 0.5) + 1) * 2;
-      }
-    }
-
-    renderer.render(scene, camera);
-
-    count += 0.1;
-  }
+}
+    
 
   return (
-    <div
-      id="particleThreeJsHoverBase"
-      className={styles.particleThreeJsHoverBase}
-    >
-      <div className={styles.title}>
-        <h1
-          className={styles.threeTitleHead}
-         
-        >
-          WELCOME TO LITTRA
-        </h1>
+ 
+       
+<div id="tsparticles"></div>
 
-        <p className={styles.threeSubtitle} >
-          {" "}
-          Good business leaders create a vision, articulate the vision,
-          passionately own the vision, and relentlessly drive it to completion.
-        </p>
-      </div>
-    </div>
-  );
-};
 
-export default Three;
+
+    
+  )
+}
+
+export default NewTopBanner
