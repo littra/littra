@@ -5,7 +5,7 @@ import HomeMessages from "../Messages/HomeMessages";
 import styles from "./css/OurCreativity.css";
 function OurCreativity() {
   return (
-    <div className={styles.base}>
+    <div className={styles.base} id={"creativity"}>
       <div className={styles.topSection}>
         <h1 className={styles.dark}>
           <FormattedMessage {...HomeMessages.shapeShifterHeading} />

@@ -4,7 +4,7 @@ import { PUBLIC_ASSETS_PATH } from "./../Utils/Constants";
 
 const NewFooter = () => {
   return (
-    <footer className="new_footer_area bg_color">
+    <footer className="new_footer_area bg_color" id={"newFooter"}>
       <div className="new_footer_top">
         <div className="container">
           <div className="row">

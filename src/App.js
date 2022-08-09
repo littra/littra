@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import NewHeader from "./HeaderFooter/NewHeader"
 
 import Home from "./Home/Component/Home";
 import Header from "./HeaderFooter/Component/Header";
@@ -9,6 +8,7 @@ import isMobile from "./Utils/UserAgent";
 import Image from "./general/Image";
 import * as styles from "./App.css";
 import Icon from "./general/Icon";
+import TabBar from "./WebSite Ui Components/TabBar/TabBar";
 
 export default class App extends React.Component {
   componentDidMount() {
@@ -31,14 +31,10 @@ export default class App extends React.Component {
     //   );
     // }
     return (
-      <div style={{height:0,margin:0,padding: 0 }}>
+      <div style={{ height: 0, margin: 0, padding: 0 }}>
         {/* <Header />  */}
-        
-   
-        <NewHeader />
-     
-       
-       
+        <TabBar />
+
         <Switch>
           <Route path="*" component={Home} />
         </Switch>

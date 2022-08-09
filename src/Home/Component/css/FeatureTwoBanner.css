@@ -1,5 +1,7 @@
 .base {
   width: 100%;
+  margin-bottom: -30px;
+  padding-top: 20px;
 }
 .topSection {
   width: 60%;
