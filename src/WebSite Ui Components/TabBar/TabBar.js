@@ -85,7 +85,37 @@ const TabBar = () => {
     >
       <div className="title ">LITTRA</div>
       <div className="togglerr">
-        <Icon image={`${PUBLIC_ASSETS_PATH}/square.svg`} size={30} />
+        
+
+      <nav class="menus">
+  <input type="checkbox" href="#" class="menus-open" name="menus-open" id="menus-open"/>
+  <label class="menus-open-button" for="menus-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+  
+  <a href="#aboutus" className="menus-item">   
+  <img className="menus-icon" src={`${PUBLIC_ASSETS_PATH}/dropmenu.svg`} alt=""/>
+   </a>
+   <a href="#features" className="menus-item">   
+  <img className="menus-icon" src={`${PUBLIC_ASSETS_PATH}/drop-box.svg`} alt=""/>
+   </a>
+   <a href="#pages" className="menus-item">   
+  <img className="menus-icon" src={`${PUBLIC_ASSETS_PATH}/drop-papper.svg`} alt=""/>
+   </a>
+   <a href="#creativity" className="menus-item">   
+  <img className="menus-icon" src={`${PUBLIC_ASSETS_PATH}/drop-picture.svg`} alt=""/>
+   </a>
+  
+  
+  
+
+  
+  
+</nav>
+
+
       </div>
       <menu className="menu">
         {renderLink(
