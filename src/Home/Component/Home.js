@@ -44,8 +44,8 @@ class Home extends React.Component {
             transform: `translateY(${this.state.translateY}px)`,
           }}
         >
-          <TopBanner />
-          {/* <NewTopBanner /> */}
+          {/* <TopBanner /> */}
+          <NewTopBanner />
         </div>
         <div className={styles.second}>
           <VisibilityChild>
