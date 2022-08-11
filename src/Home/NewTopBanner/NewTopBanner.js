@@ -38,7 +38,7 @@ const loadUiFrame = () =>{
       },
       size: {
         width: 100,
-        height: 0
+        height: 65
       },
       position: {
         y: 100,
