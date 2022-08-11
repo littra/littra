@@ -5,9 +5,27 @@ import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 
 function ShapeShifter() {
   useEffect(() => {
+    //scroll fun start
+    let screen = () => {
+      window.addEventListener("scroll", function() {
+        var scroll = document.querySelectorAll(".mainDiv");
+        for (var i = 0; i < scroll.length; i++) {
+          var windowHeight = window.innerHeight;
+          var scrollTop = scroll[i].getBoundingClientRect().top;
+          // var scrollPoint = 150;
+          if (scrollTop === 144.89584350585938) {
+            S.init();
+          } else {
+          }
+        }
+      });
+    };
+    screen();
+    //scroll fun end
+
     var count = 1;
-    var demo = document.querySelector(".mainDiv");
-    demo.addEventListener("click", function(e) {
+    var Shifter = document.querySelector(".mainDiv");
+    Shifter.addEventListener("mouseover", function(e) {
       count++;
       if (count <= 2) {
         S.init();

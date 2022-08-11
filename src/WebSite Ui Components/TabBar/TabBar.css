@@ -28,13 +28,6 @@ html *::after {
     height: 120px;
     transition: 1s;
 }
-.title{
-    display: flex;
-    margin-left: 20px;
-    color: #ffff;
-    font-size: 40px;
-    font-weight: bold;
-}
 .fixedHeader{
     width: 100%;
     /* transition: all 0.4s; */
@@ -49,30 +42,16 @@ html *::after {
     transition: 1s;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-  .fixedHeaderDown{
-    width: 100%;
-    background-color: #000000;
-    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 110;
-    height: 170px;
-    scroll-behavior: smooth;
-    transition: 1s;
+.scroll-down .fixedHeader {
+    transform: translate3d(0, -100%, 0);
   }
-  .fixedHeaderUp{
-    width: 100%;
-    background-color: #000000;
-    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 110;
-    height: 100px;
-    scroll-behavior: smooth;
-    transition: 1s;
+  .scroll-up .fixedHeader {
+    filter: drop-shadow(0 -10px 40px #2c3e50 74%);
   }
+  .menu-is-open .fixedHeader {
+    filter: none;
+  }
+  
   .togglerr{
     display: none;
   }
@@ -129,6 +108,7 @@ html *::after {
     transform: scale(1);
     background-color: var(--bgColorItem);
 
+
 }
 
 .icon{
@@ -143,6 +123,9 @@ html *::after {
     stroke-linejoin: round;
     stroke-dasharray: 400;
 
+}
+.iconNew{
+  padding: 40px;
 }
 
 .menu__item.active .icon {
@@ -168,7 +151,10 @@ html *::after {
     height: 0;
 }
 
-@media only screen and (max-width: 1220px) {
+@media only screen and (max-width: 2000px) {
+  .fixedHeader{
+    height:120px
+  }
     .menu{
         display: flex;
         width:50.05em;
@@ -177,90 +163,152 @@ html *::after {
         justify-content: center;
         padding: 0 2.85em;
         background-color: var(--bgColorMenu);
-        font-size: 1.5em;
+        font-size: 2em;
         margin-left: 10%;
-    
+    }
+    .icon{
+        padding: 65px;
+        width: 1.8em;
+        height: 1.8em;
+        stroke: white;
+        fill: transparent;
+        stroke-width: 1pt;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 400;
+    }
+  }
+@media only screen and (max-width: 1820px) {
+  .fixedHeader{
+    height:120px
+  }
+    .menu{
+        margin-left: 6%;
+        font-size: 1.8em;
+    }
+    .icon{
+        padding: 55px;
+    }
+  }
+@media only screen and (max-width: 1620px) {
+  .fixedHeader{
+    height:120px
+  }
+    .menu{
+        margin-left: 10%;
+        font-size: 1.7em;
+    }
+    .icon{
+        padding: 50px;
+    }
+  }
+@media only screen and (max-width: 1530px) {
+  .fixedHeader{
+    height:120px
+  }
+    .menu{
+        margin-left: 11%;
+        font-size: 1.6em;
+    }
+    .icon{
+        padding: 45px;
+    }
+  }
+@media only screen and (max-width: 1400px) {
+  .fixedHeader{
+    height:100px
+  }
+    .menu{
+        margin-left: 6%;
+        font-size: 1.4em;
+    }
+    .icon{
+        padding: 40px;
+    }
+  }
+@media only screen and (max-width: 1240px) {
+  .fixedHeader{
+    height:100px
+  }
+    .menu{
+        margin-left: 6%;
+        font-size: 1.3em;
+    }
+    .icon{
+        padding: 38px;
     }
   }
 @media only screen and (max-width: 1180px) {
+
+   .fixedHeader{
+    height:100px
+  }
+    .menu{
+        margin-left: 5%;
+        font-size: 1.3em;
+    }
     .icon{
-        padding: 25px;
-        width: 1.5em;
-        height: 1.5em;
-        stroke: white;
-        fill: transparent;
-        stroke-width: 1pt;
-        stroke-miterlimit: 10;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 400;
+        padding: 35px;
     }
   }
 @media only screen and (max-width: 1090px) {
+  .fixedHeader{
+    height:100px
+  }
+    .menu{
+        margin-left: 4%;
+    }
+    .iconNew{
+      padding: 35px;
+    }
+  }
+@media only screen and (max-width: 1000px) {
+  .fixedHeader{
+    height:100px
+  }
+    .menu{
+        margin-left: 4%;
+        font-size: 1.3em;
+    }
+    .icon{
+        padding: 25px;
+    }
+  }
+@media only screen and (max-width: 910px) {
+  .fixedHeader{
+    height:100px
+  }
+    .menu{
+        margin-left: 4%;
+        font-size: 1.3em;
+    }
     .icon{
         padding: 20px;
-        width: 1.5em;
-        height: 1.5em;
-        stroke: white;
-        fill: transparent;
-        stroke-width: 1pt;
-        stroke-miterlimit: 10;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 400;
     }
   }
-  @media only screen and (max-width: 1000px) {
-    .icon{
-        padding: 18px;
-        width: 1.3em;
-        height: 1.3em;
-        stroke: white;
-        fill: transparent;
-        stroke-width: 1pt;
-        stroke-miterlimit: 10;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 400;
-    }
+@media only screen and (max-width: 830px) {
+  .fixedHeader{
+    height:100px
+  }
     .menu{
-        margin-left: 5%;
-    
+        margin-left: 4%;
+        font-size: 1.3em;
     }
-  }
-@media only screen and (max-width: 840px) {
     .icon{
         padding: 17px;
-        width: 1.3em;
-        height: 1.3em;
-        stroke: white;
-        fill: transparent;
-        stroke-width: 1pt;
-        stroke-miterlimit: 10;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 400;
-    }
-    .menu{
-        margin-left: 1%;
-    
     }
   }
-  @media only screen and (max-width: 810px) {
-    .icon{
-        padding: 15px;
-        width: 1.3em;
-        height: 1.3em;
-        stroke: white;
-        fill: transparent;
-        stroke-width: 1pt;
-        stroke-miterlimit: 10;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 400;
-    }
+@media only screen and (max-width: 780px) {
+  .fixedHeader{
+    height:100px
+  }
     .menu{
-        margin-left: -1%;
+        margin-left: 4%;
+        font-size: 1.1em;
+    }
+    .icon{
+        padding: 16px;
     }
   }
   @media only screen and (max-width: 760px) {
@@ -280,5 +328,46 @@ html *::after {
         -o-transition: margin 0.4s ease, padding 0.4s ease;
         transition: margin 0.4s ease, padding 0.4s ease;
       }
+
+      .title {
+        background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, rgb(35, 55, 133), transparent, transparent);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: flex;
+        margin-left: 20px;
+        color: #ffff;
+        font-size: 40px;
+        font-weight: bold;
+        -webkit-animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+                animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+      }
+      @-webkit-keyframes reveal {
+        80% {
+          letter-spacing: 8px;
+        }
+        100% {
+          background-size: 300% 300%;
+        }
+      }
+      @keyframes reveal {
+        80% {
+          letter-spacing: 8px;
+        }
+        100% {
+          background-size: 300% 300%;
+        }
+      }
+      @-webkit-keyframes glow {
+        40% {
+          text-shadow: 0 0 15px #fff;
+        }
+      }
+      @keyframes glow {
+        40% {
+          text-shadow: 0 0 15px #fff;
+        }
+      }
     
+      
       

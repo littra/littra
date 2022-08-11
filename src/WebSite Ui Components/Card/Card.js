@@ -199,6 +199,7 @@ export function Card({ height = 400, width = 300, icon, title, description }) {
         <Gradient
           style={{
             background: gradient,
+            borderRadius: "16px",
           }}
         />
       </Content>
