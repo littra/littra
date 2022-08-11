@@ -394,4 +394,13 @@ html *::after {
         }
       }
     
+      .scroll-down .fixedHeader {
+        transform: translate3d(0, -100%, 0);
+      }
+      .scroll-up .fixedHeader {
+        filter: drop-shadow(0 -10px 40px #2c3e50 74%);
+      }
+      .menu-is-open .fixedHeader {
+        filter: none;
+      }
       

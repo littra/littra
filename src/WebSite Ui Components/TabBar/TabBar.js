@@ -78,7 +78,31 @@ const TabBar = () => {
       </a>
     );
   };
+  const scrollTab = document.body;
+  let lastScroll = 0;
 
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll <= 0) {
+      scrollTab.classList.remove("scroll-up");
+      return;
+    }
+
+    if (
+      currentScroll > lastScroll &&
+      !scrollTab.classList.contains("scroll-down")
+    ) {
+      scrollTab.classList.remove("scroll-up");
+      scrollTab.classList.add("scroll-down");
+    } else if (
+      currentScroll < lastScroll &&
+      scrollTab.classList.contains("scroll-down")
+    ) {
+      scrollTab.classList.remove("scroll-down");
+      scrollTab.classList.add("scroll-up");
+    }
+    lastScroll = currentScroll;
+  });
   return (
     <div
       className={[stickyHeader ? "headerWrapper fixedHeader" : "headerWrapper"]}
@@ -144,7 +168,7 @@ const TabBar = () => {
         {renderLink(
           <button className="menu__item" style={{ "--bgColorItem": "#f54888" }}>
             <div className="iconNew">
-              <Icon image={`${PUBLIC_ASSETS_PATH}/welcome.png`} size={40} />
+              <Icon image={`${PUBLIC_ASSETS_PATH}/welcome.png`} size={38} />
             </div>
           </button>,
           "#aboutus"
@@ -152,7 +176,7 @@ const TabBar = () => {
         {renderLink(
           <button className="menu__item" style={{ "--bgColorItem": "#4343f5" }}>
             <div className="iconNew">
-              <Icon image={`${PUBLIC_ASSETS_PATH}/support.png`} size={40} />
+              <Icon image={`${PUBLIC_ASSETS_PATH}/support.png`} size={38} />
             </div>
           </button>,
           "#features"
@@ -160,7 +184,7 @@ const TabBar = () => {
         {renderLink(
           <button className="menu__item" style={{ "--bgColorItem": "#e0b115" }}>
             <div className="iconNew">
-              <Icon image={`${PUBLIC_ASSETS_PATH}/idea.png`} size={40} />
+              <Icon image={`${PUBLIC_ASSETS_PATH}/idea.png`} size={38} />
             </div>
           </button>,
           "#pages"
@@ -168,7 +192,7 @@ const TabBar = () => {
         {renderLink(
           <button className="menu__item" style={{ "--bgColorItem": "#65ddb7" }}>
             <div className="iconNew">
-              <Icon image={`${PUBLIC_ASSETS_PATH}/creativety.png`} size={40} />
+              <Icon image={`${PUBLIC_ASSETS_PATH}/creativety.png`} size={38} />
             </div>
           </button>,
           "#creativity"
@@ -176,7 +200,7 @@ const TabBar = () => {
         {renderLink(
           <button className="menu__item" style={{ "--bgColorItem": "#65ddb7" }}>
             <div className="iconNew">
-              <Icon image={`${PUBLIC_ASSETS_PATH}/ourWorks.png`} size={40} />
+              <Icon image={`${PUBLIC_ASSETS_PATH}/ourWorks.png`} size={38} />
             </div>
           </button>,
           "#portfolio"
@@ -184,7 +208,7 @@ const TabBar = () => {
         {renderLink(
           <button className="menu__item" style={{ "--bgColorItem": "#65ddb7" }}>
             <div className="iconNew">
-              <Icon image={`${PUBLIC_ASSETS_PATH}/chooseUs.png`} size={40} />
+              <Icon image={`${PUBLIC_ASSETS_PATH}/chooseUs.png`} size={38} />
             </div>
           </button>,
           "#whyus"
@@ -192,7 +216,7 @@ const TabBar = () => {
         {renderLink(
           <button className="menu__item" style={{ "--bgColorItem": "#65ddb7" }}>
             <div className="iconNew">
-              <Icon image={`${PUBLIC_ASSETS_PATH}/footer.png`} size={40} />
+              <Icon image={`${PUBLIC_ASSETS_PATH}/footer.png`} size={33} />
             </div>
           </button>,
           "#newFooter"
