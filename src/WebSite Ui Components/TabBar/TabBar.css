@@ -1,11 +1,6 @@
-/* html {
-
-    box-sizing: border-box;
-    scroll-behavior: smooth;
- 
-     --duration: .7s;    
-
-} */
+html {
+  --duration: .7s;    
+}
 
 html *,
 html *::before,
@@ -115,6 +110,7 @@ html *::after {
     position: absolute;
     transform: scale(0);
     transition: background-color var(--duration), transform var(--duration);
+    
 
 }
 
@@ -128,7 +124,6 @@ html *::after {
 .menu__item.active::before{
     transform: scale(1);
     background-color: var(--bgColorItem);
-
 }
 
 .icon{
@@ -143,6 +138,10 @@ html *::after {
     stroke-linejoin: round;
     stroke-dasharray: 400;
 
+}
+
+.iconNew{
+  padding: 40px;
 }
 
 .menu__item.active .icon {
@@ -168,50 +167,7 @@ html *::after {
     height: 0;
 }
 
-/* @media only screen and (max-width: 1220px) {
-    .menu{
-        display: flex;
-        width:50.05em;
-        height:100px;
-        align-items: center;
-        justify-content: center;
-        padding: 0 2.85em;
-        background-color: var(--bgColorMenu);
-        font-size: 1.5em;
-        margin-left: 10%;
-    
-    }
-  } */
-@media only screen and (max-width: 1180px) {
-    .icon{
-        padding: 25px;
-        width: 1.5em;
-        height: 1.5em;
-        stroke: white;
-        /* fill: transparent; */
-        stroke-width: 1pt;
-        stroke-miterlimit: 10;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 400;
-    }
-    .menu {
-        display: none;
-  
-      }
-      .togglerr{
-          display:flex;
-          justify-self: flex-end;
-          margin-left: auto;
-          margin-right: 40px;
-          margin-bottom: 90px;
-  
-  
-      }
-
-      /*  */
-
-
+/* Mobile Responsive TabBar starts Here */
       .menus {
           filter: url("#shadowed-goo");
         }
@@ -333,101 +289,109 @@ html *::after {
            width: 30px;
 
         }
+/* Mobile Responsive TabBar End Here */
 
 
-      /*  */
-  
-      /* .base{
-          background-color: white;
-      } */
-  
-  
-  
-    
-  }
-@media only screen and (max-width: 1090px) {
-    .icon{
-        padding: 20px;
-        width: 1.5em;
-        height: 1.5em;
-        stroke: white;
-        fill: transparent;
-        stroke-width: 1pt;
-        stroke-miterlimit: 10;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 400;
-    }
-  }
-  @media only screen and (max-width: 1000px) {
-    .icon{
-        padding: 18px;
-        width: 1.3em;
-        height: 1.3em;
-        stroke: white;
-        fill: transparent;
-        stroke-width: 1pt;
-        stroke-miterlimit: 10;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 400;
-    }
-    .menu{
-        margin-left: 5%;
-    
-    }
-  }
-/* @media only screen and (max-width: 840px) {
-    .icon{
-        padding: 17px;
-        width: 1.3em;
-        height: 1.3em;
-        stroke: white;
-        fill: transparent;
-        stroke-width: 1pt;
-        stroke-miterlimit: 10;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 400;
-    }
-    .menu{
-        margin-left: 1%;
-    
-    } */
-  /* } */
-  /* @media only screen and (max-width: 810px) {
-    .icon{
-        padding: 15px;
-        width: 1.3em;
-        height: 1.3em;
-        stroke: white;
-        fill: transparent;
-        stroke-width: 1pt;
-        stroke-miterlimit: 10;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 400;
-    }
-    .menu{
-        margin-left: -1%;
-    }
-  } */
-  /* @media only screen and (max-width: 760px) {
-    .menu{
-        display: none;
-    }
-    .togglerr{
-        display:flex;
-        margin-left: auto;
-        margin-right: 20px;
-    } 
-  } */
-      /* .link { 
-        color: var(--text-color-dark);
-        font-weight: 700;
-        -webkit-transition: margin 0.4s ease, padding 0.4s ease;
-        -o-transition: margin 0.4s ease, padding 0.4s ease;
-        transition: margin 0.4s ease, padding 0.4s ease;
-      } */
+       @media only screen and (max-width: 1800px) {
+        .menu{
+            margin-left: 18%;
+        }
+        .iconNew{
+          padding: 55px;
+        }
+      } 
+       @media only screen and (max-width: 1600px) {
+        .menu{
+            margin-left: 15%;
+        }
+        .iconNew{
+          padding: 50px;
+        }
+      } 
+       @media only screen and (max-width: 1470px) {
+        .menu{
+            margin-left: 12%;
+        }
+        .iconNew{
+          padding: 45px;
+        }
+      } 
+       @media only screen and (max-width: 1360px) {
+        .menu{
+            margin-left: 8%;
+        }
+        .iconNew{
+          padding: 40px;
+        }
+      } 
+       @media only screen and (max-width: 1200px) {
+        .menu{
+            margin-left: 6%;
+        }
+        .iconNew{
+          padding: 36px;
+        }
+      } 
+       @media only screen and (max-width: 1130px) {
+        .menu{
+            margin-left: 6%;
+        }
+        .iconNew{
+          padding: 32px;
+        }
+      } 
+       @media only screen and (max-width: 1060px) {
+        .menu{
+            margin-left: 5%;
+        }
+        .iconNew{
+          padding: 28px;
+        }
+      } 
+       @media only screen and (max-width: 980px) {
+         .menu {
+          display: none;
+        }
+        .togglerr{
+            display:flex;
+            justify-self: flex-end;
+            margin-left: auto;
+            margin-right: 40px;
+            margin-bottom: 90px;
+        } 
+      } 
+      .title {
+        background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, rgb(35, 55, 133), transparent, transparent);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: flex;
+        margin-left: 20px;
+        color: #ffff;
+        font-size: 40px;
+        font-weight: bold;
+        -webkit-animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+                animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+      }
+      @-webkit-keyframes reveal {
+        100% {
+          background-size: 300% 300%;
+        }
+      }
+      @keyframes reveal {
+        100% {
+          background-size: 300% 300%;
+        }
+      }
+      @-webkit-keyframes glow {
+        40% {
+          text-shadow: 0 0 15px #fff;
+        }
+      }
+      @keyframes glow {
+        40% {
+          text-shadow: 0 0 15px #fff;
+        }
+      }
     
       
