@@ -3,8 +3,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Raleway', sans-serif;;
+  font-family: 'Raleway', sans-serif;
+  /* background-image: linear-gradient(to right, #533e14, #3E5151); */
+  /* background-image: linear-gradient(to right, #141e30, #243b55); */
+  /* background-color: aliceblue; */
+  /* background-image: linear-gradient(to right, #070713, #2630b9, #070713); */
+  background: linear-gradient(110deg, #6f6b5f 60%, #f8e03f 60%);
 }
+
 .card {
   padding: 10px;
 }
