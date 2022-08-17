@@ -35,7 +35,7 @@ React.useEffect(()=>{
 
      setTimeout(hideAnimation, 8000);
    
-})
+},[])
   
   
 
