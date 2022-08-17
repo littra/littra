@@ -18,31 +18,31 @@ import NewTopBanner from "../NewTopBanner/NewTopBanner";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      translateY: 0,
-    };
+    // this.state = {
+    //   translateY: 0,
+    // };
   }
-  handleScroll = () => {
-    if (document.documentElement.scrollTop < window.innerHeight) {
-      this.setState({
-        translateY: document.documentElement.scrollTop / 1.5,
-      });
-    }
-  };
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
-  componentWillUnmount() {
-    window.removeEventListener("scroll");
-  }
+  // handleScroll = () => {
+  //   if (document.documentElement.scrollTop < window.innerHeight) {
+  //     this.setState({
+  //       translateY: document.documentElement.scrollTop / 1.5,
+  //     });
+  //   }
+  // };
+  // componentDidMount() {
+  //   window.addEventListener("scroll", this.handleScroll);
+  // }
+  // componentWillUnmount() {
+  //   window.removeEventListener("scroll");
+  // }
   render() {
     return (
       <div className={styles.base}>
         <div
           className={styles.front}
-          style={{
-            transform: `translateY(${this.state.translateY}px)`,
-          }}
+          // style={{
+          //   transform: `translateY(${this.state.translateY}px)`,
+          // }}
         >
           {/* <TopBanner /> */}
           <NewTopBanner />

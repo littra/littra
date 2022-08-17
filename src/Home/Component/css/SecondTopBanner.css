@@ -1,14 +1,17 @@
 .base {
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  padding-bottom: 50px;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
 }
 .left {
-  width: 50%;
+  width: 55%;
 }
 .right {
-  width: 50%;
+  width: 45%;
 }
 .imageWrapper {
   width: 500px;
@@ -18,7 +21,7 @@
   padding-left: 25%;
 }
 .darkColor {
-  color: var(--text-color-dark);
+  /* color: var(--text-color-dark); */
 }
 .feature {
   composes: darkColor;
@@ -67,22 +70,25 @@
 .border {
   height: 3px;
   margin: 30px 0px;
-  background-color: var(--text-color-dark);
+  background-color: #ffff;
   width: 50px;
   border-radius: 5px;
 }
 
 .aboutText {
+  margin-left: 20px;
   margin-top: 30px;
   padding-top: 0px;
   font-family: Hind, sans-serif;
   color: #758d99;
   font-size: 18px;
-  line-height: 170%;
+  line-height: 180%;
   font-weight: 400;
+  text-align: justify;
 }
 
 .showMore {
+  margin-left: 20px;
   outline: none;
   border: none;
   background: var(--background-color-midDark);
