@@ -6,8 +6,7 @@ html {
   transition: all 0.4s;
   background-color: rgba(0, 0, 0, 0.273);
   display: flex;
-  
- 
+
   border-bottom: 1px solid rgba(170, 95, 95, 0.1);
   justify-content: space-between;
   align-items: center;
@@ -15,7 +14,7 @@ html {
   top: 0;
   left: 0;
   z-index: 5;
-  height:120px;
+  height: 120px;
 }
 .fixedHeader {
   position: fixed;
@@ -92,6 +91,9 @@ html {
   .base {
     /* display: none; */
     background-color: #fff;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    height: 80px;
   }
   .links {
     display: none;
