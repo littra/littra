@@ -66,6 +66,13 @@ const TabBar = () => {
   window.addEventListener("scroll", scrolled);
   window.addEventListener("scroll", renderLink);
 
+  function hidetabbar(){
+    var menusItem = document.getElementsByClassName("menus-open");
+    for(let i=0; i<1; i++){
+      menusItem[i].checked= false;
+    }
+  }
+
   const renderLink = (title, url) => {
     return (
       <a
@@ -123,56 +130,56 @@ const TabBar = () => {
             <span className="hamburger hamburger-3"></span>
           </label>
 
-          <a href="#" className="menus-item">
+          <a href="#" className="menus-item" onClick={hidetabbar}>
             <img
               className="menus-icon"
               src={`${PUBLIC_ASSETS_PATH}/menu.png`}
               alt=""
             />
           </a>
-          <a href="#aboutus" className="menus-item">
+          <a href="#aboutus" className="menus-item" onClick={hidetabbar}>
             <img
               className="menus-icon"
               src={`${PUBLIC_ASSETS_PATH}/welcome.png`}
               alt=""
             />
           </a>
-          <a href="#features" className="menus-item">
+          <a href="#features" className="menus-item" onClick={hidetabbar}>
             <img
               className="menus-icon"
               src={`${PUBLIC_ASSETS_PATH}/support.png`}
               alt=""
             />
           </a>
-          <a href="#pages" className="menus-item">
+          <a href="#pages" className="menus-item" onClick={hidetabbar}>
             <img
               className="menus-icon"
               src={`${PUBLIC_ASSETS_PATH}/idea.png`}
               alt=""
             />
           </a>
-          <a href="#creativity" className="menus-item">
+          <a href="#creativity" className="menus-item" onClick={hidetabbar}>
             <img
               className="menus-icon"
               src={`${PUBLIC_ASSETS_PATH}/creativety.png`}
               alt=""
             />
           </a>
-          <a href="#portfolio" className="menus-item">
+          <a href="#portfolio" className="menus-item" onClick={hidetabbar}>
             <img
               className="menus-icon"
               src={`${PUBLIC_ASSETS_PATH}/ourWorks.png`}
               alt=""
             />
           </a>
-          <a href="#whyus" className="menus-item">
+          <a href="#whyus" className="menus-item" onClick={hidetabbar}>
             <img
               className="menus-icon"
               src={`${PUBLIC_ASSETS_PATH}/chooseUs.png`}
               alt=""
             />
           </a>
-          <a href="#newFooter" className="menus-item">
+          <a href="#newFooter" className="menus-item" onClick={hidetabbar}>
             <img
               className="menus-icon"
               src={`${PUBLIC_ASSETS_PATH}/footer.png`}
@@ -183,7 +190,7 @@ const TabBar = () => {
       </div>
       <menu className="menu">
         {renderLink(
-          <button
+          <button 
             className="menu__item active"
             style={{ "--bgColorItem": "#ff8c00" }}
           >
