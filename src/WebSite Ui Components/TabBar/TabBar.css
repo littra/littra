@@ -173,7 +173,7 @@ html *::after {
         }
         
         .menus-item, .menus-open-button {
-          background: #f46208;
+          background:#5e6c73;
           border-radius: 100%;
           width: 50px;
           height: 50px;
@@ -185,6 +185,9 @@ html *::after {
           line-height: 80px;
           transform: translate3d(0, 0, 0);
           transition: transform ease-out 200ms;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
         
         .menus-open {
@@ -231,20 +234,32 @@ html *::after {
         }
         
         .menus-item:hover {
-          background: white;
+          background: #2c3e50;
           color: #00bcd4;
         }
         .menus-item:nth-child(3) {
-          transition-duration: 180ms;
+          transition-duration: 300ms;
         }
         .menus-item:nth-child(4) {
-          transition-duration: 180ms;
+          transition-duration: 300ms;
         }
         .menus-item:nth-child(5) {
-          transition-duration: 180ms;
+          transition-duration: 300ms;
         }
         .menus-item:nth-child(6) {
-          transition-duration: 180ms;
+          transition-duration: 300ms;
+        }
+        .menus-item:nth-child(7) {
+          transition-duration: 300ms;
+        }
+        .menus-item:nth-child(8) {
+          transition-duration: 300ms;
+        }
+        .menus-item:nth-child(9) {
+          transition-duration: 300ms;
+        }
+        .menus-item:nth-child(10) {
+          transition-duration: 300ms;
         }
         
         .menus-open-button {
@@ -264,30 +279,44 @@ html *::after {
           transition-duration: 200ms;
           transform: scale(0.8, 0.8) translate3d(0, 0, 0);
         }
-        
         .menus-open:checked ~ .menus-item {
           transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         .menus-open:checked ~ .menus-item:nth-child(3) {
           transition-duration: 190ms;
-          transform: translate3d(0px, 100px, 0);
+          transform: translate3d(0px, 55px, 0);
         }
         .menus-open:checked ~ .menus-item:nth-child(4) {
           transition-duration: 290ms;
-          transform: translate3d(0px, 200px, 0);
+          transform: translate3d(0px, 110px, 0);
         }
         .menus-open:checked ~ .menus-item:nth-child(5) {
           transition-duration: 390ms;
-          transform: translate3d(0px, 300px, 0);
+          transform: translate3d(0px, 165px, 0);
         }
         .menus-open:checked ~ .menus-item:nth-child(6) {
           transition-duration: 490ms;
-          transform: translate3d(0px, 400px, 0);
+          transform: translate3d(0px, 220px, 0);
+        }
+        .menus-open:checked ~ .menus-item:nth-child(7) {
+          transition-duration: 490ms;
+          transform: translate3d(0px, 275px, 0);
+        }
+        .menus-open:checked ~ .menus-item:nth-child(8) {
+          transition-duration: 490ms;
+          transform: translate3d(0px, 330px, 0);
+        }
+        .menus-open:checked ~ .menus-item:nth-child(9) {
+          transition-duration: 490ms;
+          transform: translate3d(0px, 385px, 0);
+        }
+        .menus-open:checked ~ .menus-item:nth-child(10) {
+          transition-duration: 490ms;
+          transform: translate3d(0px, 440px, 0);
         }
         .menus-icon{
-           height: 35px;
-           width: 30px;
-
+           height: 20px;
+           width: 20px;
         }
 /* Mobile Responsive TabBar End Here */
 

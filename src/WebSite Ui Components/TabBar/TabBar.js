@@ -61,7 +61,6 @@ const TabBar = () => {
     } else {
       setStickyHeader(false);
     }
-    // console.log(window.screenY);
   };
 
   window.addEventListener("scroll", scrolled);
@@ -103,51 +102,80 @@ const TabBar = () => {
     }
     lastScroll = currentScroll;
   });
+
   return (
     <div
       className={[stickyHeader ? "headerWrapper fixedHeader" : "headerWrapper"]}
     >
       <div className="title ">LITTRA</div>
       <div className="togglerr">
-        <nav class="menus">
+        <nav className="menus">
           <input
             type="checkbox"
             href="#"
-            class="menus-open"
+            className="menus-open"
             name="menus-open"
             id="menus-open"
           />
-          <label class="menus-open-button" for="menus-open">
-            <span class="hamburger hamburger-1"></span>
-            <span class="hamburger hamburger-2"></span>
-            <span class="hamburger hamburger-3"></span>
+          <label className="menus-open-button" for="menus-open">
+            <span className="hamburger hamburger-1"></span>
+            <span className="hamburger hamburger-2"></span>
+            <span className="hamburger hamburger-3"></span>
           </label>
 
+          <a href="#" className="menus-item">
+            <img
+              className="menus-icon"
+              src={`${PUBLIC_ASSETS_PATH}/menu.png`}
+              alt=""
+            />
+          </a>
           <a href="#aboutus" className="menus-item">
             <img
               className="menus-icon"
-              src={`${PUBLIC_ASSETS_PATH}/dropmenu.svg`}
+              src={`${PUBLIC_ASSETS_PATH}/welcome.png`}
               alt=""
             />
           </a>
           <a href="#features" className="menus-item">
             <img
               className="menus-icon"
-              src={`${PUBLIC_ASSETS_PATH}/drop-box.svg`}
+              src={`${PUBLIC_ASSETS_PATH}/support.png`}
               alt=""
             />
           </a>
           <a href="#pages" className="menus-item">
             <img
               className="menus-icon"
-              src={`${PUBLIC_ASSETS_PATH}/drop-papper.svg`}
+              src={`${PUBLIC_ASSETS_PATH}/idea.png`}
               alt=""
             />
           </a>
           <a href="#creativity" className="menus-item">
             <img
               className="menus-icon"
-              src={`${PUBLIC_ASSETS_PATH}/drop-picture.svg`}
+              src={`${PUBLIC_ASSETS_PATH}/creativety.png`}
+              alt=""
+            />
+          </a>
+          <a href="#portfolio" className="menus-item">
+            <img
+              className="menus-icon"
+              src={`${PUBLIC_ASSETS_PATH}/ourWorks.png`}
+              alt=""
+            />
+          </a>
+          <a href="#whyus" className="menus-item">
+            <img
+              className="menus-icon"
+              src={`${PUBLIC_ASSETS_PATH}/chooseUs.png`}
+              alt=""
+            />
+          </a>
+          <a href="#newFooter" className="menus-item">
+            <img
+              className="menus-icon"
+              src={`${PUBLIC_ASSETS_PATH}/footer.png`}
               alt=""
             />
           </a>
