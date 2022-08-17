@@ -13,7 +13,7 @@ function ShapeShifter() {
           var windowHeight = window.innerHeight;
           var scrollTop = scroll[i].getBoundingClientRect().top;
           // var scrollPoint = 150;
-          if (scrollTop === 144.89584350585938) {
+          if (scrollTop === 144.7291717529297) {
             S.init();
           } else {
           }
