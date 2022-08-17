@@ -41,9 +41,9 @@ React.useEffect(()=>{
 
   return (
     <div>
-      <div  className={styles.card} id="cardAshir">
+      <div  className={styles.card} >
         <div className={styles.flipCard}>
-          <div className={styles.flipCardContainer} id="flipcardAshir">
+          <div className={styles.flipCardContainer} >
             <div className={styles.cardFront}>
               <div
                 className={styles.cardFrontTp + " " + styles.cardFrontTpCity}
@@ -85,7 +85,7 @@ React.useEffect(()=>{
           </div>
         </div>
 
-        <div className={styles.insidePage} id="insidepageAshir">
+        <div className={styles.insidePage} >
           <div className={styles.insidePage__container}>
             <h3
               className={
