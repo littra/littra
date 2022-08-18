@@ -7,13 +7,13 @@ import FeatureTwoBanner from "./FeatureTwoBanner";
 import Footer from "../../HeaderFooter/Component/Footer";
 import ContactUs from "./Contactus";
 import About from "./About";
-import WhyUs from "./WhyUs";
 import isMobile from "../../Utils/UserAgent";
 import Image from "../../general/Image";
 import LatestWorks from "./LatestWorks";
 import OurCreativity from "./OurCreativity";
 import NewFooter from "../../HeaderFooter/NewFooter";
 import NewTopBanner from "../NewTopBanner/NewTopBanner";
+import WhyChooseUs from "../../WebSite Ui Components/WhyChooseUs/WhyChooseUs";
 
 class Home extends React.Component {
   constructor(props) {
@@ -51,7 +51,7 @@ class Home extends React.Component {
         </VisibilityChild>
 
         <VisibilityChild>
-          <WhyUs />
+          <WhyChooseUs />
         </VisibilityChild>
 
         {/* <VisibilityChild>

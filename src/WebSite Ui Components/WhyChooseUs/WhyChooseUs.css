@@ -1,0 +1,586 @@
+.whyUsMain{
+    background-color: #fff; 
+    height: 120vh;
+    padding: 20px;
+}
+
+.dark {
+    color: var(--text-color-dark);
+}
+
+.topSection {
+    text-align: center;
+}
+.divider {
+    width: 150px;
+    height: 3px;
+    border: none;
+    background: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  
+  }
+.mainContainer {
+    margin: 50px auto;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-image: url("https://i.ibb.co/jVL0zvC/section-img.jpg");
+    background-size: cover;
+    background-position: 43%;
+    opacity: .8;
+    position: relative;   
+}
+
+.center-div {
+   position: absolute;
+   top: 45%;
+   margin-top: -30px;
+   width: 80%;
+   left: 50%;
+   transform: translate(-50%,-50%); 
+}
+
+.center-div h2 {
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.center-div p {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ccc;
+    line-height: 1.8;
+
+}
+
+.choices {
+    display: flex;
+}
+
+.left-top,
+.right-top,
+.right-top-second,
+.right-bottom,
+.left-bottom {
+    position: absolute;
+    display: flex;
+    transition: .6s;
+    cursor: pointer;
+    width: 100%;
+    user-select: none;
+}
+
+.left-top:hover,
+.right-top:hover,
+.right-bottom:hover,
+.left-bottom:hover {
+    transform: scale(1.1);
+}
+
+.left-top {
+    left: -70%;
+    top:  3%;
+}
+
+.right-top {
+    left: 70%;
+    top: 3%;
+}
+
+.right-bottom {
+    left: 70%;
+    top: 80%;
+}
+
+.left-bottom {
+    left: -70%;
+    top: 80%;
+}
+
+.left-top-circle,
+.right-top-circle,
+.right-bottom-circle,
+.left-bottom-circle {
+    position: relative;   
+    background-color: rgb(19, 12, 12);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+   
+}
+
+.left-top-circle{
+    left: 81%;    
+}
+
+
+.left-bottom-circle {
+    left: 81%;
+}
+
+.left-top-circle img,
+.right-top-circle img,
+.right-bottom-circle img,
+.left-bottom-circle img {
+    width: 70%;
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: 12%;
+}
+
+.left-top-text,
+.right-top-text,
+.right-bottom-text,
+.left-bottom-text {
+    position: relative;
+    padding: 8px;
+    width: 75%;
+   
+}
+
+.left-top-text {
+    left: -17%;
+}
+
+.right-top-text {
+    left: 5%;
+}
+
+.right-bottom-text {
+    left: 2%;
+    top: 80%;
+}
+
+.left-bottom-text {
+    left: -11%;
+}
+
+.left-top-text h3,
+.right-top-text h3,
+.right-bottom-text h3,
+.left-bottom-text h3 {
+    text-align: right;
+    color: #263c41;
+    opacity: .9;
+    font-size: 22px;
+}
+
+.right-top-text h3,
+.right-bottom-text h3{
+    text-align: left;
+}
+
+.left-top-text p,
+.right-top-text p,
+.right-bottom-text p,
+.left-bottom-text p {
+    margin-top: 20px;
+    color: #979dac;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align:justify;
+    font-size: 16px;
+    width: 300px;
+}
+.left-top-head{
+    margin-right: 0%;
+}
+.left-bottom-head{
+    margin-right: 14%;
+}
+.right-top-head{
+    margin-left: -10%;
+}
+.right-bottom-head{
+    margin-left: -5%;
+}
+
+
+@media screen and (max-width:1060px) {
+    .whyUsMain{
+        height: 110vh;
+    }
+    .mainContainer{
+    margin-right: 60%;
+    }
+
+    .left-top-text{
+       margin-left: 95%;
+       margin-top: 25%;
+    }
+    .left-top-head{
+        margin-right: 20%;
+    }
+    .left-top-circle{
+        margin-top: 21%;
+        margin-left: 78%;
+        padding: 40px;
+    }
+
+
+    .left-bottom-text{
+       margin-left: 96%;
+       margin-top: -25%;
+    }
+    .left-bottom-head{
+        margin-right:30%;
+    }
+    .left-bottom-circle{
+        margin-top: -21%;
+        margin-left: 78%;
+        padding: 40px;
+
+    }
+
+
+    .right-top{
+        margin-right: 5%;
+        margin-top: -3%;
+    }
+    .right-top-text{
+        margin-left:5% ;
+     }
+    .right-top-head{
+        margin-right: 40%;
+    }
+
+    .right-top-circle{
+        margin-top: -3%;
+        
+    }
+
+    .right-bottom{
+        margin-right: 20%;
+        margin-top: 2%;
+    }
+
+    .right-bottom-circle{
+        margin-top: 5%;
+        padding: 40px;
+    }
+
+    .right-bottom-text{
+        margin-left: 5%;
+    }
+
+    .right-bottom-head{
+        margin-right: 2%;
+    }
+    .left-top-circle,
+    .right-top-circle,
+    .right-bottom-circle,
+    .left-bottom-circle {
+        position: relative;   
+        background-color: rgb(19, 12, 12);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    
+    }
+ .left-top-text p,
+.right-top-text p,
+.right-bottom-text p,
+.left-bottom-text p {
+    margin-top: 20px;
+    color: #979dac;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align:justify;
+    font-size: 16px;
+    width: 430px;
+}
+   
+}
+
+@media screen and ( max-width:890px) {
+    .whyUsMain{
+        height: 105vh;
+    }
+    .mainContainer{
+        margin: auto;
+        display: block;
+    } 
+
+    .left-top-text p,
+    .right-top-text p,
+    .right-bottom-text p,
+    .left-bottom-text p {
+    margin-top: 20px;
+    color: #979dac;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align:justify;
+    font-size: 16px;
+    width: 350px;
+    }
+    
+ /* Right-Top end */
+        .right-top{
+            position: absolute;
+            margin-top: 100%;
+            margin-left: -65%;
+        }
+        .right-top-head{
+            margin: auto;
+        display: block;
+        }
+        .right-top-text{
+            margin-left: 4%;
+        display: block;
+        }
+        .right-top-circle{
+            margin-top: 4%;
+            margin-left: -1%;
+
+        }
+ /* Right-Top end */
+
+/* left-top start*/
+        .left-top{
+            margin-top: 108%;
+        }
+        .left-top-head{
+        display: block;
+        }
+        .left-top-text{
+            margin-left:106%;
+        display: block;
+        }
+        .left-top-circle{
+            margin-top: 30%;
+            margin-left: -7%;
+        }
+
+ /* left-top End */
+
+ /* left-bottom-start */
+
+        .left-bottom{
+            position: absolute;
+            margin-top: 115%;
+        }
+        .left-bottom-head{
+        display: block;
+        }
+        .left-bottom-text{
+            margin-left:100%;
+        display: block;
+        }
+        .left-bottom-circle{
+            margin-left: -7%;
+        }
+ /* left-bottom-end */
+
+/* Right-Bottom Start */
+        .right-bottom{
+            position: absolute;
+            margin-top: 125%;
+            margin-left: -65%;
+        }
+        .right-bottom-head{
+            margin: auto;
+        display: block;
+        }
+        .right-bottom-text{
+            margin-left: 7%;
+        display: block;
+        }
+        .right-bottom-circle{
+
+            margin-top: 4%;
+            margin-left: -1%;
+        }
+
+/* Right-Bottom End */
+
+}
+
+@media screen and ( max-width:770px){
+    .whyUsMain{
+        height: 120vh;
+    }
+}
+
+@media screen and ( max-width:550px){
+    .whyUsMain{
+        height: 170vh;
+    }
+}
+
+@media screen and ( max-width:480px){
+    .whyUsMain{
+        height: 180vh;
+    }
+    
+    .mainContainer {
+        width: 330px;
+        height: 330px;
+        border-radius: 50%;
+        margin: auto;
+        display: block;
+    }
+    .left-top,
+    .left-bottom{
+        margin-left: -5%;
+    }
+
+    .left-top-text p,
+    .right-top-text p,
+    .right-bottom-text p,
+    .left-bottom-text p {
+        margin-top: 20px;
+        color: #979dac;
+        font-weight: bold;
+        line-height: 1.4;
+        text-align:justify;
+        font-size: 16px;
+        width: 200px;
+    }
+
+    .left-top-text h3,
+    .left-bottom-text h3{
+        text-align: start;
+        color: #263c41;
+        opacity: .9;
+        font-size: 16px;
+        width: 100%;
+    }
+    .right-top-text h3,
+    .right-bottom-text h3,
+    .left-bottom-text h3 {
+        color: #263c41;
+        opacity: .9;
+        font-size: 16px;
+    }
+
+    .left-top:hover,
+    .right-top:hover,
+    .right-bottom:hover,
+    .left-bottom:hover {
+         transform: none;
+    }
+
+    /* Right-Top end */
+    .right-top{
+        position: absolute;
+        margin-top: 100%;
+        margin-left: -70%;
+    }
+    .right-top-head{
+        margin: auto;
+        display: block;
+    }
+    .right-top-text{
+        margin-left: 4%;
+        display: block;
+    }
+    .right-top-circle{
+        margin-top: 4%;
+        margin-left: -1%;
+    }
+/* Right-Top end */
+
+/* left-top start*/
+    .left-top{
+        margin-top: 130%;
+    }
+    .left-top-head{
+        margin-right: 30%;
+        display: block;
+    }
+    .left-top-text{
+        margin-left:106%;
+    display: block;
+    }
+    .left-top-circle{
+        margin-top: 30%;
+        margin-left: -7%;
+        width: 20px;
+        height: 20px;
+    }
+
+/* left-top End */
+
+/* left-bottom-start */
+
+    .left-bottom{
+        position: absolute;
+        margin-top: 155%;
+    }
+    .left-bottom-head{
+        display: block;
+    }
+    .left-bottom-text{
+        margin-left:100%;
+        display: block;
+    }
+    .left-bottom-circle{
+        margin-left: -7%;
+    }
+/* left-bottom-end */
+
+/* Right-Bottom Start */
+    .right-bottom{
+        position: absolute;
+        margin-top: 180%;
+        margin-left: -70%;
+    }
+    .right-bottom-head{
+        margin: auto;
+        display: block;
+    }
+    .right-bottom-text{
+        margin-left: 7%;
+        display: block;
+    }
+    .right-bottom-circle{
+        margin-top: 4%;
+        margin-left: -1%;
+    }
+
+/* Right-Bottom End */
+
+}
+
+@media screen and ( max-width:420px){
+    .whyUsMain{
+        height: 130vh;
+    }
+}
+@media screen and ( max-width:395px){
+    .whyUsMain{
+        height: 140vh;
+    }
+}
+
+
+@media screen and ( max-width:376px){
+    .whyUsMain{
+        height: 170vh;
+    }
+    .mainContainer {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin: auto;
+        display: block;
+    }
+    .left-bottom{
+        position: absolute;
+        margin-top: 160%;
+    }
+    .right-bottom{
+        position: absolute;
+        margin-top: 190%;
+    }
+}
