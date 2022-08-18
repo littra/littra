@@ -444,7 +444,7 @@
         line-height: 1.4;
         text-align:justify;
         font-size: 16px;
-        width: 200px;
+        width: 240px;
     }
 
     .left-top-text h3,
@@ -452,7 +452,7 @@
         text-align: start;
         color: #263c41;
         opacity: .9;
-        font-size: 16px;
+        font-size: 18px;
         width: 100%;
     }
     .right-top-text h3,
@@ -460,7 +460,7 @@
     .left-bottom-text h3 {
         color: #263c41;
         opacity: .9;
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .left-top:hover,
@@ -556,10 +556,35 @@
     .whyUsMain{
         height: 130vh;
     }
+    .left-top-text p,
+    .right-top-text p,
+    .right-bottom-text p,
+    .left-bottom-text p {
+        margin-top: 20px;
+        color: #979dac;
+        font-weight: bold;
+        line-height: 1.4;
+        text-align:justify;
+        font-size: 16px;
+        width: 230px;
+    }
 }
 @media screen and ( max-width:395px){
     .whyUsMain{
         height: 140vh;
+    }
+
+    .left-top-text p,
+    .right-top-text p,
+    .right-bottom-text p,
+    .left-bottom-text p {
+        margin-top: 20px;
+        color: #979dac;
+        font-weight: bold;
+        line-height: 1.4;
+        text-align:justify;
+        font-size: 16px;
+        width: 200px;
     }
 }
 
@@ -584,3 +609,10 @@
         margin-top: 190%;
     }
 }
+
+@media screen and ( max-width:376px){
+    .whyUsMain{
+        height: 155vh;
+    }
+}
+
