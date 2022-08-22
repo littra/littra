@@ -24,7 +24,7 @@ const loadUiFrame = () =>{
     background: {
       color: "#000"
     },
-    fpsLimit: 60,
+    fpsLimit: 30,
     emitters: {
       direction: "top",
       life: {
@@ -55,7 +55,7 @@ const loadUiFrame = () =>{
           count: 1,
           factor: { value: 1 / 3 },
           rate: {
-            value: 100
+            value: 80
           },
           particles: {
             stroke: {
@@ -81,7 +81,7 @@ const loadUiFrame = () =>{
               value: 1,
               animation: {
                 enable: true,
-                speed: 0.7,
+                speed: 0.6,
                 minimumValue: 0.1,
                 sync: false,
                 startValue: "max",
@@ -131,7 +131,7 @@ const loadUiFrame = () =>{
         animation: {
           enable: true,
           sync: true,
-          speed: 150,
+          speed: 100,
           startValue: "max",
           destroy: "min"
         }
