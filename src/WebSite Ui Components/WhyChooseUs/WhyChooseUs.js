@@ -1,18 +1,64 @@
 import React from "react";
+import { useEffect } from "react";
 import "!style-loader!css-loader!./WhyChooseUs.css";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../../Home/Messages/HomeMessages";
+import { motion } from "framer-motion/dist/framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion/dist/framer-motion";
 
 function WhyChooseUs() {
+  const { ref, inView } = useInView();
+  const animationOne = useAnimation();
+  const animationTwo = useAnimation();
+  const animationThree = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      animationOne.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+      });
+      animationTwo.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.5,
+        },
+      });
+      animationThree.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "spring",
+          duration: 6,
+          bounce: 0.3,
+          mass: 1,
+          stiffness: 200,
+        },
+      });
+    }
+    if (!inView) {
+      animationOne.start({ x: "-130vh" });
+      animationTwo.start({ x: "120vh" });
+      if (!inView) {
+        animationThree.start({ y: "25vh", opacity: 0, duration: 1 });
+      }
+    }
+  }, [inView]);
   return (
-    <div className="whyUsMain" id="whyus">
-      <div className="topSection">
+    <div className="whyUsMain" id="whyus" ref={ref}>
+      <motion.div className="topSection" animate={animationOne}>
         <h1 className="dark">
           <FormattedMessage {...HomeMessages.whyUsHeading} />
         </h1>
-      </div>
-      <hr className="divider" />
-      <section className="mainContainer">
+      </motion.div>
+      <motion.hr className="divider" animate={animationTwo} />
+      <motion.section className="mainContainer" animate={animationThree}>
         <div className="center-div">
           <h2>Why you choice Us ?</h2>
           <p>
@@ -24,7 +70,7 @@ function WhyChooseUs() {
         </div>
 
         <div className="choices">
-          <div className="left-top">
+          <motion.div className="left-top" animate={animationOne}>
             <div className="left-top-circle">
               <img
                 src="https://i.ibb.co/VJmZKFj/high-quality.png"
@@ -39,9 +85,9 @@ function WhyChooseUs() {
                 by the readable content of a page when looking at its layout.{" "}
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="right-top">
+          <motion.div className="right-top" animate={animationTwo}>
             <div className="right-top-circle">
               <img src="https://i.ibb.co/qgKNr59/backup.png" alt="backup" />
             </div>
@@ -53,9 +99,9 @@ function WhyChooseUs() {
                 by the readable content of a page when looking at its layout.{" "}
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="right-bottom">
+          <motion.div className="right-bottom" animate={animationTwo}>
             <div className="right-bottom-circle">
               <img src="https://i.ibb.co/Kbd0xbp/smart.png" alt="smart" />
             </div>
@@ -67,9 +113,9 @@ function WhyChooseUs() {
                 by the readable content of a page when looking at its layout.{" "}
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="left-bottom">
+          <motion.div className="left-bottom" animate={animationOne}>
             <div className="left-bottom-circle">
               <img src="https://i.ibb.co/G53sbGK/customer.png" alt="customer" />
             </div>
@@ -81,9 +127,9 @@ function WhyChooseUs() {
                 by the readable content of a page when looking at its layout.{" "}
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

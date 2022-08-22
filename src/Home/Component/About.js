@@ -4,7 +4,7 @@ import Image from "../../general/Image";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../Messages/HomeMessages";
-
+import { motion } from "framer-motion/dist/framer-motion";
 var images = [
   {
     img: "welcomeOne.jpg",
@@ -80,7 +80,12 @@ export default class About extends React.Component {
         }}
         id="aboutus"
       >
-        <div className={styles.left}>
+        <motion.div
+          className={styles.left}
+          initial={{ x: "-100vw" }}
+          animate={{ x: 0 }}
+          transition={{ type: "spring", duration: 1, bounce: 0.3 }}
+        >
           <div className={styles.featureWrapper}>
             <h1 className={styles.darkColor}>
               <FormattedMessage {...HomeMessages.aboutHeading} />
@@ -117,15 +122,20 @@ export default class About extends React.Component {
               )}
             </div>
           </div>
-        </div>
-        <div className={styles.right}>
+        </motion.div>
+        <motion.div
+          className={styles.right}
+          initial={{ y: "-100vw" }}
+          animate={{ y: 0 }}
+          transition={{ type: "spring", duration: 1, bounce: 0.3 }}
+        >
           <div className={styles.imageWrapper}>
             <Image
               src={`${PUBLIC_ASSETS_PATH}/image1.png`}
               paddingBottom="370px"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     );
   }

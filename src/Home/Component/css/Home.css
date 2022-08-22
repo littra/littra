@@ -1,4 +1,5 @@
 .base {
+   overflow: "hidden"
 }
 .back {
   font-size: 30px;

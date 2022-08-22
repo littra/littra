@@ -1,9 +1,60 @@
 import React from "react";
+import { useEffect } from "react";
 import "!style-loader!css-loader!./newfooter.css";
+import { motion } from "framer-motion/dist/framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion/dist/framer-motion";
 
 const NewFooter = () => {
+  const { ref, inView } = useInView();
+  const animationOne = useAnimation();
+  const animationTwo = useAnimation();
+  const animationThree = useAnimation();
+  const animationFour = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      animationOne.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+      });
+      animationTwo.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+      });
+      animationThree.start({
+        y: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+      });
+      animationFour.start({
+        y: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+      });
+    }
+    if (!inView) {
+      animationOne.start({ x: "-130vh" });
+      animationTwo.start({ x: "120vh" });
+      animationThree.start({ y: "120vh" });
+      animationFour.start({ y: "-120vh" });
+    }
+  }, [inView]);
   return (
-    <footer className="new_footer_area bg_color" id={"newFooter"}>
+    <footer className="new_footer_area bg_color" id={"newFooter"} ref={ref}>
       <div className="new_footer_top">
         <div className="container">
           <div className="row">
@@ -17,72 +68,37 @@ const NewFooter = () => {
                   animationName: "fadeInLeft",
                 }}
               >
-                <h3 className=" f-title f_600 t_color f_size_18">
-                  Get in Touch
-                </h3>
-                {/* <p>
-                  Don’t miss any updates of our new templates and extensions.!
-                </p>
-                <form
-                  action="#"
-                  className="f_subscribe_two mailchimp"
-                  method="post"
-                  noValidate="true"
-                  _lpchecked={1}
-                >
-                  <input
-                    type="text"
-                    name="EMAIL"
-                    className="form-control memail"
-                    placeholder="Email"
-                  />
-                  <button className="btn btn_get btn_get_two" type="submit">
-                    Subscribe
-                  </button>
-                  <p
-                    className="mchimp-errmessage"
-                    style={{ display: "none" }}
-                  />
-                  <p
-                    className="mchimp-sucmessage"
-                    style={{ display: "none" }}
-                  />
-                </form> */}
-
-
-
-
-
-
-
-<div className='f_subscribe_two mailchimp'>
-          <div className=''>
-            <h3 className=''>BANGALORE</h3>
-            <div className='address-style-footer'>
-              <p className='marginZero' >
-                2nd floor ,392, 7th Cross, 29th main , Bangalore, Karnataka,
-                India (560076)
-              </p>
-              <p  className='marginZero'>9456888501</p>
-              <p  className='marginZero'>8577033940</p>
-            </div>
-            <h3 className=''>NOIDA</h3>
-            <div className=''>
-              <p className='marginZero' >
-                D-10, Sector 31, Noida, Uttar Pradesh, India (201301)
-              </p>
-              <p className=''>9554814201</p>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
+                <motion.div animate={animationOne}>
+                  <h3 className=" f-title f_600 t_color f_size_18">
+                    Get in Touch
+                  </h3>
+                  <div className="f_subscribe_two mailchimp">
+                    <div className="">
+                      <h3 className="">BANGALORE</h3>
+                      <div className="address-style-footer">
+                        <p className="marginZero">
+                          2nd floor ,392, 7th Cross, 29th main , Bangalore,
+                          Karnataka, India (560076)
+                        </p>
+                        <p className="marginZero">9456888501</p>
+                        <p className="marginZero">8577033940</p>
+                      </div>
+                      <h3 className="">NOIDA</h3>
+                      <div className="">
+                        <p className="marginZero">
+                          D-10, Sector 31, Noida, Uttar Pradesh, India (201301)
+                        </p>
+                        <p className="">9554814201</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6 rowdelete">
+            <motion.div
+              className="col-lg-3 col-md-6 rowdelete"
+              animate={animationFour}
+            >
               <div
                 className="f_widget about-widget pl_70 wow fadeInLeft"
                 data-wow-delay="0.4s"
@@ -114,8 +130,11 @@ const NewFooter = () => {
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-6 rowdelete">
+            </motion.div>
+            <motion.div
+              className="col-lg-3 col-md-6 rowdelete"
+              animate={animationFour}
+            >
               <div
                 className="f_widget about-widget pl_70 wow fadeInLeft"
                 data-wow-delay="0.6s"
@@ -147,8 +166,11 @@ const NewFooter = () => {
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-6 visblerow">
+            </motion.div>
+            <motion.div
+              className="col-lg-3 col-md-6 visblerow"
+              animate={animationTwo}
+            >
               <div
                 className="f_widget social-widget pl_70 wow fadeInLeft"
                 data-wow-delay="0.8s"
@@ -168,7 +190,7 @@ const NewFooter = () => {
                   <a href="#" className="fab fa-pinterest" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="footer_bg">

@@ -1,49 +1,75 @@
 import React from "react";
+import { useEffect } from "react";
 import Icon from "../../general/Icon";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import styles from "./DairyCard.css";
+import { motion } from "framer-motion/dist/framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion/dist/framer-motion";
+
 function DairyCard({ icon, header, desc, link, image }) {
-  var flipCardContainer= document.getElementsByClassName(styles.flipCardContainer)
-  var insidePage= document.getElementsByClassName(styles.insidePage);
-  var card = document.getElementsByClassName(styles.card)
+  var flipCardContainer = document.getElementsByClassName(
+    styles.flipCardContainer
+  );
+  var insidePage = document.getElementsByClassName(styles.insidePage);
+  var card = document.getElementsByClassName(styles.card);
 
- 
-
-React.useEffect(()=>{
-  
-  function showAnimation(){
-    for(let i = 0; i < 1; i++){
-      card[i].style.boxShadow = "-0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75)";
-      card[i].style.width = "40rem"
-         flipCardContainer[i].style.transform ="rotateY(-180deg)";
-        card[i].style.boxShadow = "inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1)";
-        insidePage[i].style.boxShadow = "inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1)";
+  React.useEffect(() => {
+    function showAnimation() {
+      for (let i = 0; i < 1; i++) {
+        card[i].style.boxShadow =
+          "-0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75)";
+        card[i].style.width = "40rem";
+        flipCardContainer[i].style.transform = "rotateY(-180deg)";
+        card[i].style.boxShadow =
+          "inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1)";
+        insidePage[i].style.boxShadow =
+          "inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1)";
+      }
     }
-   }
 
     setTimeout(showAnimation, 4000);
-    function hideAnimation(){
-      for(let i = 0; i < 1; i++){
+    function hideAnimation() {
+      for (let i = 0; i < 1; i++) {
         card[i].style.boxShadow = "";
-        card[i].style.width = "20rem"
-           card[i].style.transform ="";
-           flipCardContainer[i].style.transform ="";
-          card[i].style.boxShadow = "";
-          insidePage[i].style.boxShadow = "";
+        card[i].style.width = "20rem";
+        card[i].style.transform = "";
+        flipCardContainer[i].style.transform = "";
+        card[i].style.boxShadow = "";
+        insidePage[i].style.boxShadow = "";
       }
-     }
+    }
 
-     setTimeout(hideAnimation, 8000);
-   
-},[])
-  
-  
+    setTimeout(hideAnimation, 8000);
+  }, []);
+
+  const { ref, inView } = useInView();
+  const animationThree = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animationThree.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "spring",
+          duration: 6,
+          bounce: 0.3,
+          mass: 1,
+          stiffness: 200,
+        },
+      });
+    }
+    if (!inView) {
+      animationThree.start({ y: "25vh", opacity: 0, duration: 1 });
+    }
+  }, [inView]);
 
   return (
-    <div>
-      <div  className={styles.card} >
+    <motion.div ref={ref} animate={animationThree}>
+      <div className={styles.card}>
         <div className={styles.flipCard}>
-          <div className={styles.flipCardContainer} >
+          <div className={styles.flipCardContainer}>
             <div className={styles.cardFront}>
               <div
                 className={styles.cardFrontTp + " " + styles.cardFrontTpCity}
@@ -66,7 +92,7 @@ React.useEffect(()=>{
               </div>
             </div>
             <div className={styles.cardBack}>
-              <div classNameName={styles.imgContainer}>
+              <div classnamename={styles.imgContainer}>
                 <div className={styles.IconDiv}>
                   <Icon image={`${PUBLIC_ASSETS_PATH}/${image}`} size={200} />
                 </div>
@@ -85,7 +111,7 @@ React.useEffect(()=>{
           </div>
         </div>
 
-        <div className={styles.insidePage} >
+        <div className={styles.insidePage}>
           <div className={styles.insidePage__container}>
             <h3
               className={
@@ -99,7 +125,7 @@ React.useEffect(()=>{
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

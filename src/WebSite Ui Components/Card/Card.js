@@ -11,6 +11,8 @@ import "./Card.css";
 import styles from "../../Home/Component/css/FeatureBanner.css";
 import Icon from "../../general/Icon";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion/dist/framer-motion";
 
 const Container = styled.div`
   border-radius: 8px;
@@ -77,9 +79,16 @@ const Gradient = styled(motion.div)`
 `;
 
 export function Card({ height = 400, width = 300, icon, title, description }) {
-  const ref = useRef();
+  // const ref = useRef();
   const [hover, setHover] = useState(false);
   const [tapped, setTapped] = useState(false);
+
+  // Animation Onscroll Start
+
+  const { ref, inView } = useInView();
+  const animation = useAnimation();
+
+  // Animation Onscroll End
 
   // middle point in 2d space [150, 250]
   const centerPoint = [width / 2, height / 2];
@@ -153,56 +162,76 @@ export function Card({ height = 400, width = 300, icon, title, description }) {
     }
   }, [hover, xy, centerPoint]);
 
-  return (
-    <Container ref={ref} style={{ height: `${height}px`, width: `${width}px` }}>
-      <Content
-        style={{
-          scale: 1,
-          rotateX: springX,
-          rotateY: springY,
-        }}
-        whileHover={{
-          scale: 1.03,
-        }}
-        whileTap={{
-          scale: 0.97,
-        }}
-        onTapCancel={(e) => {
-          setTapped(false);
-          onMouseOver(e);
-        }}
-        onTapStart={() => {
-          setTapped(true);
-        }}
-        onTap={(e) => {
-          setTapped(false);
-        }}
-        onHoverStart={hoverStart}
-        onHoverEnd={hoverEnd}
-        onMouseMove={onMouseOver}
-      >
-        <Shadow hover={hover} />
-        <RelativeContainer>
-          <div className={styles.card}>
-            <div className={styles.iconWrapper}>
-              <Icon
-                className={styles.icons}
-                image={`${PUBLIC_ASSETS_PATH}/${icon}`}
-                size={60}
-              />
-            </div>
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          bounce: 0.4,
+          duration: 1,
+        },
+      });
+    }
+    if (!inView) {
+      animation.start({ x: "-100vw" });
+    }
+  }, [inView]);
 
-            <h2 className={styles.dark}> {title}</h2>
-            <p className={styles.featureDes}> {description}</p>
-          </div>
-        </RelativeContainer>
-        <Gradient
-          style={{
-            background: gradient,
-            borderRadius: "16px",
-          }}
-        />
-      </Content>
-    </Container>
+  return (
+    <div ref={ref}>
+      <motion.div animate={animation}>
+        <Container style={{ height: `${height}px`, width: `${width}px` }}>
+          <Content
+            style={{
+              scale: 1,
+              rotateX: springX,
+              rotateY: springY,
+            }}
+            whileHover={{
+              scale: 1.03,
+            }}
+            whileTap={{
+              scale: 0.97,
+            }}
+            onTapCancel={(e) => {
+              setTapped(false);
+              onMouseOver(e);
+            }}
+            onTapStart={() => {
+              setTapped(true);
+            }}
+            onTap={(e) => {
+              setTapped(false);
+            }}
+            onHoverStart={hoverStart}
+            onHoverEnd={hoverEnd}
+            onMouseMove={onMouseOver}
+          >
+            <Shadow hover={hover} />
+            <RelativeContainer>
+              <div className={styles.card}>
+                <div className={styles.iconWrapper}>
+                  <Icon
+                    className={styles.icons}
+                    image={`${PUBLIC_ASSETS_PATH}/${icon}`}
+                    size={60}
+                  />
+                </div>
+
+                <h2 className={styles.dark}> {title}</h2>
+                <p className={styles.featureDes}> {description}</p>
+              </div>
+            </RelativeContainer>
+            <Gradient
+              style={{
+                background: gradient,
+                borderRadius: "16px",
+              }}
+            />
+          </Content>
+        </Container>
+      </motion.div>
+    </div>
   );
 }

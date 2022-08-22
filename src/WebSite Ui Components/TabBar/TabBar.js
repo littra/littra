@@ -40,7 +40,7 @@ const TabBar = () => {
   }
 
   function offsetMenuBorder(element, menuBorder) {
-    const offsetActiveItem = element.getBoundingClientRect();
+    const offsetActiveItem = element.getBoundingClientRect;
     const left =
       Math.floor(
         offsetActiveItem.left -
@@ -66,10 +66,10 @@ const TabBar = () => {
   window.addEventListener("scroll", scrolled);
   window.addEventListener("scroll", renderLink);
 
-  function hidetabbar(){
+  function hidetabbar() {
     var menusItem = document.getElementsByClassName("menus-open");
-    for(let i=0; i<1; i++){
-      menusItem[i].checked= false;
+    for (let i = 0; i < 1; i++) {
+      menusItem[i].checked = false;
     }
   }
 
@@ -190,7 +190,7 @@ const TabBar = () => {
       </div>
       <menu className="menu">
         {renderLink(
-          <button 
+          <button
             className="menu__item active"
             style={{ "--bgColorItem": "#ff8c00" }}
           >
