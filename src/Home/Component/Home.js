@@ -12,7 +12,7 @@ import Image from "../../general/Image";
 import LatestWorks from "./LatestWorks";
 import OurCreativity from "./OurCreativity";
 import NewFooter from "../../HeaderFooter/NewFooter";
-// import NewTopBanner from "../NewTopBanner/NewTopBanner";
+import NewTopBanner from "../NewTopBanner/NewTopBanner";
 import WhyChooseUs from "../../WebSite Ui Components/WhyChooseUs/WhyChooseUs";
 
 class Home extends React.Component {
@@ -22,10 +22,10 @@ class Home extends React.Component {
   render() {
     return (
       <div className={styles.base}>
-        {/* <div className={styles.front}>
-          <TopBanner />
+        <div className={styles.front}>
+          {/* <TopBanner /> */}
           <NewTopBanner />
-        </div> */}
+        </div>
         <div className={styles.second}>
           <VisibilityChild>
             <About />
