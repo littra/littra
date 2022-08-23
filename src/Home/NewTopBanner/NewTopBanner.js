@@ -55,7 +55,7 @@ const loadUiFrame = () =>{
           count: 1,
           factor: { value: 1 / 3 },
           rate: {
-            value: 80
+            value: 70
           },
           particles: {
             stroke: {
@@ -127,7 +127,7 @@ const loadUiFrame = () =>{
         type: "line"
       },
       size: {
-        value: 50,
+        value: 40,
         animation: {
           enable: true,
           sync: true,
@@ -148,12 +148,12 @@ const loadUiFrame = () =>{
       move: {
         enable: true,
         gravity: {
-          acceleration: 15,
+          acceleration: 12,
           enable: true,
           inverse: true,
-          maxSpeed: 100
+          maxSpeed: 70
         },
-        speed: { min: 10, max: 20 },
+        speed: { min: 7, max: 15 },
         outModes: {
           default: "destroy",
           top: "none"
