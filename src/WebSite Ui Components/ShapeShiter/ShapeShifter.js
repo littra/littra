@@ -6,15 +6,17 @@ import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 function ShapeShifter() {
   useEffect(() => {
     //scroll fun start
+
+    var main = document.querySelectorAll(".mainDiv");
     let screen = () => {
-      window.addEventListener("scroll", function() {
-        var scroll = document.querySelectorAll(".mainDiv");
-        for (var i = 0; i < scroll.length; i++) {
+      window.addEventListener("scroll", function scrolling(e) {
+        for (var i = 0; i < main.length; i++) {
           var windowHeight = window.innerHeight;
-          var scrollTop = scroll[i].getBoundingClientRect().top;
-          // var scrollPoint = 150;
-          if (scrollTop === 144.7291717529297) {
+          var scrollTop = main[i].getBoundingClientRect().top;
+          var scrollPoint = 150;
+          if (scrollTop < windowHeight - scrollPoint) {
             S.init();
+            e.currentTarget.removeEventListener(e.type, scrolling);
           } else {
           }
         }
@@ -22,15 +24,6 @@ function ShapeShifter() {
     };
     screen();
     //scroll fun end
-
-    var count = 1;
-    var Shifter = document.querySelector(".mainDiv");
-    Shifter.addEventListener("mouseover", function(e) {
-      count++;
-      if (count <= 2) {
-        S.init();
-      }
-    });
 
     var S = {
       init: function() {
@@ -271,7 +264,7 @@ function ShapeShifter() {
                       time = t;
                       S.Shape.switchShape(S.ShapeBuilder.letter(time));
                     }
-                  }, 1000);
+                  }, 2500);
                 }
                 break;
 
@@ -281,7 +274,7 @@ function ShapeShifter() {
                 );
             }
           },
-          2000,
+          2500,
           sequence.length
         );
       }
@@ -841,7 +834,8 @@ function ShapeShifter() {
                     className="commands-item-info"
                     data-demo="#countdown 10"
                   >
-                    #countdown<span className="commands-item-mode">number</span>
+                    #countdown
+                    <span className="commands-item-mode">number</span>
                   </span>
                   <span className="commands-item-action">Demo</span>
                 </li>
@@ -866,7 +860,8 @@ function ShapeShifter() {
                 <li className="commands-item">
                   <span className="commands-item-title">Circle</span>
                   <span className="commands-item-info" data-demo="#circle 25">
-                    #circle<span className="commands-item-mode">diameter</span>
+                    #circle
+                    <span className="commands-item-mode">diameter</span>
                   </span>
                   <span className="commands-item-action">Demo</span>
                 </li>
@@ -877,7 +872,8 @@ function ShapeShifter() {
                     className="commands-item-info"
                     data-demo="The time is|#time|#countdown 3|"
                   >
-                    <span className="commands-item-mode">command1</span>&nbsp;|
+                    <span className="commands-item-mode">command1</span>
+                    &nbsp;|
                     <span className="commands-item-mode">command2</span>
                   </span>
                   <span className="commands-item-action">Demo</span>

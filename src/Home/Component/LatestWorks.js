@@ -3,6 +3,8 @@ import { FormattedMessage } from "react-intl";
 import HomeMessages from "../../Home/Messages/HomeMessages";
 import DairyCard from "../../WebSite Ui Components/DairyCard/DairyCard";
 import styles from "./css/LatestWorks.css";
+import { motion } from "framer-motion/dist/framer-motion";
+import useScrollAnimation from "./useScrollAnimation";
 function LatestWorks() {
   const LatestWorkData = [
     {
@@ -20,14 +22,17 @@ function LatestWorks() {
       image: "dish.png",
     },
   ];
+  const { ref, slideRight, slideLeft } = useScrollAnimation();
   return (
     <div className={styles.base} id="portfolio">
-      <div className={styles.topSection}>
-        <h1 className={styles.dark}>
-          <FormattedMessage {...HomeMessages.portfolioHeading} />
-        </h1>
+      <div ref={ref}>
+        <motion.div className={styles.topSection} animate={slideRight}>
+          <h1 className={styles.dark}>
+            <FormattedMessage {...HomeMessages.portfolioHeading} />
+          </h1>
+        </motion.div>
+        <motion.hr className={styles.divider} animate={slideLeft} />
       </div>
-      <hr className={styles.divider} />
       <div className={styles.cardMain}>
         <div className={styles.cardArea}>
           <div className={styles.cardSection}>

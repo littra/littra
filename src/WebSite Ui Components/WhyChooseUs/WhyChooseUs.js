@@ -2,17 +2,21 @@ import React from "react";
 import "!style-loader!css-loader!./WhyChooseUs.css";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../../Home/Messages/HomeMessages";
+import { motion } from "framer-motion/dist/framer-motion";
+import useScrollAnimation from "../../Home/Component/useScrollAnimation";
 
 function WhyChooseUs() {
+  const { ref, slideRight, slideLeft, popUp } = useScrollAnimation();
+
   return (
-    <div className="whyUsMain" id="whyus">
-      <div className="topSection">
+    <div className="whyUsMain" id="whyus" ref={ref}>
+      <motion.div className="topSection" animate={slideRight}>
         <h1 className="dark">
           <FormattedMessage {...HomeMessages.whyUsHeading} />
         </h1>
-      </div>
-      <hr className="divider" />
-      <section className="mainContainer">
+      </motion.div>
+      <motion.hr className="divider" animate={slideLeft} />
+      <motion.section className="mainContainer" animate={popUp}>
         <div className="center-div">
           <h2>Why you choice Us ?</h2>
           <p>
@@ -24,7 +28,7 @@ function WhyChooseUs() {
         </div>
 
         <div className="choices">
-          <div className="left-top">
+          <motion.div className="left-top" animate={slideRight}>
             <div className="left-top-circle">
               <img
                 src="https://i.ibb.co/VJmZKFj/high-quality.png"
@@ -39,9 +43,9 @@ function WhyChooseUs() {
                 by the readable content of a page when looking at its layout.{" "}
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="right-top">
+          <motion.div className="right-top" animate={slideLeft}>
             <div className="right-top-circle">
               <img src="https://i.ibb.co/qgKNr59/backup.png" alt="backup" />
             </div>
@@ -53,9 +57,9 @@ function WhyChooseUs() {
                 by the readable content of a page when looking at its layout.{" "}
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="right-bottom">
+          <motion.div className="right-bottom" animate={slideLeft}>
             <div className="right-bottom-circle">
               <img src="https://i.ibb.co/Kbd0xbp/smart.png" alt="smart" />
             </div>
@@ -67,9 +71,9 @@ function WhyChooseUs() {
                 by the readable content of a page when looking at its layout.{" "}
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="left-bottom">
+          <motion.div className="left-bottom" animate={slideRight}>
             <div className="left-bottom-circle">
               <img src="https://i.ibb.co/G53sbGK/customer.png" alt="customer" />
             </div>
@@ -81,9 +85,9 @@ function WhyChooseUs() {
                 by the readable content of a page when looking at its layout.{" "}
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

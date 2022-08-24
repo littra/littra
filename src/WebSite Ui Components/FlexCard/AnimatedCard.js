@@ -5,6 +5,8 @@ import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../../Home/Messages/HomeMessages";
 import { forEach } from "lodash";
+import { motion } from "framer-motion/dist/framer-motion";
+import useScrollAnimation from "../../Home/Component/useScrollAnimation";
 
 const AnimatedCardData = [
   {
@@ -53,6 +55,7 @@ const AnimatedCardData = [
 ];
 function AnimatedCard() {
   const [activeCard, setActiveCard] = useState("");
+  const { ref, slideUp } = useScrollAnimation();
 
   useEffect(() => {
     setActiveCard(0);
@@ -103,9 +106,9 @@ function AnimatedCard() {
   resizeFn();
 
   return (
-    <>
+    <div ref={ref}>
       <div className={styles.AnimatedCardMain}>
-        <div className={styles.AnimatedCardOptions}>
+        <motion.div className={styles.AnimatedCardOptions} animate={slideUp}>
           {AnimatedCardData.map((item, index) => {
             return (
               <div
@@ -146,7 +149,7 @@ function AnimatedCard() {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
       <link
         rel="stylesheet"
@@ -156,7 +159,7 @@ function AnimatedCard() {
         rel="stylesheet"
         href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css"
       />
-    </>
+    </div>
   );
 }
 

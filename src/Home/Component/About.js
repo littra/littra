@@ -4,7 +4,6 @@ import Image from "../../general/Image";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../Messages/HomeMessages";
-
 var images = [
   {
     img: "welcomeOne.jpg",
