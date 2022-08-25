@@ -1,6 +1,6 @@
 .whyUsMain{
     background-color: #fff; 
-    height: 120vh;
+    height: 110%;
     padding: 20px;
 }
 
@@ -73,7 +73,7 @@
 .left-bottom {
     position: absolute;
     display: flex;
-    transition: .6s;
+    /* transition: .6s; */
     cursor: pointer;
     width: 100%;
     user-select: none;
@@ -208,7 +208,7 @@
 
 @media screen and (max-width:1060px) {
     .whyUsMain{
-        height: 110vh;
+        height: 50vh;
     }
     .mainContainer{
     margin-right: 60%;
@@ -248,7 +248,9 @@
         margin-top: -3%;
     }
     .right-top-text{
+        /* margin-left: 96%; */
         margin-left:5% ;
+        /* margin-top: -25%; */
      }
     .right-top-head{
         margin-right: 40%;
@@ -444,7 +446,7 @@
         line-height: 1.4;
         text-align:justify;
         font-size: 16px;
-        width: 240px;
+        width: 200px;
     }
 
     .left-top-text h3,
@@ -452,7 +454,7 @@
         text-align: start;
         color: #263c41;
         opacity: .9;
-        font-size: 18px;
+        font-size: 16px;
         width: 100%;
     }
     .right-top-text h3,
@@ -460,7 +462,7 @@
     .left-bottom-text h3 {
         color: #263c41;
         opacity: .9;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .left-top:hover,
@@ -556,35 +558,10 @@
     .whyUsMain{
         height: 130vh;
     }
-    .left-top-text p,
-    .right-top-text p,
-    .right-bottom-text p,
-    .left-bottom-text p {
-        margin-top: 20px;
-        color: #979dac;
-        font-weight: bold;
-        line-height: 1.4;
-        text-align:justify;
-        font-size: 16px;
-        width: 230px;
-    }
 }
 @media screen and ( max-width:395px){
     .whyUsMain{
         height: 140vh;
-    }
-
-    .left-top-text p,
-    .right-top-text p,
-    .right-bottom-text p,
-    .left-bottom-text p {
-        margin-top: 20px;
-        color: #979dac;
-        font-weight: bold;
-        line-height: 1.4;
-        text-align:justify;
-        font-size: 16px;
-        width: 200px;
     }
 }
 
@@ -609,10 +586,3 @@
         margin-top: 190%;
     }
 }
-
-@media screen and ( max-width:376px){
-    .whyUsMain{
-        height: 155vh;
-    }
-}
-
