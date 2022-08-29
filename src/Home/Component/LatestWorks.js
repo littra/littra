@@ -1,8 +1,12 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../../Home/Messages/HomeMessages";
+import Animation, {
+  ANIMATE_FLAG,
+} from "../../WebSite Ui Components/Animation/Animation";
 import DairyCard from "../../WebSite Ui Components/DairyCard/DairyCard";
 import styles from "./css/LatestWorks.css";
+
 function LatestWorks() {
   const LatestWorkData = [
     {
@@ -20,14 +24,19 @@ function LatestWorks() {
       image: "dish.png",
     },
   ];
+
   return (
     <div className={styles.base} id="portfolio">
-      <div className={styles.topSection}>
-        <h1 className={styles.dark}>
+      <Animation animate={ANIMATE_FLAG.SLIDE_RIGHT}>
+        <h1 className={styles.dark + " " + styles.topSection}>
           <FormattedMessage {...HomeMessages.portfolioHeading} />
         </h1>
-      </div>
-      <hr className={styles.divider} />
+      </Animation>
+
+      <Animation animate={ANIMATE_FLAG.SLIDE_LEFT}>
+        <hr className={styles.divider} />
+      </Animation>
+
       <div className={styles.cardMain}>
         <div className={styles.cardArea}>
           <div className={styles.cardSection}>

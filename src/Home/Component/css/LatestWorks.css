@@ -1,7 +1,8 @@
 .base {
   width: 100%;
-  padding: 20px;
+  padding: 40px;
   background-color: #f9f9f9;
+  padding-bottom: 80px;
 }
 .dark {
   color: var(--text-color-dark);
