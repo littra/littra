@@ -11,7 +11,7 @@ import "./Card.css";
 import styles from "../../Home/Component/css/FeatureBanner.css";
 import Icon from "../../general/Icon";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
-import useScrollAnimation from "../../Home/Component/useScrollAnimation";
+import Animation, { ANIMATE_FLAG } from "../Animation/Animation";
 
 const Container = styled.div`
   border-radius: 8px;
@@ -154,10 +154,9 @@ export function Card({ height = 400, width = 300, icon, title, description }) {
     }
   }, [hover, xy, centerPoint]);
 
-  const { ref, slideRight } = useScrollAnimation();
   return (
-    <div ref={ref}>
-      <motion.div animate={slideRight}>
+    <div>
+      <Animation animate={ANIMATE_FLAG.POP_RIGHT}>
         <Container style={{ height: `${height}px`, width: `${width}px` }}>
           <Content
             style={{
@@ -208,7 +207,7 @@ export function Card({ height = 400, width = 300, icon, title, description }) {
             />
           </Content>
         </Container>
-      </motion.div>
+      </Animation>
     </div>
   );
 }

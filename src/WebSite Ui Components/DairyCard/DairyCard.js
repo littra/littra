@@ -2,8 +2,7 @@ import React from "react";
 import Icon from "../../general/Icon";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import styles from "./DairyCard.css";
-import { motion } from "framer-motion/dist/framer-motion";
-import useScrollAnimation from "../../Home/Component/useScrollAnimation";
+import Animation, { ANIMATE_FLAG } from "../Animation/Animation";
 
 function DairyCard({ icon, header, desc, link, image }) {
   var flipCardContainer = document.getElementsByClassName(
@@ -11,8 +10,6 @@ function DairyCard({ icon, header, desc, link, image }) {
   );
   var insidePage = document.getElementsByClassName(styles.insidePage);
   var card = document.getElementsByClassName(styles.card);
-
-  const { ref, popUp } = useScrollAnimation();
 
   React.useEffect(() => {
     function showAnimation() {
@@ -44,7 +41,7 @@ function DairyCard({ icon, header, desc, link, image }) {
   }, []);
 
   return (
-    <motion.div ref={ref} animate={popUp}>
+    <Animation animate={ANIMATE_FLAG.POP_UP}>
       <div className={styles.card}>
         <div className={styles.flipCard}>
           <div className={styles.flipCardContainer}>
@@ -103,7 +100,7 @@ function DairyCard({ icon, header, desc, link, image }) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </Animation>
   );
 }
 

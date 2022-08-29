@@ -225,7 +225,7 @@ function ShapeShifter() {
                       S.Shape.switchShape(S.ShapeBuilder.letter(index), true);
                     }
                   },
-                  1000,
+                  1500,
                   value,
                   true
                 );
@@ -274,7 +274,7 @@ function ShapeShifter() {
                 );
             }
           },
-          2500,
+          3000,
           sequence.length
         );
       }

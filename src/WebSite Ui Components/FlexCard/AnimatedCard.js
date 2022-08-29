@@ -5,8 +5,6 @@ import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../../Home/Messages/HomeMessages";
 import { forEach } from "lodash";
-import { motion } from "framer-motion/dist/framer-motion";
-import useScrollAnimation from "../../Home/Component/useScrollAnimation";
 
 const AnimatedCardData = [
   {
@@ -55,7 +53,6 @@ const AnimatedCardData = [
 ];
 function AnimatedCard() {
   const [activeCard, setActiveCard] = useState("");
-  const { ref, slideUp } = useScrollAnimation();
 
   useEffect(() => {
     setActiveCard(0);
@@ -106,50 +103,48 @@ function AnimatedCard() {
   resizeFn();
 
   return (
-    <div ref={ref}>
-      <div className={styles.AnimatedCardMain}>
-        <motion.div className={styles.AnimatedCardOptions} animate={slideUp}>
-          {AnimatedCardData.map((item, index) => {
-            return (
-              <div
-                key={index}
-                id="optionId"
-                className={`${styles.AnimatedCardOption} ${
-                  index === activeCard ? styles.active : ""
-                }`}
-                // onMouseEnter={() => setActiveCard(index)}
-                style={{
-                  backgroundImage: `url(${PUBLIC_ASSETS_PATH}/${item.image})`,
-                  backgroundRepeat: "no-repeat",
-                  marginRight: "10px",
-                  backgroundSize: "cover",
-                  transition: "all 2s",
-                }}
-                onTransitionEnd={() => transitionFun(index)}
-              >
-                <div style={{ margin: "30px" }}>
-                  <div className={styles.shadow}></div>
-                  <div className={styles.label}>
-                    <div className={styles.icon}>
-                      <Icon
-                        image={`${PUBLIC_ASSETS_PATH}/${item.icon}`}
-                        size={20}
-                      />
+    <div className={styles.AnimatedCardMain}>
+      <div className={styles.AnimatedCardOptions}>
+        {AnimatedCardData.map((item, index) => {
+          return (
+            <div
+              key={index}
+              id="optionId"
+              className={`${styles.AnimatedCardOption} ${
+                index === activeCard ? styles.active : ""
+              }`}
+              // onMouseEnter={() => setActiveCard(index)}
+              style={{
+                backgroundImage: `url(${PUBLIC_ASSETS_PATH}/${item.image})`,
+                backgroundRepeat: "no-repeat",
+                marginRight: "10px",
+                backgroundSize: "cover",
+                transition: "all 2s",
+              }}
+              onTransitionEnd={() => transitionFun(index)}
+            >
+              <div style={{ margin: "30px" }}>
+                <div className={styles.shadow}></div>
+                <div className={styles.label}>
+                  <div className={styles.icon}>
+                    <Icon
+                      image={`${PUBLIC_ASSETS_PATH}/${item.icon}`}
+                      size={20}
+                    />
+                  </div>
+                  <div className={styles.info}>
+                    <div className={styles.title}>
+                      <h4> {item.title} </h4>
                     </div>
-                    <div className={styles.info}>
-                      <div className={styles.title}>
-                        <h4> {item.title} </h4>
-                      </div>
-                      <div className={styles.sub} style={{ padding: "5px" }}>
-                        <p> {item.desc} </p>
-                      </div>
+                    <div className={styles.sub} style={{ padding: "5px" }}>
+                      <p> {item.desc} </p>
                     </div>
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </motion.div>
+            </div>
+          );
+        })}
       </div>
       <link
         rel="stylesheet"
