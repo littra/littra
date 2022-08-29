@@ -3,30 +3,35 @@ import styles from "./css/FeatureTwoBanner.css";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../Messages/HomeMessages";
 import AnimatedCard from "../../WebSite Ui Components/FlexCard/AnimatedCard";
-import SkeletonLoader from "../../WebSite Ui Components/Loder/SkeletonLoader";
-export default class FeatureTwoBanner extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+import Animation, {
+  ANIMATE_FLAG,
+} from "../../WebSite Ui Components/Animation/Animation";
 
-  render() {
-    return (
-      <>
-        <div className={styles.base} id="pages">
-          <div className={styles.topSection}>
-            <h1 className={styles.dark}>
-              <FormattedMessage {...HomeMessages.richFeatureHeading} />
-            </h1>
-            <p className={styles.richFeature}>
-              <FormattedMessage {...HomeMessages.richFeatureDes} />
-            </p>
-          </div>
-          <hr className={styles.divider} />
-          <div className={styles.infoWrapper}>
-            <AnimatedCard />
-          </div>
-        </div>
-      </>
-    );
-  }
+function FeatureTwoBanner() {
+  return (
+    <div className={styles.base} id="pages">
+      <div className={styles.topSection}>
+        <Animation animate={ANIMATE_FLAG.SLIDE_RIGHT}>
+          <h1 className={styles.dark}>
+            <FormattedMessage {...HomeMessages.richFeatureHeading} />
+          </h1>
+        </Animation>
+        <Animation animate={ANIMATE_FLAG.SLIDE_LEFT}>
+          <p className={styles.richFeature}>
+            <FormattedMessage {...HomeMessages.richFeatureDes} />
+          </p>
+        </Animation>
+      </div>
+      <Animation animate={ANIMATE_FLAG.SLIDE_RIGHT}>
+        <hr className={styles.divider} />
+      </Animation>
+      <div className={styles.infoWrapper}>
+        <Animation animate={ANIMATE_FLAG.SLIDE_UP}>
+          <AnimatedCard />
+        </Animation>
+      </div>
+    </div>
+  );
 }
+
+export default FeatureTwoBanner;

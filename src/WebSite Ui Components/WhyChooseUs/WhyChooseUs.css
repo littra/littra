@@ -1,9 +1,10 @@
 .whyUsMain{
-    background-color: #fff; 
-    height: 110%;
+    height: 120vh;
     padding: 20px;
 }
-
+.whyUsWrapper{
+    background-color: #ffff;
+}
 .dark {
     color: var(--text-color-dark);
 }
@@ -73,7 +74,7 @@
 .left-bottom {
     position: absolute;
     display: flex;
-    /* transition: .6s; */
+    transition: .4s;
     cursor: pointer;
     width: 100%;
     user-select: none;
@@ -208,7 +209,7 @@
 
 @media screen and (max-width:1060px) {
     .whyUsMain{
-        height: 50vh;
+        height: 110vh;
     }
     .mainContainer{
     margin-right: 60%;

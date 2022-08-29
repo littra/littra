@@ -58,6 +58,7 @@ export default class FeatureBanner extends React.Component {
   renderCard = (item, id) => {
     return (
       <Card
+        key={id}
         icon={item.icon}
         title={item.title}
         description={item.description}
@@ -68,9 +69,9 @@ export default class FeatureBanner extends React.Component {
     return (
       <div className={styles.base} id="features">
         <div className={styles.featureWrapper}>
-          {_.chunk(cards, 3).map((row) => {
+          {_.chunk(cards, 3).map((row, id) => {
             return (
-              <div className={styles.featureRow}>
+              <div className={styles.featureRow} key={id}>
                 {row.map((item, id) => {
                   return this.renderCard(item, id);
                 })}

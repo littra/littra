@@ -4,7 +4,9 @@ import Image from "../../general/Image";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../Messages/HomeMessages";
-
+import Animation, {
+  ANIMATE_FLAG,
+} from "../../WebSite Ui Components/Animation/Animation";
 var images = [
   {
     img: "welcomeOne.jpg",
@@ -82,50 +84,61 @@ export default class About extends React.Component {
       >
         <div className={styles.left}>
           <div className={styles.featureWrapper}>
-            <h1 className={styles.darkColor}>
-              <FormattedMessage {...HomeMessages.aboutHeading} />
-            </h1>
-            <hr className={styles.border} />
-            <div className={styles.imageWrapperMobile}>
+            <Animation animate={ANIMATE_FLAG.POP_UP}>
+              <h1 className={styles.darkColor}>
+                <FormattedMessage {...HomeMessages.aboutHeading} />
+              </h1>
+            </Animation>
+            <Animation animate={ANIMATE_FLAG.POP_RIGHT}>
+              <hr className={styles.border} />
+            </Animation>
+            <Animation animate={ANIMATE_FLAG.SLIDE_RIGHT}>
+              <div className={styles.imageWrapperMobile}>
+                <Image
+                  src={`${PUBLIC_ASSETS_PATH}/image1.png`}
+                  paddingBottom="80%"
+                />
+              </div>
+              <div className={styles.pad}>
+                <p className={styles.aboutText}>
+                  <FormattedMessage {...HomeMessages.aboutTextOne} />
+                </p>
+                <button
+                  className={styles.showMore}
+                  onClick={this.toggleShowMore}
+                >
+                  {this.state.showMore ? "" : "Show more..."}
+                </button>
+                {this.state.showMore && (
+                  <div className={styles.moreContent}>
+                    <p className={styles.aboutText}>
+                      <FormattedMessage {...HomeMessages.aboutTextTwo} />
+                    </p>
+                    <p className={styles.aboutText}>
+                      <FormattedMessage {...HomeMessages.aboutTextThree} />
+                    </p>
+                    <button
+                      className={styles.showMore}
+                      onClick={this.toggleShowMore}
+                    >
+                      {!this.state.showMore ? "" : "Show Less..."}
+                    </button>
+                  </div>
+                )}
+              </div>
+            </Animation>
+          </div>
+        </div>
+        <Animation animate={ANIMATE_FLAG.SLIDE_LEFT}>
+          <div className={styles.right}>
+            <div className={styles.imageWrapper}>
               <Image
                 src={`${PUBLIC_ASSETS_PATH}/image1.png`}
-                paddingBottom="80%"
+                paddingBottom="370px"
               />
             </div>
-            <div className={styles.pad}>
-              <p className={styles.aboutText}>
-                <FormattedMessage {...HomeMessages.aboutTextOne} />
-              </p>
-              <button className={styles.showMore} onClick={this.toggleShowMore}>
-                {this.state.showMore ? "" : "Show more..."}
-              </button>
-              {this.state.showMore && (
-                <div className={styles.moreContent}>
-                  <p className={styles.aboutText}>
-                    <FormattedMessage {...HomeMessages.aboutTextTwo} />
-                  </p>
-                  <p className={styles.aboutText}>
-                    <FormattedMessage {...HomeMessages.aboutTextThree} />
-                  </p>
-                  <button
-                    className={styles.showMore}
-                    onClick={this.toggleShowMore}
-                  >
-                    {!this.state.showMore ? "" : "Show Less..."}
-                  </button>
-                </div>
-              )}
-            </div>
           </div>
-        </div>
-        <div className={styles.right}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src={`${PUBLIC_ASSETS_PATH}/image1.png`}
-              paddingBottom="370px"
-            />
-          </div>
-        </div>
+        </Animation>
       </div>
     );
   }
