@@ -5,7 +5,7 @@ import {
   useSpring,
   useMotionValue,
   useTransform,
-} from "framer-motion/dist/framer-motion";
+} from "framer-motion";
 import { interpolate } from "@popmotion/popcorn";
 import "./Card.css";
 import styles from "../../Home/Component/css/FeatureBanner.css";
@@ -190,6 +190,7 @@ export function Card({ height = 400, width = 300, icon, title, description }) {
                 image={`${PUBLIC_ASSETS_PATH}/${icon}`}
                 size={60}
               />
+              {console.log(`${PUBLIC_ASSETS_PATH}/${icon}`)}
             </div>
 
             <h2 className={styles.dark}> {title}</h2>

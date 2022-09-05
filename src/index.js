@@ -1,11 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import Loadable from "react-loadable";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./configureStore.js";
 import registerServiceWorker from "./registerServiceWorker";
+import { hydrateRoot } from 'react-dom/client';
 
 import LanguageProvider from "./LanguageProvider/LanguageProvider.js";
 
@@ -21,9 +22,13 @@ const AppBundle = (
 
 window.onload = () => {
   Loadable.preloadReady().then(() => {
-    ReactDOM.hydrate(AppBundle, document.getElementById("root"));
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(AppBundle);
   });
 };
+
+
 
 const displayToastFunc = message => {
   ReactDOM.render(

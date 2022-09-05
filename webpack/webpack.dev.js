@@ -26,35 +26,36 @@ module.exports = require("./webpack.base")({
       path.join(process.cwd(), "public")
     ],
     port: 3000,
+    hot: true,
     historyApiFallback: true,
     disableHostCheck: true,
     compress: true
   },
-  optimization: {
-    splitChunks: {
-      name: false,
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          name(module) {
-            // get the name. E.g. node_modules/packageName/not/this/part.js
-            // or node_modules/packageName
-            const packageName = module.context.match(
-              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-            )[1];
-            // npm package names are URL-safe, but some servers don't like @ symbols
-            return `npm.${packageName.replace("@", "")}`;
-          },
-          chunks: "all"
-        }
-      }
-      // maxSize: 200000
-    }
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     name: false,
+  //     cacheGroups: {
+  //       vendors: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         name(module) {
+  //           // get the name. E.g. node_modules/packageName/not/this/part.js
+  //           // or node_modules/packageName
+  //           const packageName = module.context.match(
+  //             /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+  //           )[1];
+  //           // npm package names are URL-safe, but some servers don't like @ symbols
+  //           return `npm.${packageName.replace("@", "")}`;
+  //         },
+  //         chunks: "all"
+  //       }
+  //     }
+  //     // maxSize: 200000
+  //   }
+  // },
   // Add development plugins
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     // For injecting minified html file
     new HtmlWebpackPlugin({
       title: "TCL",

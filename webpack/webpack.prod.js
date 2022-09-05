@@ -22,22 +22,27 @@ module.exports = require("./webpack.base")({
     path: path.join(process.cwd(), "dist"),
     publicPath: process.env.BASE_PATH // this is for deploy to sub directory . we need to change it to /
   },
-  optimization: {
-    splitChunks: {
-      name: false,
-      cacheGroups: {
-        default: false,
-        vendors: false,
+  // optimization: {
+  //   splitChunks: {
+  //     name: false,
+  //     cacheGroups: {
+  //       default: false,
+  //       vendors: false,
 
-        vendor: {
-          // sync + async chunks
-          chunks: "all",
-          // import file path containing node_modules
-          test: /node_modules/
-        }
-      }
-    }
-  },
+  //       vendor: {
+  //         // sync + async chunks
+  //         chunks: "all",
+  //         // import file path containing node_modules
+  //         test: /node_modules/
+  //       }
+  //     }
+  //   }
+  // },
+
+
+ 
+
+
   // Add production plugins
   plugins: [
     // new webpack.optimize.ModuleConcatenationPlugin(),
@@ -48,6 +53,8 @@ module.exports = require("./webpack.base")({
       template: path.join(process.cwd(), "/public/index.html"),
       filename: "index.html",
 
+
+      // uglify can be used
       minify: {
         removeComments: true,
         collapseWhitespace: true,
