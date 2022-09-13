@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "!style-loader!css-loader!./OfflinePage.css";
 import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import PlanetDefense from "./PlanetDefense";
-import Draw from "./Draw";
+import OrbitalsDraw from "./OrbitalsDraw";
 
 function OfflinePage() {
   const [offline, setOffline] = useState(false);
@@ -16,14 +16,14 @@ function OfflinePage() {
   const PlanetGame = () => {
     setModeOne(true);
   };
-  const BlasterGame = () => {
+  const DrawOrbitals = () => {
     setModeTwo(true);
   };
   return (
     <>
       {offline && (
         <div>
-          {modeTwo ? <Draw /> : null}
+          {modeTwo ? <OrbitalsDraw /> : null}
           {modeOne ? <PlanetDefense /> : null}
           {!modeTwo && !modeOne ? (
             <div className="offlineWrapper">
@@ -81,7 +81,7 @@ function OfflinePage() {
                         <div className="back from-bottom">
                           <div className="textDark">
                             <span className="lineBreak"> Draw </span>
-                            <div className="gameText" onClick={BlasterGame}>
+                            <div className="gameText" onClick={DrawOrbitals}>
                               Color-Orbitals
                             </div>
                           </div>
