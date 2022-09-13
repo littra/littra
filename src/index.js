@@ -5,9 +5,9 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./configureStore.js";
-import registerServiceWorker from "./registerServiceWorker";
 
 import LanguageProvider from "./LanguageProvider/LanguageProvider.js";
+import serviceWorker from "./ServiceWorkerRegister";
 
 const AppBundle = (
   <Provider store={store}>
@@ -25,23 +25,25 @@ window.onload = () => {
   });
 };
 
-const displayToastFunc = message => {
-  ReactDOM.render(
-    <div className="newUpdateWrapper">
-      New Version is abailable
-      <a href={window.location.href} className="refreshContent">
-        REFRESH
-      </a>
-      <span className="closeToast">x</span>
-    </div>,
-    document.getElementById("service-worker-toast-root")
-  );
-  setTimeout(() => {
-    document.getElementById("service-worker-toast-root").innerHTML = "";
-  }, 4000);
-};
-try {
-  registerServiceWorker(displayToastFunc);
-} catch (e) {
-  console.log(e.message);
-}
+// const displayToastFunc = message => {
+//   ReactDOM.render(
+//     <div className="newUpdateWrapper">
+//       New Version is abailable
+//       <a href={window.location.href} className="refreshContent">
+//         REFRESH
+//       </a>
+//       <span className="closeToast">x</span>
+//     </div>,
+//     document.getElementById("service-worker-toast-root")
+//   );
+//   setTimeout(() => {
+//     document.getElementById("service-worker-toast-root").innerHTML = "";
+//   }, 4000);
+// };
+// try {
+//   registerServiceWorker(displayToastFunc);
+// } catch (e) {
+//   console.log(e.message);
+// }
+
+serviceWorker();
