@@ -14,6 +14,7 @@ import OurCreativity from "./OurCreativity";
 import NewFooter from "../../HeaderFooter/NewFooter";
 import NewTopBanner from "../NewTopBanner/NewTopBanner";
 import WhyChooseUs from "../../WebSite Ui Components/WhyChooseUs/WhyChooseUs";
+import TabBar from "../../WebSite Ui Components/TabBar/TabBar";
 
 class Home extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className={styles.base}>
+        <TabBar />
         <div className={styles.front}>
           {/* <TopBanner /> */}
           <NewTopBanner />
