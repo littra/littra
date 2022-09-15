@@ -11,7 +11,6 @@ function PlanetDefense() {
 
     game();
     function game() {
-      console.log("first");
       //Canvas
       var canvas = document.getElementById("canvas"),
         ctx = canvas.getContext("2d"),

@@ -24,14 +24,6 @@ class App extends React.Component {
     } else {
       document.querySelector("html").removeAttribute("data-theme");
     }
-
-    window.addEventListener("offline", () => {
-      this.props.history.push("/offline");
-    });
-
-    window.addEventListener("online", () => {
-      this.props.history.push("/");
-    });
   }
   render() {
     // if (isMobile()) {

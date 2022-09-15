@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import "!style-loader!css-loader!./OrbitalsDraw.css";
+import "!style-loader!css-loader!./CircleDraw.css";
 
-function OrbitalsDraw() {
+function CircleDraw() {
   useEffect(() => {
     window.requestAnimFrame = (function() {
       return (
@@ -177,4 +177,4 @@ function OrbitalsDraw() {
   );
 }
 
-export default OrbitalsDraw;
+export default CircleDraw;
