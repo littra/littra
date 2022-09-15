@@ -46,7 +46,7 @@ export default function register(displayToastFunc) {
         if (navigator.onLine) {
           event.target.location.href = "/";
         } else {
-          !navigator.onLine;
+          // !navigator.onLine;
           event.target.location.href = "/offline";
         }
       }
