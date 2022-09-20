@@ -5,7 +5,7 @@ import { PUBLIC_ASSETS_PATH } from "../../Utils/Constants";
 import { FormattedMessage } from "react-intl";
 import HomeMessages from "../../Home/Messages/HomeMessages";
 import { forEach } from "lodash";
-import { motion } from "framer-motion/dist/framer-motion";
+// import { motion } from "framer-motion";
 
 const AnimatedCardData = [
   {
