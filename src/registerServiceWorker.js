@@ -19,7 +19,7 @@ const isLocalhost = Boolean(
 );
 
 export default function register(displayToastFunc) {
-  if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
+  if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       const swUrl = `/service-worker.js`;
 
@@ -31,16 +31,23 @@ export default function register(displayToastFunc) {
         registerValidSW(swUrl, displayToastFunc);
       }
       function updateOnlineStatus(event) {
+        console.log("Yes....++++");
+        // if (navigator.onLine) {
+        //   document.documentElement.classList.remove("is-offline");
+        //   document
+        //     .querySelector(".connection-status")
+        //     .classList.remove("offlineMessage");
+        // } else {
+        //   document.documentElement.classList.add("is-offline");
+        //   document
+        //     .querySelector(".connection-status")
+        //     .classList.add("offlineMessage");
+        // }
         if (navigator.onLine) {
-          document.documentElement.classList.remove("is-offline");
-          document
-            .querySelector(".connection-status")
-            .classList.remove("offlineMessage");
+          event.target.location.href = "/";
         } else {
-          document.documentElement.classList.add("is-offline");
-          document
-            .querySelector(".connection-status")
-            .classList.add("offlineMessage");
+          // !navigator.onLine;
+          event.target.location.href = "/offline";
         }
       }
 
@@ -53,7 +60,7 @@ export default function register(displayToastFunc) {
 function registerValidSW(swUrl, displayToastFunc) {
   navigator.serviceWorker
     .register(swUrl)
-    .then(registration => {
+    .then((registration) => {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         installingWorker.onstatechange = () => {
@@ -78,7 +85,7 @@ function registerValidSW(swUrl, displayToastFunc) {
         };
       };
     })
-    .catch(error => {
+    .catch((error) => {
       console.error("Error during service worker registration:", error);
     });
 }
@@ -86,14 +93,14 @@ function registerValidSW(swUrl, displayToastFunc) {
 function checkValidServiceWorker(swUrl, displayToastFunc) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl)
-    .then(response => {
+    .then((response) => {
       // Ensure service worker exists, and that we really are getting a JS file.
       if (
         response.status === 404 ||
         response.headers.get("content-type").indexOf("javascript") === -1
       ) {
         // No service worker found. Probably a different app. Reload the page.
-        navigator.serviceWorker.ready.then(registration => {
+        navigator.serviceWorker.ready.then((registration) => {
           registration.unregister().then(() => {
             window.location.reload();
           });
@@ -112,7 +119,7 @@ function checkValidServiceWorker(swUrl, displayToastFunc) {
 
 export function unregister() {
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
+    navigator.serviceWorker.ready.then((registration) => {
       registration.unregister();
     });
   }

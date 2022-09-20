@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 
 import Home from "./Home/Component/Home";
 import Header from "./HeaderFooter/Component/Header";
@@ -8,9 +8,14 @@ import isMobile from "./Utils/UserAgent";
 import Image from "./general/Image";
 import * as styles from "./App.css";
 import Icon from "./general/Icon";
-import TabBar from "./WebSite Ui Components/TabBar/TabBar";
-
-export default class App extends React.Component {
+import OfflinePage from "./WebSite Ui Components/OfflinePage/OfflinePage";
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      offline: false,
+    };
+  }
   componentDidMount() {
     const theme =
       localStorage.getItem && localStorage.getItem(THEME_LOCAL_STORAGE);
@@ -33,12 +38,14 @@ export default class App extends React.Component {
     return (
       <div style={{ height: 0, margin: 0, padding: 0 }}>
         {/* <Header />  */}
-        <TabBar />
 
         <Switch>
-          <Route path="*" component={Home} />
+          <Route path="/offline" component={OfflinePage} />
+          <Route path="/" component={Home} />
         </Switch>
       </div>
     );
   }
 }
+
+export default withRouter(App);

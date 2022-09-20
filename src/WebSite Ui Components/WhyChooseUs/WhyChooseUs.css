@@ -1,5 +1,5 @@
 .whyUsMain{
-    height: 120vh;
+    height: 100%;
     padding: 20px;
 }
 .whyUsWrapper{
@@ -209,7 +209,7 @@
 
 @media screen and (max-width:1060px) {
     .whyUsMain{
-        height: 110vh;
+        height: 100%;
     }
     .mainContainer{
     margin-right: 60%;
