@@ -5,7 +5,7 @@ import {
   useSpring,
   useMotionValue,
   useTransform,
-} from "framer-motion/dist/framer-motion";
+} from "framer-motion";
 import { interpolate } from "@popmotion/popcorn";
 import "./Card.css";
 import styles from "../../Home/Component/css/FeatureBanner.css";

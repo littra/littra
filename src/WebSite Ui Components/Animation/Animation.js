@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { motion } from "framer-motion/dist/framer-motion";
-import { useAnimation } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
+import { useAnimation } from "framer-motion";
 export const ANIMATE_FLAG = {
   SLIDE_RIGHT: "SLIDE_RIGHT",
   POP_RIGHT: "POP_RIGHT",
