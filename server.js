@@ -15,7 +15,7 @@ const app = express();
 
   app.use("/", expressStaticGzip(__dirname + '/dist'));
   app.use(express.static(__dirname + '/dist'));
-  app.use("/static", express.static(__dirname+ '/public'));
+  app.use("/", express.static(__dirname+ '/public'));
 
 
 app.get("/*", (req, res) => {
