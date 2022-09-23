@@ -16,17 +16,17 @@ function FeatureTwoBanner() {
             <FormattedMessage {...HomeMessages.richFeatureHeading} />
           </h1>
         </Animation>
-        <Animation animate={ANIMATE_FLAG.SLIDE_LEFT}>
+        <Animation animate={ANIMATE_FLAG.SLIDE_UP}>
           <p className={styles.richFeature}>
             <FormattedMessage {...HomeMessages.richFeatureDes} />
           </p>
         </Animation>
       </div>
-      <Animation animate={ANIMATE_FLAG.SLIDE_RIGHT}>
+      <Animation animate={ANIMATE_FLAG.SLIDE_UP}>
         <hr className={styles.divider} />
       </Animation>
       <div className={styles.infoWrapper}>
-        <Animation animate={ANIMATE_FLAG.SLIDE_UP}>
+        <Animation animate={ANIMATE_FLAG.SLIDE_SMOOTH_LEFT}>
           <AnimatedCard />
         </Animation>
       </div>

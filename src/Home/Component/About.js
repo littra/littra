@@ -84,15 +84,15 @@ export default class About extends React.Component {
       >
         <div className={styles.left}>
           <div className={styles.featureWrapper}>
-            <Animation animate={ANIMATE_FLAG.POP_UP}>
+            <Animation animate={ANIMATE_FLAG.SLIDE_LEFT}>
               <h1 className={styles.darkColor}>
                 <FormattedMessage {...HomeMessages.aboutHeading} />
               </h1>
             </Animation>
-            <Animation animate={ANIMATE_FLAG.POP_RIGHT}>
+            <Animation animate={ANIMATE_FLAG.SLIDE_RIGHT}>
               <hr className={styles.border} />
             </Animation>
-            <Animation animate={ANIMATE_FLAG.SLIDE_RIGHT}>
+            <Animation animate={ANIMATE_FLAG.SLIDE_UP}>
               <div className={styles.imageWrapperMobile}>
                 <Image
                   src={`${PUBLIC_ASSETS_PATH}/image1.png`}
@@ -129,7 +129,7 @@ export default class About extends React.Component {
             </Animation>
           </div>
         </div>
-        <Animation animate={ANIMATE_FLAG.SLIDE_LEFT}>
+        <Animation animate={ANIMATE_FLAG.SLIDE_UP}>
           <div className={styles.right}>
             <div className={styles.imageWrapper}>
               <Image

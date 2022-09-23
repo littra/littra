@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import {
-  motion,
-  useSpring,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
+import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
 import { interpolate } from "@popmotion/popcorn";
 import "./Card.css";
 import styles from "../../Home/Component/css/FeatureBanner.css";
@@ -156,7 +151,7 @@ export function Card({ height = 400, width = 300, icon, title, description }) {
 
   return (
     <div>
-      <Animation animate={ANIMATE_FLAG.POP_RIGHT}>
+      <Animation animate={ANIMATE_FLAG.SLIDE_SMOOTH_RIGHT}>
         <Container style={{ height: `${height}px`, width: `${width}px` }}>
           <Content
             style={{
