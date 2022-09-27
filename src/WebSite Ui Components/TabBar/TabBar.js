@@ -225,7 +225,7 @@ const TabBar = () => {
           "#pages"
         )}
         {renderLink(
-          <button className="menu__item" style={{ "--bgColorItem": "#65ddb7" }}>
+          <button className="menu__item" style={{ "--bgColorItem": "#1dd8e0" }}>
             <div className="iconNew">
               <Icon image={`${PUBLIC_ASSETS_PATH}/creativety.png`} size={38} />
             </div>
@@ -233,7 +233,7 @@ const TabBar = () => {
           "#creativity"
         )}
         {renderLink(
-          <button className="menu__item" style={{ "--bgColorItem": "#65ddb7" }}>
+          <button className="menu__item" style={{ "--bgColorItem": "#61ab00" }}>
             <div className="iconNew">
               <Icon image={`${PUBLIC_ASSETS_PATH}/ourWorks.png`} size={38} />
             </div>
@@ -241,7 +241,7 @@ const TabBar = () => {
           "#portfolio"
         )}
         {renderLink(
-          <button className="menu__item" style={{ "--bgColorItem": "#65ddb7" }}>
+          <button className="menu__item" style={{ "--bgColorItem": "#7000a3" }}>
             <div className="iconNew">
               <Icon image={`${PUBLIC_ASSETS_PATH}/chooseUs.png`} size={38} />
             </div>
@@ -249,7 +249,7 @@ const TabBar = () => {
           "#whyus"
         )}
         {renderLink(
-          <button className="menu__item" style={{ "--bgColorItem": "#65ddb7" }}>
+          <button className="menu__item" style={{ "--bgColorItem": "#167acc" }}>
             <div className="iconNew">
               <Icon image={`${PUBLIC_ASSETS_PATH}/footer.png`} size={33} />
             </div>

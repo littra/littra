@@ -9,6 +9,7 @@
 }
 
 .divider {
+  margin: auto;
   width: 150px;
   height: 3px;
   border: none;
@@ -17,8 +18,6 @@
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  /* margin-left: 45%; */
-
 }
 .topSection {
   text-align: center;
@@ -49,6 +48,3 @@
   width: 100%;
   size: 500px;
 }
-
-
-
