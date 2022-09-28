@@ -12,8 +12,8 @@ import Image from "../../general/Image";
 import LatestWorks from "./LatestWorks";
 import OurCreativity from "./OurCreativity";
 import NewFooter from "../../HeaderFooter/NewFooter";
-import NewTopBanner from "../NewTopBanner/NewTopBanner";
 import WhyChooseUs from "../../WebSite Ui Components/WhyChooseUs/WhyChooseUs";
+import TopBannerSlider from "../../WebSite Ui Components/TopBanner/TopBannerSlider";
 
 class Home extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Home extends React.Component {
       <div className={styles.base}>
         <div className={styles.front}>
           {/* <TopBanner /> */}
-          <NewTopBanner />
+          <TopBannerSlider />
         </div>
         <div className={styles.second}>
           <VisibilityChild>
