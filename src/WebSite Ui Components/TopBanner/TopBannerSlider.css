@@ -292,6 +292,8 @@
   opacity: 1;
   transition: all 0.5s;
   cursor: pointer;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .slider__control:hover {
   background: #fff;
